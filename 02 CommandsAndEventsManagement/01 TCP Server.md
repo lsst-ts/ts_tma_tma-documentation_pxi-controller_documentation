@@ -15,7 +15,7 @@ depending on the configuration set to it.
 As explained in [this section](#configuration-file-explained) the Server.lvclass requires a *\*.xml* file to
 specify the configuration of the task. For this specific case, the used
 configuration is specified in the “*CommandTCP_Config.xml*” file located at the
-Configuration folder inside the PXIController repo (RT Code\Configuration\CAR_TCP).
+Configuration folder inside the PXIController repo (RT Code -> Configuration -> CAR_TCP).
 
 The values of this configuration can be modified to improve the performance or if you need to change the port used to communicate to the TMA OMT (operation_manager).
 
