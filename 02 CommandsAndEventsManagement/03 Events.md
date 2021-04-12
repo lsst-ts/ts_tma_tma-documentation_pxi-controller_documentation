@@ -12,7 +12,18 @@ This event reports the occurred warnings. See example bellow:
 
 ``` plantuml
 @startjson
-{"id":10,"timestamp":0.000000,"parameters":{"name":"","subsystemId":0,"subsystemInstance":"","active":false,"code":0,"description":""}}
+{
+    "id": 10,
+    "timestamp": 0.000000,
+    "parameters": {
+        "name": "",
+        "subsystemId": 0,
+        "subsystemInstance": "",
+        "active": false,
+        "code": 0,
+        "description": ""
+    }
+}
 @endjson
 ```
 
@@ -29,7 +40,19 @@ This event reports the occurred alarms. See example bellow:
 
 ``` plantuml
 @startjson
-{"id":11,"timestamp":0.000000,"parameters":{"name":"","subsystemId":0,"subsystemInstance":"","active":false,"latched":false,"code":0,"description":""}}
+{
+    "id": 11,
+    "timestamp": 0.000000,
+    "parameters": {
+        "name": "",
+        "subsystemId": 0,
+        "subsystemInstance": "",
+        "active": false,
+        "latched": false,
+        "code": 0,
+        "description": ""
+    }
+}
 @endjson
 ```
 
@@ -47,7 +70,13 @@ This event reports the actual comander. See example bellow:
 
 ``` plantuml
 @startjson
-{"id":20,"timestamp":3701058211.501903,"parameters":{"actualCommander":0}}
+{
+    "id": 20,
+    "timestamp": 3701058211.501903,
+    "parameters": {
+        "actualCommander": 0
+    }
+}
 @endjson
 ```
 
@@ -55,7 +84,15 @@ This event reports the actual comander. See example bellow:
 
 ``` plantuml
 @startjson
-{"<color:blue><b>actualCommander": {"<b>id": "<b>value","0": "None", "1": "TCS", "2": "EUI", "3": "HHD"}}
+{
+    "<color:blue><b>actualCommander": {
+        "<b>id": "<b>value",
+        "0": "None",
+        "1": "TCS",
+        "2": "EUI",
+        "3": "HHD"
+    }
+}
 @endjson
 ```
 
@@ -355,7 +392,14 @@ System with no subelements:
 
 ``` plantuml
 @startjson
-{"id":100,"timestamp":3700809100.303714,"parameters":{"system":0,"powerState":0}}
+{
+    "id": 100,
+    "timestamp": 3700809100.303714,
+    "parameters": {
+        "system": 0,
+        "powerState": 0
+    }
+}
 @endjson
 ```
 
@@ -363,7 +407,20 @@ System with 4 subelements:
 
 ``` plantuml
 @startjson
-{"id":100,"timestamp":3700810104.567383,"parameters":{"system":0,"powerState":0,"elementsPowerState":[0,0,0,0]}}
+{
+    "id": 100,
+    "timestamp": 3700810104.567383,
+    "parameters": {
+        "system": 0,
+        "powerState": 0,
+        "elementsPowerState": [
+            0,
+            0,
+            0,
+            0
+        ]
+    }
+}
 @endjson
 ```
 
@@ -371,7 +428,27 @@ System with 4 subelements:
 
 ``` plantuml
 @startjson
-{"<color:blue><b>system": {"<b>id": "<b>value","0": "Azimuth", "1": "Elevation", "2": "CameraCableWrap", "3": "Balancing", "4": "MirrorCover", "5": "MirroCoverLocks", "6": "AzimuthCableWrap", "7": "LockingPins", "8": "DeployablePlatforms", "9": "OilSupplySystem", "10": "AzimuthDrivesThermal", "11": "ElevationDrivesThemal", "12": "AZ0101CabinetThemal", "13": "ModbusTemperatureControllers", "14": "MainCabinet", "15": "MainAxesPowerSupply"}}
+{
+    "<color:blue><b>system": {
+        "<b>id": "<b>value",
+        "0": "Azimuth",
+        "1": "Elevation",
+        "2": "CameraCableWrap",
+        "3": "Balancing",
+        "4": "MirrorCover",
+        "5": "MirroCoverLocks",
+        "6": "AzimuthCableWrap",
+        "7": "LockingPins",
+        "8": "DeployablePlatforms",
+        "9": "OilSupplySystem",
+        "10": "AzimuthDrivesThermal",
+        "11": "ElevationDrivesThemal",
+        "12": "AZ0101CabinetThemal",
+        "13": "ModbusTemperatureControllers",
+        "14": "MainCabinet",
+        "15": "MainAxesPowerSupply"
+    }
+}
 @endjson
 ```
 
@@ -379,7 +456,16 @@ System with 4 subelements:
 
 ``` plantuml
 @startjson
-{"<color:blue><b>powerState": {"<b>id": "<b>value","0": "OFF", "1": "ON", "2": "TURNING_ON", "3": "TURNING_OFF", "4": "FAULT"}}
+{
+    "<color:blue><b>powerState": {
+        "<b>id": "<b>value",
+        "0": "OFF",
+        "1": "ON",
+        "2": "TURNING_ON",
+        "3": "TURNING_OFF",
+        "4": "FAULT"
+    }
+}
 @endjson
 ```
 
@@ -391,7 +477,15 @@ This event publishes the motion state of Azimuth, Elevation and CameraCableWrap.
 
 ``` plantuml
 @startjson
-{"id":101,"timestamp":3700813075.739622,"parameters":{"axis":0,"motionState":0,"position":0.00000000}}
+{
+    "id": 101,
+    "timestamp": 3700813075.739622,
+    "parameters": {
+        "axis": 0,
+        "motionState": 0,
+        "position": 0.00000000
+    }
+}
 @endjson
 ```
 
@@ -399,7 +493,14 @@ This event publishes the motion state of Azimuth, Elevation and CameraCableWrap.
 
 ``` plantuml
 @startjson
-{"<color:blue><b>axis": {"<b>id": "<b>value","0": "Azimuth", "1": "Elevation", "2": "CameraCableWrap"}}
+{
+    "<color:blue><b>axis": {
+        "<b>id": "<b>value",
+        "0": "Azimuth",
+        "1": "Elevation",
+        "2": "CameraCableWrap"
+    }
+}
 @endjson
 ```
 
@@ -407,7 +508,16 @@ This event publishes the motion state of Azimuth, Elevation and CameraCableWrap.
 
 ``` plantuml
 @startjson
-{"<color:blue><b>motionState": {"<b>id": "<b>value","0": "STOPPING", "1": "STOPPED", "2": "MOVING_POINT_TO_POINT", "3": "JOGGING", "4": "TRACKING"}}
+{
+    "<color:blue><b>motionState": {
+        "<b>id": "<b>value",
+        "0": "STOPPING",
+        "1": "STOPPED",
+        "2": "MOVING_POINT_TO_POINT",
+        "3": "JOGGING",
+        "4": "TRACKING"
+    }
+}
 @endjson
 ```
 
@@ -419,7 +529,15 @@ This event reports the state of the oil supply system. See example bellow:
 
 ``` plantuml
 @startjson
-{"id":102,"timestamp":3701053969.999932,"parameters":{"cooling":0,"oil":0,"mainPump":0}}
+{
+    "id": 102,
+    "timestamp": 3701053969.999932,
+    "parameters": {
+        "cooling": 0,
+        "oil": 0,
+        "mainPump": 0
+    }
+}
 @endjson
 ```
 
@@ -427,7 +545,16 @@ This event reports the state of the oil supply system. See example bellow:
 
 ``` plantuml
 @startjson
-{"<color:blue><b>cooling": {"<b>id": "<b>value","0": "OFF", "1": "ON", "2": "TURNING_ON", "3": "TURNING_OFF", "4": "FAULT"}}
+{
+    "<color:blue><b>cooling": {
+        "<b>id": "<b>value",
+        "0": "OFF",
+        "1": "ON",
+        "2": "TURNING_ON",
+        "3": "TURNING_OFF",
+        "4": "FAULT"
+    }
+}
 @endjson
 ```
 
@@ -435,7 +562,16 @@ This event reports the state of the oil supply system. See example bellow:
 
 ``` plantuml
 @startjson
-{"<color:blue><b>oil": {"<b>id": "<b>value","0": "OFF", "1": "ON", "2": "TURNING_ON", "3": "TURNING_OFF", "4": "FAULT"}}
+{
+    "<color:blue><b>oil": {
+        "<b>id": "<b>value",
+        "0": "OFF",
+        "1": "ON",
+        "2": "TURNING_ON",
+        "3": "TURNING_OFF",
+        "4": "FAULT"
+    }
+}
 @endjson
 ```
 
@@ -443,7 +579,16 @@ This event reports the state of the oil supply system. See example bellow:
 
 ``` plantuml
 @startjson
-{"<color:blue><b>mainPump": {"<b>id": "<b>value","0": "OFF", "1": "ON", "2": "TURNING_ON", "3": "TURNING_OFF", "4": "FAULT"}}
+{
+    "<color:blue><b>mainPump": {
+        "<b>id": "<b>value",
+        "0": "OFF",
+        "1": "ON",
+        "2": "TURNING_ON",
+        "3": "TURNING_OFF",
+        "4": "FAULT"
+    }
+}
 @endjson
 ```
 
@@ -455,7 +600,15 @@ For systems that have no subelements:
 
 ``` plantuml
 @startjson
-{"id":103,"timestamp":3701054317.787135,"parameters":{"system":0,"trackAmbient":0,"temperature":0.00}}
+{
+    "id": 103,
+    "timestamp": 3701054317.787135,
+    "parameters": {
+        "system": 0,
+        "trackAmbient": 0,
+        "temperature": 0.00
+    }
+}
 @endjson
 ```
 
@@ -463,7 +616,25 @@ For systems that have subelements:
 
 ``` plantuml
 @startjson
-{"id":103,"timestamp":3701054465.650976,"parameters":{"system":0,"trackAmbient":0,"temperature":0.00,"elementsChillerState":[{"trackAmbient":0,"temperature":0.00},{"trackAmbient":0,"temperature":0.00}]}}
+{
+    "id": 103,
+    "timestamp": 3701054465.650976,
+    "parameters": {
+        "system": 0,
+        "trackAmbient": 0,
+        "temperature": 0.00,
+        "elementsChillerState": [
+            {
+                "trackAmbient": 0,
+                "temperature": 0.00
+            },
+            {
+                "trackAmbient": 0,
+                "temperature": 0.00
+            }
+        ]
+    }
+}
 @endjson
 ```
 
@@ -471,7 +642,27 @@ For systems that have subelements:
 
 ``` plantuml
 @startjson
-{"<color:blue><b>system": {"<b>id": "<b>value","0": "Azimuth", "1": "Elevation", "2": "CameraCableWrap", "3": "Balancing", "4": "MirrorCover", "5": "MirroCoverLocks", "6": "AzimuthCableWrap", "7": "LockingPins", "8": "DeployablePlatforms", "9": "OilSupplySystem", "10": "AzimuthDrivesThermal", "11": "ElevationDrivesThemal", "12": "AZ0101CabinetThemal", "13": "ModbusTemperatureControllers", "14": "MainCabinet", "15": "MainAxesPowerSupply"}}
+{
+    "<color:blue><b>system": {
+        "<b>id": "<b>value",
+        "0": "Azimuth",
+        "1": "Elevation",
+        "2": "CameraCableWrap",
+        "3": "Balancing",
+        "4": "MirrorCover",
+        "5": "MirroCoverLocks",
+        "6": "AzimuthCableWrap",
+        "7": "LockingPins",
+        "8": "DeployablePlatforms",
+        "9": "OilSupplySystem",
+        "10": "AzimuthDrivesThermal",
+        "11": "ElevationDrivesThemal",
+        "12": "AZ0101CabinetThemal",
+        "13": "ModbusTemperatureControllers",
+        "14": "MainCabinet",
+        "15": "MainAxesPowerSupply"
+    }
+}
 @endjson
 ```
 
@@ -485,7 +676,18 @@ This event reports the state of the motion controllers for Azimuth, Elevation, C
 
 ``` plantuml
 @startjson
-{"id":104,"timestamp":3701055564.832080,"parameters":{"system":0,"motionControllerState":[0,0,0]}}
+{
+    "id": 104,
+    "timestamp": 3701055564.832080,
+    "parameters": {
+        "system": 0,
+        "motionControllerState": [
+            0,
+            0,
+            0
+        ]
+    }
+}
 @endjson
 ```
 
@@ -493,7 +695,27 @@ This event reports the state of the motion controllers for Azimuth, Elevation, C
 
 ``` plantuml
 @startjson
-{"<color:blue><b>system": {"<b>id": "<b>value","0": "Azimuth", "1": "Elevation", "2": "CameraCableWrap", "3": "Balancing", "4": "MirrorCover", "5": "MirroCoverLocks", "6": "AzimuthCableWrap", "7": "LockingPins", "8": "DeployablePlatforms", "9": "OilSupplySystem", "10": "AzimuthDrivesThermal", "11": "ElevationDrivesThemal", "12": "AZ0101CabinetThemal", "13": "ModbusTemperatureControllers", "14": "MainCabinet", "15": "MainAxesPowerSupply"}}
+{
+    "<color:blue><b>system": {
+        "<b>id": "<b>value",
+        "0": "Azimuth",
+        "1": "Elevation",
+        "2": "CameraCableWrap",
+        "3": "Balancing",
+        "4": "MirrorCover",
+        "5": "MirroCoverLocks",
+        "6": "AzimuthCableWrap",
+        "7": "LockingPins",
+        "8": "DeployablePlatforms",
+        "9": "OilSupplySystem",
+        "10": "AzimuthDrivesThermal",
+        "11": "ElevationDrivesThemal",
+        "12": "AZ0101CabinetThemal",
+        "13": "ModbusTemperatureControllers",
+        "14": "MainCabinet",
+        "15": "MainAxesPowerSupply"
+    }
+}
 @endjson
 ```
 
@@ -501,7 +723,14 @@ This event reports the state of the motion controllers for Azimuth, Elevation, C
 
 ``` plantuml
 @startjson
-{"<color:blue><b>motionControllerState": {"<b>id": "<b>value","0": "OFF", "1": "ON", "2": "FAULT"}}
+{
+    "<color:blue><b>motionControllerState": {
+        "<b>id": "<b>value",
+        "0": "OFF",
+        "1": "ON",
+        "2": "FAULT"
+    }
+}
 @endjson
 ```
 
@@ -511,7 +740,14 @@ This event publishes when the Azimuth, Elevation and CameraCableWrap systems are
 
 ``` plantuml
 @startjson
-{"id":200,"timestamp":3700813498.634085,"parameters":{"axis":0,"inPosition":0}}
+{
+    "id": 200,
+    "timestamp": 3700813498.634085,
+    "parameters": {
+        "axis": 0,
+        "inPosition": 0
+    }
+}
 @endjson
 ```
 
@@ -519,7 +755,14 @@ This event publishes when the Azimuth, Elevation and CameraCableWrap systems are
 
 ``` plantuml
 @startjson
-{"<color:blue><b>axis": {"<b>id": "<b>value","0": "Azimuth", "1": "Elevation", "2": "CameraCableWrap"}}
+{
+    "<color:blue><b>axis": {
+        "<b>id": "<b>value",
+        "0": "Azimuth",
+        "1": "Elevation",
+        "2": "CameraCableWrap"
+    }
+}
 @endjson
 ```
 
@@ -531,7 +774,17 @@ This event reports the position of the elevation locking pins. See example bello
 
 ``` plantuml
 @startjson
-{"id":201,"timestamp":3700813897.094651,"parameters":{"position":0,"elementsPosition":[0,0]}}
+{
+    "id": 201,
+    "timestamp": 3700813897.094651,
+    "parameters": {
+        "position": 0,
+        "elementsPosition": [
+            0,
+            0
+        ]
+    }
+}
 @endjson
 ```
 
@@ -539,7 +792,16 @@ This event reports the position of the elevation locking pins. See example bello
 
 ``` plantuml
 @startjson
-{"<color:blue><b>LockingPinPosition": {"<b>id": "<b>value","0": "AT_1", "1": "AT_2", "2": "AT_3", "3": "MOVING", "4": "MISMATCH"}}
+{
+    "<color:blue><b>LockingPinPosition": {
+        "<b>id": "<b>value",
+        "0": "AT_1",
+        "1": "AT_2",
+        "2": "AT_3",
+        "3": "MOVING",
+        "4": "MISMATCH"
+    }
+}
 @endjson
 ```
 
@@ -551,7 +813,19 @@ This event reports the position of the mirror cover. See example bellow:
 
 ``` plantuml
 @startjson
-{"id":202,"timestamp":3700814173.229395,"parameters":{"position":0,"elementsPosition":[0,0,0,0]}}
+{
+    "id": 202,
+    "timestamp": 3700814173.229395,
+    "parameters": {
+        "position": 0,
+        "elementsPosition": [
+            0,
+            0,
+            0,
+            0
+        ]
+    }
+}
 @endjson
 ```
 
@@ -559,7 +833,16 @@ This event reports the position of the mirror cover. See example bellow:
 
 ``` plantuml
 @startjson
-{"<color:blue><b>position": {"<b>id": "<b>value","0": "RETRACTED", "1": "DEPLOYED", "2": "RETRACTING", "3": "DEPLOYING", "4": "LOST"}}
+{
+    "<color:blue><b>position": {
+        "<b>id": "<b>value",
+        "0": "RETRACTED",
+        "1": "DEPLOYED",
+        "2": "RETRACTING",
+        "3": "DEPLOYING",
+        "4": "LOST"
+    }
+}
 @endjson
 ```
 
@@ -571,7 +854,19 @@ This event reports the position of the mirror cover locks. See example bellow:
 
 ``` plantuml
 @startjson
-{"id":203,"timestamp":3701053050.357125,"parameters":{"position":0,"elementsPosition":[0,0,0,0]}}
+{
+    "id": 203,
+    "timestamp": 3701053050.357125,
+    "parameters": {
+        "position": 0,
+        "elementsPosition": [
+            0,
+            0,
+            0,
+            0
+        ]
+    }
+}
 @endjson
 ```
 
@@ -579,7 +874,16 @@ This event reports the position of the mirror cover locks. See example bellow:
 
 ``` plantuml
 @startjson
-{"<color:blue><b>position": {"<b>id": "<b>value","0": "RETRACTED", "1": "DEPLOYED", "2": "RETRACTING", "3": "DEPLOYING", "4": "LOST"}}
+{
+    "<color:blue><b>position": {
+        "<b>id": "<b>value",
+        "0": "RETRACTED",
+        "1": "DEPLOYED",
+        "2": "RETRACTING",
+        "3": "DEPLOYING",
+        "4": "LOST"
+    }
+}
 @endjson
 ```
 
@@ -591,7 +895,17 @@ This event reports the position of the deployable platforms. See example bellow:
 
 ``` plantuml
 @startjson
-{"id":204,"timestamp":3701053793.306807,"parameters":{"position":0,"elementsPosition":[0,0]}}
+{
+    "id": 204,
+    "timestamp": 3701053793.306807,
+    "parameters": {
+        "position": 0,
+        "elementsPosition": [
+            0,
+            0
+        ]
+    }
+}
 @endjson
 ```
 
@@ -599,7 +913,16 @@ This event reports the position of the deployable platforms. See example bellow:
 
 ``` plantuml
 @startjson
-{"<color:blue><b>position": {"<b>id": "<b>value","0": "RETRACTED", "1": "DEPLOYED", "2": "RETRACTING", "3": "DEPLOYING", "4": "LOST"}}
+{
+    "<color:blue><b>position": {
+        "<b>id": "<b>value",
+        "0": "RETRACTED",
+        "1": "DEPLOYED",
+        "2": "RETRACTING",
+        "3": "DEPLOYING",
+        "4": "LOST"
+    }
+}
 @endjson
 ```
 
@@ -614,12 +937,14 @@ For systems that have no subelements:
 ``` plantuml
 @startjson
 {
-      "id": 300,
-      "timestamp": 3700547270.538420,
-      "parameters": {
-                      "system": 0,
-                      "limits": [0]
-      }
+    "id": 300,
+    "timestamp": 3700547270.538420,
+    "parameters": {
+        "system": 0,
+        "limits": [
+            0
+        ]
+    }
 }
 @endjson
 ```
@@ -629,12 +954,17 @@ For systems that have 4 subelements:
 ``` plantuml
 @startjson
 {
-      "id": 300,
-      "timestamp": 3700547270.538420,
-      "parameters": {
-                      "system": 0,
-                      "limits": [0,0,0,0]
-      }
+    "id": 300,
+    "timestamp": 3700547270.538420,
+    "parameters": {
+        "system": 0,
+        "limits": [
+            0,
+            0,
+            0,
+            0
+        ]
+    }
 }
 @endjson
 ```
@@ -643,7 +973,27 @@ For systems that have 4 subelements:
 
 ``` plantuml
 @startjson
-{"<color:blue><b>system": {"<b>id": "<b>value","0": "Azimuth", "1": "Elevation", "2": "CameraCableWrap", "3": "Balancing", "4": "MirrorCover", "5": "MirroCoverLocks", "6": "AzimuthCableWrap", "7": "LockingPins", "8": "DeployablePlatforms", "9": "OilSupplySystem", "10": "AzimuthDrivesThermal", "11": "ElevationDrivesThemal", "12": "AZ0101CabinetThemal", "13": "ModbusTemperatureControllers", "14": "MainCabinet", "15": "MainAxesPowerSupply"}}
+{
+    "<color:blue><b>system": {
+        "<b>id": "<b>value",
+        "0": "Azimuth",
+        "1": "Elevation",
+        "2": "CameraCableWrap",
+        "3": "Balancing",
+        "4": "MirrorCover",
+        "5": "MirroCoverLocks",
+        "6": "AzimuthCableWrap",
+        "7": "LockingPins",
+        "8": "DeployablePlatforms",
+        "9": "OilSupplySystem",
+        "10": "AzimuthDrivesThermal",
+        "11": "ElevationDrivesThemal",
+        "12": "AZ0101CabinetThemal",
+        "13": "ModbusTemperatureControllers",
+        "14": "MainCabinet",
+        "15": "MainAxesPowerSupply"
+    }
+}
 @endjson
 ```
 
@@ -676,17 +1026,17 @@ This event reports the enabled/disabled status of the special limits for azimuth
 ``` plantuml
 @startjson
 {
-      "id": 301,
-      "timestamp": 3700547270.538420,
-      "parameters": {
-                      "system": 0,
-                      "adjustableSoftwareMax": 0,
-                      "adjustableSoftwareMin": 0,
-                      "adjustableSoftwareMaxPosition": 0,
-                      "adjustableSoftwareMinPosition": 0,
-                      "operationalSwitchMax": 0,
-                      "operationalSwitchMin": 0
-      }
+    "id": 301,
+    "timestamp": 3700547270.538420,
+    "parameters": {
+        "system": 0,
+        "adjustableSoftwareMax": 0,
+        "adjustableSoftwareMin": 0,
+        "adjustableSoftwareMaxPosition": 0,
+        "adjustableSoftwareMinPosition": 0,
+        "operationalSwitchMax": 0,
+        "operationalSwitchMin": 0
+    }
 }
 @endjson
 ```
@@ -695,7 +1045,27 @@ This event reports the enabled/disabled status of the special limits for azimuth
 
 ``` plantuml
 @startjson
-{"<color:blue><b>system": {"<b>id": "<b>value","0": "Azimuth", "1": "Elevation", "2": "CameraCableWrap", "3": "Balancing", "4": "MirrorCover", "5": "MirroCoverLocks", "6": "AzimuthCableWrap", "7": "LockingPins", "8": "DeployablePlatforms", "9": "OilSupplySystem", "10": "AzimuthDrivesThermal", "11": "ElevationDrivesThemal", "12": "AZ0101CabinetThemal", "13": "ModbusTemperatureControllers", "14": "MainCabinet", "15": "MainAxesPowerSupply"}}
+{
+    "<color:blue><b>system": {
+        "<b>id": "<b>value",
+        "0": "Azimuth",
+        "1": "Elevation",
+        "2": "CameraCableWrap",
+        "3": "Balancing",
+        "4": "MirrorCover",
+        "5": "MirroCoverLocks",
+        "6": "AzimuthCableWrap",
+        "7": "LockingPins",
+        "8": "DeployablePlatforms",
+        "9": "OilSupplySystem",
+        "10": "AzimuthDrivesThermal",
+        "11": "ElevationDrivesThemal",
+        "12": "AZ0101CabinetThemal",
+        "13": "ModbusTemperatureControllers",
+        "14": "MainCabinet",
+        "15": "MainAxesPowerSupply"
+    }
+}
 @endjson
 ```
 
@@ -723,7 +1093,27 @@ This event reports the position for the software limits, bits 0 and 1 of the lim
 
 ``` plantuml
 @startjson
-{"<color:blue><b>system": {"<b>id": "<b>value","0": "Azimuth", "1": "Elevation", "2": "CameraCableWrap", "3": "Balancing", "4": "MirrorCover", "5": "MirroCoverLocks", "6": "AzimuthCableWrap", "7": "LockingPins", "8": "DeployablePlatforms", "9": "OilSupplySystem", "10": "AzimuthDrivesThermal", "11": "ElevationDrivesThemal", "12": "AZ0101CabinetThemal", "13": "ModbusTemperatureControllers", "14": "MainCabinet", "15": "MainAxesPowerSupply"}}
+{
+    "<color:blue><b>system": {
+        "<b>id": "<b>value",
+        "0": "Azimuth",
+        "1": "Elevation",
+        "2": "CameraCableWrap",
+        "3": "Balancing",
+        "4": "MirrorCover",
+        "5": "MirroCoverLocks",
+        "6": "AzimuthCableWrap",
+        "7": "LockingPins",
+        "8": "DeployablePlatforms",
+        "9": "OilSupplySystem",
+        "10": "AzimuthDrivesThermal",
+        "11": "ElevationDrivesThemal",
+        "12": "AZ0101CabinetThemal",
+        "13": "ModbusTemperatureControllers",
+        "14": "MainCabinet",
+        "15": "MainAxesPowerSupply"
+    }
+}
 @endjson
 ```
 
@@ -736,7 +1126,14 @@ This event reports the state of the azimuth topple block. See example bellow:
 
 ``` plantuml
 @startjson
-{"id":303,"timestamp":3701054994.342060,"parameters":{"reverse":0,"forward":0}}
+{
+    "id": 303,
+    "timestamp": 3701054994.342060,
+    "parameters": {
+        "reverse": 0,
+        "forward": 0
+    }
+}
 @endjson
 ```
 
@@ -749,7 +1146,17 @@ This event reports the state of the camera cable wrap limits. See example bellow
 
 ``` plantuml
 @startjson
-{"id":304,"timestamp":3701055342.073140,"parameters":{"negativeTravel":0,"positiveTravel":0,"interlock":0,"negativeDiviation":0,"positiveDiviation":0}}
+{
+    "id": 304,
+    "timestamp": 3701055342.073140,
+    "parameters": {
+        "negativeTravel": 0,
+        "positiveTravel": 0,
+        "interlock": 0,
+        "negativeDiviation": 0,
+        "positiveDiviation": 0
+    }
+}
 @endjson
 ```
 
