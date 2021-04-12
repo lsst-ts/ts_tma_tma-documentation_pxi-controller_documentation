@@ -708,13 +708,13 @@ This event reports the position for the software limits, bits 0 and 1 of the lim
 ``` plantuml
 @startjson
 {
-      "id": 302,
-      "timestamp": 3700547270.538420,
-      "parameters": {
-                      "system": 0,
-                      "max": 0.00,
-                      "min”: 0.00
-      }
+    "id": 302,
+    "timestamp": 3700547270.538420,
+    "parameters": {
+        "system": 0,
+        "max": 0.00,
+        "min": 0.00
+    }
 }
 @endjson
 ```
