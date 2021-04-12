@@ -617,7 +617,7 @@ For systems that have no subelements:
       "id": 300,
       "timestamp": 3700547270.538420,
       "parameters": {
-                      "system": 0
+                      "system": 0,
                       "limits": [0]
       }
 }
@@ -632,7 +632,7 @@ For systems that have 4 subelements:
       "id": 300,
       "timestamp": 3700547270.538420,
       "parameters": {
-                      "system": 0
+                      "system": 0,
                       "limits": [0,0,0,0]
       }
 }
