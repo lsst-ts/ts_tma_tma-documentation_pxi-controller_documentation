@@ -10,11 +10,11 @@ All the events generated in the PXI can have an additional field defined as "com
 
 This event reports the occurred warnings. See example bellow:
 
-``` plantuml
+
 @startjson
 {"id":10,"timestamp":0.000000,"parameters":{"name":"","subsystemId":0,"subsystemInstance":"","active":false,"code":0,"description":""}}
 @endjson
-```
+
 
 - name is a string that contains the alarm name.
 - subsystemId is an int that contains the id of the subsystem.
