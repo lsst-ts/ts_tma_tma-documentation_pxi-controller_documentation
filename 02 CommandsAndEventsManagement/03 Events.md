@@ -605,25 +605,130 @@ This event reports the position of the deployable platforms. See example bellow:
 
 - elementsPosition is an array of positon enums.
 
-#### limit  #TODO: write this event
+#### limits
 
-This event reports the state of the limits. See example bellow:
+This event reports the tripped status of the limits using a bit mask. See example bellow:
 
-``` plantuml
-@startjson
-
-@endjson
-```
-
-#### softLimitPosition  #TODO: write this event
-
-This event reports the position of the software limits. See example bellow:
+For systems that have no subelements:
 
 ``` plantuml
 @startjson
-
+{
+      "id": 300,
+      "timestamp": 3700547270.538420,
+      "parameters": {
+                      "system": 0
+                      "limits": [0]
+      }
+}
 @endjson
 ```
+
+For systems that have 4 subelements:
+
+``` plantuml
+@startjson
+{
+      "id": 300,
+      "timestamp": 3700547270.538420,
+      "parameters": {
+                      "system": 0
+                      "limits": [0,0,0,0]
+      }
+}
+@endjson
+```
+
+- system enum:
+
+``` plantuml
+@startjson
+{"<color:blue><b>system": {"<b>id": "<b>value","0": "Azimuth", "1": "Elevation", "2": "CameraCableWrap", "3": "Balancing", "4": "MirrorCover", "5": "MirroCoverLocks", "6": "AzimuthCableWrap", "7": "LockingPins", "8": "DeployablePlatforms", "9": "OilSupplySystem", "10": "AzimuthDrivesThermal", "11": "ElevationDrivesThemal", "12": "AZ0101CabinetThemal", "13": "ModbusTemperatureControllers", "14": "MainCabinet", "15": "MainAxesPowerSupply"}}
+@endjson
+```
+
+- limits is an int array for the limits of each system element coded in a bit mask as follows:
+
+  bit 0 -> software min
+
+  bit 1 -> software max
+
+  bit 2 -> travelSwitch min
+
+  bit 3 -> travelSwitch max
+
+  bit 4 -> safetySwitch min
+
+  bit 5 -> safetySwitch max
+
+  bit 6 -> adjustableSoftware min (special software limit for Azimuth and Elevation)
+
+  bit 7 -> adjustableSoftware max (special software limit for Azimuth and Elevation)
+
+  bit 8 -> operationalSwitch min (special limit switch for Elevation)
+
+  bit 9 -> operationalSwitch max (special limit switch for Elevation)
+
+#### specialLimits
+
+This event reports the enabled/disabled status of the special limits for azimuth and elevation. See example bellow:
+
+``` plantuml
+@startjson
+{
+      "id": 301,
+      "timestamp": 3700547270.538420,
+      "parameters": {
+                      "system": 0,
+                      "adjustableSoftwareMax": 0,
+                      "adjustableSoftwareMin": 0,
+                      "adjustableSoftwareMaxPosition": 0,
+                      "adjustableSoftwareMinPosition": 0,
+                      "operationalSwitchMax": 0,
+                      "operationalSwitchMin": 0
+      }
+}
+@endjson
+```
+
+- system enum:
+
+``` plantuml
+@startjson
+{"<color:blue><b>system": {"<b>id": "<b>value","0": "Azimuth", "1": "Elevation", "2": "CameraCableWrap", "3": "Balancing", "4": "MirrorCover", "5": "MirroCoverLocks", "6": "AzimuthCableWrap", "7": "LockingPins", "8": "DeployablePlatforms", "9": "OilSupplySystem", "10": "AzimuthDrivesThermal", "11": "ElevationDrivesThemal", "12": "AZ0101CabinetThemal", "13": "ModbusTemperatureControllers", "14": "MainCabinet", "15": "MainAxesPowerSupply"}}
+@endjson
+```
+
+- the rest are boolean int (0 disabled 1 enabled).
+
+#### softLimitPosition
+
+This event reports the position for the software limits, bits 0 and 1 of the limits event bit mask. See example bellow:
+
+``` plantuml
+@startjson
+{
+      "id": 302,
+      "timestamp": 3700547270.538420,
+      "parameters": {
+                      "system": 0,
+                      "max": 0.00,
+                      "min”: 0.00
+      }
+}
+@endjson
+```
+
+- system enum:
+
+``` plantuml
+@startjson
+{"<color:blue><b>system": {"<b>id": "<b>value","0": "Azimuth", "1": "Elevation", "2": "CameraCableWrap", "3": "Balancing", "4": "MirrorCover", "5": "MirroCoverLocks", "6": "AzimuthCableWrap", "7": "LockingPins", "8": "DeployablePlatforms", "9": "OilSupplySystem", "10": "AzimuthDrivesThermal", "11": "ElevationDrivesThemal", "12": "AZ0101CabinetThemal", "13": "ModbusTemperatureControllers", "14": "MainCabinet", "15": "MainAxesPowerSupply"}}
+@endjson
+```
+
+- max is a float that represents the maximum value of the software limit.
+- min is a float that represents the minimum value of the software limit.
 
 #### azimuthToppleBlock
 
@@ -631,7 +736,7 @@ This event reports the state of the azimuth topple block. See example bellow:
 
 ``` plantuml
 @startjson
-{"id":304,"timestamp":3701054994.342060,"parameters":{"reverse":0,"forward":0}}
+{"id":303,"timestamp":3701054994.342060,"parameters":{"reverse":0,"forward":0}}
 @endjson
 ```
 
@@ -644,7 +749,7 @@ This event reports the state of the camera cable wrap limits. See example bellow
 
 ``` plantuml
 @startjson
-{"id":305,"timestamp":3701055342.073140,"parameters":{"negativeTravel":0,"positiveTravel":0,"interlock":0,"negativeDiviation":0,"positiveDiviation":0}}
+{"id":304,"timestamp":3701055342.073140,"parameters":{"negativeTravel":0,"positiveTravel":0,"interlock":0,"negativeDiviation":0,"positiveDiviation":0}}
 @endjson
 ```
 
