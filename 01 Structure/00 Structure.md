@@ -37,12 +37,24 @@ As shown in Figure \ref{TMAPXISoftwareStructure}, the components of the real tim
   - Balancing System
   - Deployable Platforms 
 
-- Subsystems over Modbus:
+- Subsystems over Modbus: this is a set of modules. There is a module for each subsystem that connects to an element using modbus tcp. This modules will receive the commands from the CommandReceiver (except the safety module that could receive also commands from other subsystems modules) and it will execute the command sending necessary commands element using a Modbus Task. Any generated event will be sent to Events module. The subsystems that are in this category are:
+  - OilSupplySystem
+  - Safety
+  - Modbus TemperatureControllers
+  - Main Cabinet
+  - Top end chiller
   
-- Temperature controllers over EtherCAT:
+- Subsystems over EtherCAT: this is a set of modules. There is a module for each subsystem that connects to an element using EtherCAT. This modules will receive the commands from the CommandReceiver and it will execute the command updating the values of the EtherCAT outputs via EtherCAT engine. Any generated event will be sent to Events module. The subsystems that are in this category are:
+  - Phase Power Supply
+  - Azimuth Drives Thermal
+  - Elevation Drives Thermal
+  - Cabinet 0101 Thermal
+  - Bosch Power Supply
   
-- TCP client and Network streams tasks:  this modules will send/receive data to the AXES PXI. This modules will be explained in the Main Axes software module.
+- TCP client and Network streams tasks:  this modules will send/receive data to/from the AXES PXI. This modules will be explained in the Main Axes software module.
 
-- Modbus Tasks. There is a modbus task for each element communicated over modbus Ethernet. This modules will be explained in the corresponding software module.
+- Modbus Tasks. There is a modbus task for each element communicated over modbus Ethernet. This modules will be explained in the corresponding software module, but they will interface the element with the subsystem software component.
 
-- Bosch Task module:
+- Bosch Task module: this component manage the communication with bosch drivers. This task receives commands from subsystems over bosch and send back the events to them. Drives telemetry is published in this module using the network shared variables engine.
+
+- Telemetry Task: this component read data from EtherCAT inputs that are not relevant for any subsystem and publish data as telemetry using the network shared variables engine.
