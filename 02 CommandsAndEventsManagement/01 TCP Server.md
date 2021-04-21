@@ -4,7 +4,7 @@ This component is the one the TMA connects to over TCP to
  send and receive the TCP messages. The message to send is specified to the
  task by a public method of the TCP server object, and the received messages
  are published in a user event created when the object is initialized. These events are then
-registered by another task to filter then and generate the proper triggers to the corresponding statemachines within the application.
+registered by another task to filter then and generate the proper triggers to the corresponding state machines within the application.
 
 For this component, the Server.lvclass is used. This class is explained in
 [this section](#server.lvclass) in a generic way, as this task can be used in many different ways
@@ -28,7 +28,7 @@ class main elements are explained in the following sections.
 
 This section explains how to use the Server.lvclass.
 
-1. Create a configuration file with the desiered configuration.
+1. Create a configuration file with the desired configuration.
 2. Add the Server_Init.vi to initialize the TCP server and pass to it the path to the previously defined config file.
 3. This init will return a reference to a user event where the received TCP messages are going to be published. Register this event in a event structure to get the TCP messages.
 4. For sending TCP messages to the clients there are two options:
@@ -194,7 +194,7 @@ the upcoming sections.
 
 ###### StatusCheck
 
-Here the connected clients are cheked:
+Here the connected clients are checked:
 
 - If there are no clients connected the next state is StatusCheck
 
