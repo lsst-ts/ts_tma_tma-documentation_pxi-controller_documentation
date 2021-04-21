@@ -7,11 +7,13 @@ seen in Figure \ref{figureone350f30df820b4ef01f38b7cadcba9985} where the real ti
 
 The real time part is divided in two different hardwares, the TMA PXI and the AXES PXI. 
 
+## TMA PXI code
+
 The TMA PXI receives commands from the TMA OMT, and the state machine of the subsystems will process those commands. The TMA PXI also will check for event generation that will be sent to the TMA OMT. Also the telemetry generated in the TMA PXI subsystem tasks, or in the AXES PXI will be sent to the HMIs using network shared variables.
 
 ![TMA PXI software structure\label{TMAPXISoftwareStructure}](../Resources/figures/TMAPXISoftwareStructure.png)
 
-As shown in Figure \ref{TMAPXISoftwareStructure}, the components of the real time code are:
+As shown in Figure \ref{TMAPXISoftwareStructure}, the components of the TMA PXI real time code are:
 
 - TCP Server: this component is the one the TMA connects to over TCP to
  send and receive the TCP messages. The message to send is specified to the
@@ -58,3 +60,24 @@ As shown in Figure \ref{TMAPXISoftwareStructure}, the components of the real tim
 - Bosch Task module: this component manage the communication with bosch drivers. This task receives commands from subsystems over bosch and send back the events to them. Drives telemetry is published in this module using the network shared variables engine.
 
 - Telemetry Task: this component read data from EtherCAT inputs that are not relevant for any subsystem and publish data as telemetry using the network shared variables engine.
+
+## AXES PXI code
+
+The AXES PXI receives commands from the TMA PXI. The tasks in this PXI are mainly to manage the axes
+
+![TMA PXI software structure\label{AXESPXISoftwareStructure}](../Resources/figures/AXESPXISoftwareStructure.png)
+
+As shown in Figure \ref{AXESPXISoftwareStructure}, the components of the AXES PXI real time code are:
+
+- TCP Server: this component is the one the TCP client in the TMA PXI connects to send and receive commands for the axes management. The message to send is specified to the task by a public method of the TCP server object, and the received messages are published in a user event created when the object is initialized. This commands includes some monitoring requests.
+
+- Network Streams Tasks: there are several task with network streams. Some of them are used to receive commands from TMA PXI and some other are used for telemetry proposes, sending the telemetry data to TMA PXI.
+  
+- Axes management: this component will manage the axis behavior at low level. It is also the responsible of generating the trajectory for point to point movements, constant speed movements and tracking.
+
+- Axes Control: this component will execute the control algorithm taking data from axes management and EIB UDP position Read, and managing the axis drives. The axis drives are managed via EtherCAT engine
+
+- EtherCAT engine: LabVIEW software module used to read/write values of the inputs/outputs of the drives and hall effect sensors. This module will receive data from Axes control module and will change the outputs to meet the desired value. Also, it will update the values of the inputs making them accessible for Axes control module.
+  - The EtherCAT engine also provide the interface in the ATS for some simulated EIB variables simulated in the SpeedGoat
+
+- EIB UPD position Read: this component reads data from the EIB. This data is sent via UDP when the EIB management module activates the data transmission. The received data is processed and published via Network Streams and a public method for Axes controls. This module could receive some commands from TMA PXI via a Network Stream task.
