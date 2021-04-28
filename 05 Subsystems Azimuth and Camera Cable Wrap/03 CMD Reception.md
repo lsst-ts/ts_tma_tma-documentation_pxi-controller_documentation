@@ -71,13 +71,21 @@ The next table are the commands for the azimuth cable wrap
 ![Send trigger to OMT block diagram. Case Not valid command.\label{SendOMTTriggerNotValidCommand}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd1.png)
 
 ![Send trigger to OMT block diagram. Case null command.\label{SendOMTTriggerNullCommand}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd2.png)
+
 ![Send trigger to OMT block diagram. Case Reset Alarm.\label{SendOMTTriggerResetAlarm}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd3.png)
+
 ![Send trigger to OMT block diagram. Case Track.\label{SendOMTTriggerTrack}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd5.png)
+
 ![Send trigger to OMT block diagram. Case Move.\label{SendOMTTriggerMove}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd8.png)
+
 ![Send trigger to OMT block diagram. Case Stop.\label{SendOMTTriggerStop}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd10.png)
+
 ![Send trigger to OMT block diagram. Case Power.\label{SendOMTTriggerPower}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd12.png)
+
 ![Send trigger to OMT block diagram. Case Drive Enable.\label{SendOMTTriggerDriveEnable}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd14.png)
+
 ![Send trigger to OMT block diagram. Case Drive Reset.\label{SendOMTTriggerDriveReset}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd16.png)
+
 ![Send trigger to OMT block diagram. Case Enable Track.\label{SendOMTTriggerEnableTrack}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd18.png)
 
 #### GenerateOMTTrigger
