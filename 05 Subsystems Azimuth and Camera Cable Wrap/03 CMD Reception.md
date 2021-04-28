@@ -25,14 +25,14 @@ This method allows the system to convert the ID in parameters to the appropriate
 #### SendTriggerToOMT
 This method will select the appropriate trigger to the statechart, depending on the received command. This selection will be done using two private methods, SelectOMTTrigger and GenerateOMTTrigger, that will be explained in next sections
 
-![Send trigger to OMT.\labelSendTriggerToOMT}](../Resources/figures/AzimuthAndCameraCableWrap/SendTriggerToOMT_ContextHelp.png)
+![Send trigger to OMT.\label{SendTriggerToOMT}](../Resources/figures/AzimuthAndCameraCableWrap/SendTriggerToOMT_ContextHelp.png)
 
-![Send trigger to OMT block diagram.\labelSendTriggerToOMTBlockDiagram}](../Resources/figures/AzimuthAndCameraCableWrap/SendTriggerToOMT_BlockDiagram.png)
+![Send trigger to OMT block diagram.\label{SendTriggerToOMTBlockDiagram}](../Resources/figures/AzimuthAndCameraCableWrap/SendTriggerToOMT_BlockDiagram.png)
 
 #### SelectOMTTrigger
 This method selects the balancing statechart trigger depending on the command received.
 
-![Select the OMT trigger.\labelSendOMTTrigger}](../Resources/figures/AzimuthAndCameraCableWrap/SelectOMTTrigger_ContextHelp.png)
+![Select the OMT trigger.\label{SendOMTTrigger}](../Resources/figures/AzimuthAndCameraCableWrap/SelectOMTTrigger_ContextHelp.png)
 
 
 If the command number is 0 it will do nothing, because it will be considered as communication error.
@@ -66,19 +66,19 @@ The next table are the commands for the azimuth cable wrap
 |AZ_CW_MOVE_VELOCITY|304|MoveVelocity|
 |AZ_CW_ENABLE_TRACK_CAMERA|309|EnableTrack|
 
-![Send trigger to OMT block diagram. Case Move velocity.\labelSendOMTTriggerMoveVelocity}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd.png)
+![Send trigger to OMT block diagram. Case Move velocity.\label{SendOMTTriggerMoveVelocity}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd.png)
 
-![Send trigger to OMT block diagram. Case Not valid command.\labelSendOMTTriggerNotValidCommand}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd1.png)
+![Send trigger to OMT block diagram. Case Not valid command.\label{SendOMTTriggerNotValidCommand}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd1.png)
 
-![Send trigger to OMT block diagram. Case null command.\labelSendOMTTriggerNullCommand}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd2.png)
-![Send trigger to OMT block diagram. Case Reset Alarm.\labelSendOMTTriggerResetAlarm}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd3.png)
-![Send trigger to OMT block diagram. Case Track.\labelSendOMTTriggerTrack}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd5.png)
-![Send trigger to OMT block diagram. Case Move.\labelSendOMTTriggerMove}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd8.png)
-![Send trigger to OMT block diagram. Case Stop.\labelSendOMTTriggerStop}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd10.png)
-![Send trigger to OMT block diagram. Case Power.\labelSendOMTTriggerPower}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd12.png)
-![Send trigger to OMT block diagram. Case Drive Enable.\labelSendOMTTriggerDriveEnable}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd14.png)
-![Send trigger to OMT block diagram. Case Drive Reset.\labelSendOMTTriggerDriveReset}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd16.png)
-![Send trigger to OMT block diagram. Case Enable Track.\labelSendOMTTriggerEnableTrack}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd18.png)
+![Send trigger to OMT block diagram. Case null command.\label{SendOMTTriggerNullCommand}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd2.png)
+![Send trigger to OMT block diagram. Case Reset Alarm.\label{SendOMTTriggerResetAlarm}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd3.png)
+![Send trigger to OMT block diagram. Case Track.\label{SendOMTTriggerTrack}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd5.png)
+![Send trigger to OMT block diagram. Case Move.\label{SendOMTTriggerMove}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd8.png)
+![Send trigger to OMT block diagram. Case Stop.\label{SendOMTTriggerStop}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd10.png)
+![Send trigger to OMT block diagram. Case Power.\label{SendOMTTriggerPower}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd12.png)
+![Send trigger to OMT block diagram. Case Drive Enable.\label{SendOMTTriggerDriveEnable}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd14.png)
+![Send trigger to OMT block diagram. Case Drive Reset.\label{SendOMTTriggerDriveReset}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd16.png)
+![Send trigger to OMT block diagram. Case Enable Track.\label{SendOMTTriggerEnableTrack}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd18.png)
 
 #### GenerateOMTTrigger
 The selected trigger by SelectOMTTrigger will be generated in the cable crap state machine instance.
