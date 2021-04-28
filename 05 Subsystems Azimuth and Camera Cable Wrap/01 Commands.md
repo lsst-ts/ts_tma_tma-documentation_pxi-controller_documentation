@@ -1,5 +1,7 @@
 ## Commands
 
+In this section allowed commands are described
+
 There is an equivalent command for azimuth cable wrap and camera cable wrap. The first one is the 300 range and the second one in the 1000 range.
 
 ### Power
