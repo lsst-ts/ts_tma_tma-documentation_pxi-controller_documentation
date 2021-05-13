@@ -96,15 +96,42 @@ This event reports the actual comander. See example bellow:
 @endjson
 ```
 
-#### safetyInterlocks ## TODO: write this event
+#### safetyInterlocks
 
 This event reports the status of the safety interlocks. See example bellow:
 
 ``` plantuml
 @startjson
-
+{
+    "id": 30,
+    "timestamp": 3703752871.185384,
+    "parameters": {
+        "causes": 0,
+        "subcausesEmergencyStop": 0,
+        "subcausesLimitSwitch": 0,
+        "subcausesDeployablePlatform": 0,
+        "subcausesDoorHatchLadder": 0,
+        "subcausesMirrorCover": 0,
+        "subcausesLockingPin": 0,
+        "subcausesCapacitorDoor": 0,
+        "subcausesBrakesFailed": 0,
+        "effects": 0,
+        "commander": 2
+    }
+}
 @endjson
 ```
+
+- causes: is a bit mask for the safety causes.
+- subcausesEmergencyStop: is a bit mask for the emergency stop trip buttons.
+- subcausesLimitSwitch: is a bit mask for the limits switches.
+- subcausesDeployablePlatform: is a bit mask for the deployable platform switches.
+- subcausesDoorHatchLadder: is a bit mask for the Doors, hatches and ladders status.
+- subcausesMirrorCover: is a bit mask for the mirror cover power off switches.
+- subcausesLockingPin: is a bit mask for the locking pin positions.
+- subcausesCapacitorDoor: is a bit mask for the phase capacitor banks doors.
+- subcausesBrakesFailed: is a bit mask for the brakes that failed.
+- effects: is a bit mask for the safety effects.
 
 #### detailedSettingsApplied
 
