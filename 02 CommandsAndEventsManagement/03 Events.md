@@ -1109,8 +1109,24 @@ This event reports the position for the software limits, bits 0 and 1 of the lim
     "timestamp": 3700547270.538420,
     "parameters": {
         "system": 0,
-        "max": 0.00,
-        "min": 0.00
+        "max": [0.00],
+        "min": [0.00]
+    }
+}
+@endjson
+```
+
+For systems that have 4 subelements:
+
+``` plantuml
+@startjson
+{
+    "id": 302,
+    "timestamp": 3700547270.538420,
+    "parameters": {
+        "system": 0,
+        "max": [0.00,0.00,0.00,0.00],
+        "min": [0.00,0.00,0.00,0.00]
     }
 }
 @endjson
