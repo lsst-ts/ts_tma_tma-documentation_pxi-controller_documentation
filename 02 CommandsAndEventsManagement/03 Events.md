@@ -473,7 +473,8 @@ System with 4 subelements:
         "12": "AZ0101CabinetThemal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
-        "15": "MainAxesPowerSupply"
+        "15": "MainAxesPowerSupply",
+        "16": "TopEndChiller"
     }
 }
 @endjson
@@ -687,7 +688,8 @@ For systems that have subelements:
         "12": "AZ0101CabinetThemal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
-        "15": "MainAxesPowerSupply"
+        "15": "MainAxesPowerSupply",
+        "16": "TopEndChiller"
     }
 }
 @endjson
@@ -740,7 +742,8 @@ This event reports the state of the motion controllers for Azimuth, Elevation, C
         "12": "AZ0101CabinetThemal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
-        "15": "MainAxesPowerSupply"
+        "15": "MainAxesPowerSupply",
+        "16": "TopEndChiller"
     }
 }
 @endjson
@@ -1018,7 +1021,8 @@ For systems that have 4 subelements:
         "12": "AZ0101CabinetThemal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
-        "15": "MainAxesPowerSupply"
+        "15": "MainAxesPowerSupply",
+        "16": "TopEndChiller"
     }
 }
 @endjson
@@ -1090,7 +1094,8 @@ This event reports the enabled/disabled status of the special limits for azimuth
         "12": "AZ0101CabinetThemal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
-        "15": "MainAxesPowerSupply"
+        "15": "MainAxesPowerSupply",
+        "16": "TopEndChiller"
     }
 }
 @endjson
@@ -1156,7 +1161,8 @@ For systems that have 4 subelements:
         "12": "AZ0101CabinetThemal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
-        "15": "MainAxesPowerSupply"
+        "15": "MainAxesPowerSupply",
+        "16": "TopEndChiller"
     }
 }
 @endjson
