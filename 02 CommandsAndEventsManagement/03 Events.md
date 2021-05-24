@@ -1059,8 +1059,8 @@ This event reports the enabled/disabled status of the special limits for azimuth
         "system": 0,
         "adjustableSoftwareMax": 0,
         "adjustableSoftwareMin": 0,
-        "adjustableSoftwareMaxPosition": 0,
-        "adjustableSoftwareMinPosition": 0,
+        "adjustableSoftwareMaxPosition": 0.00,
+        "adjustableSoftwareMinPosition": 0.00,
         "operationalSwitchMax": 0,
         "operationalSwitchMin": 0
     }
@@ -1096,7 +1096,9 @@ This event reports the enabled/disabled status of the special limits for azimuth
 @endjson
 ```
 
-- the rest are boolean int (0 disabled 1 enabled).
+- adjustableSoftwareMax/Min and operationalSwitchMax/Min are boolean int (0 disabled 1 enabled).
+
+- adjustableSoftwareMax/MinPosition are degrees float.
 
 #### softLimitPosition
 
