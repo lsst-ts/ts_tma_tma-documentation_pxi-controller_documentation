@@ -4,11 +4,11 @@ This component is the one sending events to the mtmount_operation_manager. This 
 
 ### Events list
 
-All the events generated in the PXI can have an additional field defined as "commander" with the values -> "0": "None", "1": "TCS", "2": "EUI", "3": "HHD". This field is only used by the mtmount_operation_manager to send the event only to that comander. If this field is not present the event is sent to all the commanders connected to the mtmount_operation_manager.
+All the events generated in the PXI can have an additional field defined as "commander" with the values -> "0": "None", "1": "TCS", "2": "EUI", "3": "HHD". This field is only used by the mtmount_operation_manager to send the event only to that commander. If this field is not present the event is sent to all the commanders connected to the mtmount_operation_manager.
 
 #### warning
 
-This event reports the occurred warnings. See example bellow:
+This event reports the occurred warnings. See example below:
 
 ``` plantuml
 @startjson
@@ -36,7 +36,7 @@ This event reports the occurred warnings. See example bellow:
 
 #### alarm
 
-This event reports the occurred alarms. See example bellow:
+This event reports the occurred alarms. See example below:
 
 ``` plantuml
 @startjson
@@ -66,7 +66,7 @@ This event reports the occurred alarms. See example bellow:
 
 #### commander
 
-This event reports the actual comander. See example bellow:
+This event reports the actual commander. See example below:
 
 ``` plantuml
 @startjson
@@ -80,7 +80,7 @@ This event reports the actual comander. See example bellow:
 @endjson
 ```
 
-- actualComander enum:
+- actualCommander enum:
 
 ``` plantuml
 @startjson
@@ -98,7 +98,7 @@ This event reports the actual comander. See example bellow:
 
 #### safetyInterlocks
 
-This event reports the status of the safety interlocks. See example bellow:
+This event reports the status of the safety interlocks. See example below:
 
 ``` plantuml
 @startjson
@@ -377,7 +377,7 @@ This is an event that reports the actual applied settings.
 
 #### availableSettings
 
-This event reports the available settings sets to be specified by the applySettings command. See example bellow:
+This event reports the available settings sets to be specified by the applySettings command. See example below:
 
 ``` plantuml
 @startjson
@@ -413,7 +413,7 @@ This event reports the available settings sets to be specified by the applySetti
 
 #### powerState
 
-This event can have just one power state, for systems that have no subelements, or an additional field called "elementsPowerState" for systems that can have elements in different states. See examples bellow:
+This event can have just one power state, for systems that have no subelements, or an additional field called "elementsPowerState" for systems that can have elements in different states. See examples below:
 
 System with no subelements:
 
@@ -463,14 +463,14 @@ System with 4 subelements:
         "2": "CameraCableWrap",
         "3": "Balancing",
         "4": "MirrorCover",
-        "5": "MirroCoverLocks",
+        "5": "MirrorCoverLocks",
         "6": "AzimuthCableWrap",
         "7": "LockingPins",
         "8": "DeployablePlatforms",
         "9": "OilSupplySystem",
         "10": "AzimuthDrivesThermal",
-        "11": "ElevationDrivesThemal",
-        "12": "AZ0101CabinetThemal",
+        "11": "ElevationDrivesThermal",
+        "12": "AZ0101CabinetThermal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
         "15": "MainAxesPowerSupply",
@@ -501,7 +501,7 @@ System with 4 subelements:
 
 #### motionState
 
-This event publishes the motion state of Azimuth, Elevation and CameraCableWrap. See example bellow:
+This event publishes the motion state of Azimuth, Elevation and CameraCableWrap. See example below:
 
 ``` plantuml
 @startjson
@@ -553,7 +553,7 @@ This event publishes the motion state of Azimuth, Elevation and CameraCableWrap.
 
 #### oilSupplySystemState
 
-This event reports the state of the oil supply system. See example bellow:
+This event reports the state of the oil supply system. See example below:
 
 ``` plantuml
 @startjson
@@ -622,7 +622,7 @@ This event reports the state of the oil supply system. See example bellow:
 
 #### chillerState
 
-This event reports the state of the TopEndChiller, Azimuth Drives Thermal, Elevation Drives Thermal, AZ 0101 Cabinet and ModbusTemperatureControllers. See examples bellow:
+This event reports the state of the TopEndChiller, Azimuth Drives Thermal, Elevation Drives Thermal, AZ 0101 Cabinet and ModbusTemperatureControllers. See examples below:
 
 For systems that have no subelements:
 
@@ -678,14 +678,14 @@ For systems that have subelements:
         "2": "CameraCableWrap",
         "3": "Balancing",
         "4": "MirrorCover",
-        "5": "MirroCoverLocks",
+        "5": "MirrorCoverLocks",
         "6": "AzimuthCableWrap",
         "7": "LockingPins",
         "8": "DeployablePlatforms",
         "9": "OilSupplySystem",
         "10": "AzimuthDrivesThermal",
-        "11": "ElevationDrivesThemal",
-        "12": "AZ0101CabinetThemal",
+        "11": "ElevationDrivesThermal",
+        "12": "AZ0101CabinetThermal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
         "15": "MainAxesPowerSupply",
@@ -697,11 +697,11 @@ For systems that have subelements:
 
 - trackAmbient is a boolean int (0 false 1 true).
 - temperature is a float in degree celsius.
-- elementsChillerState is an array of chiller states that contains the status of each individual subelement.
+- elementsChillerState is an array of chiller states that contains the status of each individual subelements.
 
 #### motionControllerState
 
-This event reports the state of the motion controllers for Azimuth, Elevation, CCW, Balancing, MirrorCover, MirrorCoverLocks, AzimuthCableWrap, LockingPins and DeployablePlatforms. See example bellow:
+This event reports the state of the motion controllers for Azimuth, Elevation, CCW, Balancing, MirrorCover, MirrorCoverLocks, AzimuthCableWrap, LockingPins and DeployablePlatforms. See example below:
 
 ``` plantuml
 @startjson
@@ -732,14 +732,14 @@ This event reports the state of the motion controllers for Azimuth, Elevation, C
         "2": "CameraCableWrap",
         "3": "Balancing",
         "4": "MirrorCover",
-        "5": "MirroCoverLocks",
+        "5": "MirrorCoverLocks",
         "6": "AzimuthCableWrap",
         "7": "LockingPins",
         "8": "DeployablePlatforms",
         "9": "OilSupplySystem",
         "10": "AzimuthDrivesThermal",
-        "11": "ElevationDrivesThemal",
-        "12": "AZ0101CabinetThemal",
+        "11": "ElevationDrivesThermal",
+        "12": "AZ0101CabinetThermal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
         "15": "MainAxesPowerSupply",
@@ -766,7 +766,7 @@ This event reports the state of the motion controllers for Azimuth, Elevation, C
 
 #### inPosition
 
-This event publishes when the Azimuth, Elevation and CameraCableWrap systems are in the desiered position. See example bellow:
+This event publishes when the Azimuth, Elevation and CameraCableWrap systems are in the desired position. See example below:
 
 ``` plantuml
 @startjson
@@ -800,7 +800,7 @@ This event publishes when the Azimuth, Elevation and CameraCableWrap systems are
 
 #### elevationLockingPinPosition
 
-This event reports the position of the elevation locking pins. See example bellow:
+This event reports the position of the elevation locking pins. See example below:
 
 ``` plantuml
 @startjson
@@ -835,11 +835,11 @@ This event reports the position of the elevation locking pins. See example bello
 @endjson
 ```
 
-- elementsPosition is an array of positon enums.
+- elementsPosition is an array of position enums.
 
 #### mirrorCoverPositions
 
-This event reports the position of the mirror cover. See example bellow:
+This event reports the position of the mirror cover. See example below:
 
 ``` plantuml
 @startjson
@@ -876,11 +876,11 @@ This event reports the position of the mirror cover. See example bellow:
 @endjson
 ```
 
-- elementsPosition is an array of positon enums.
+- elementsPosition is an array of position enums.
 
 #### mirrorCoverLockPositions
 
-This event reports the position of the mirror cover locks. See example bellow:
+This event reports the position of the mirror cover locks. See example below:
 
 ``` plantuml
 @startjson
@@ -917,11 +917,11 @@ This event reports the position of the mirror cover locks. See example bellow:
 @endjson
 ```
 
-- elementsPosition is an array of positon enums.
+- elementsPosition is an array of position enums.
 
 #### deployablePlatformPositions
 
-This event reports the position of the deployable platforms. See example bellow:
+This event reports the position of the deployable platforms. See example below:
 
 ``` plantuml
 @startjson
@@ -956,11 +956,11 @@ This event reports the position of the deployable platforms. See example bellow:
 @endjson
 ```
 
-- elementsPosition is an array of positon enums.
+- elementsPosition is an array of position enums.
 
 #### limits
 
-This event reports the tripped status of the limits using a bit mask. See example bellow:
+This event reports the tripped status of the limits using a bit mask. See example below:
 
 For systems that have no subelements:
 
@@ -1011,14 +1011,14 @@ For systems that have 4 subelements:
         "2": "CameraCableWrap",
         "3": "Balancing",
         "4": "MirrorCover",
-        "5": "MirroCoverLocks",
+        "5": "MirrorCoverLocks",
         "6": "AzimuthCableWrap",
         "7": "LockingPins",
         "8": "DeployablePlatforms",
         "9": "OilSupplySystem",
         "10": "AzimuthDrivesThermal",
-        "11": "ElevationDrivesThemal",
-        "12": "AZ0101CabinetThemal",
+        "11": "ElevationDrivesThermal",
+        "12": "AZ0101CabinetThermal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
         "15": "MainAxesPowerSupply",
@@ -1052,7 +1052,7 @@ For systems that have 4 subelements:
 
 #### specialLimits
 
-This event reports the enabled/disabled status of the special limits for azimuth and elevation. See example bellow:
+This event reports the enabled/disabled status of the special limits for azimuth and elevation. See example below:
 
 ``` plantuml
 @startjson
@@ -1084,14 +1084,14 @@ This event reports the enabled/disabled status of the special limits for azimuth
         "2": "CameraCableWrap",
         "3": "Balancing",
         "4": "MirrorCover",
-        "5": "MirroCoverLocks",
+        "5": "MirrorCoverLocks",
         "6": "AzimuthCableWrap",
         "7": "LockingPins",
         "8": "DeployablePlatforms",
         "9": "OilSupplySystem",
         "10": "AzimuthDrivesThermal",
-        "11": "ElevationDrivesThemal",
-        "12": "AZ0101CabinetThemal",
+        "11": "ElevationDrivesThermal",
+        "12": "AZ0101CabinetThermal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
         "15": "MainAxesPowerSupply",
@@ -1107,7 +1107,7 @@ This event reports the enabled/disabled status of the special limits for azimuth
 
 #### softLimitPosition
 
-This event reports the position for the software limits, bits 0 and 1 of the limits event bit mask. See example bellow:
+This event reports the position for the software limits, bits 0 and 1 of the limits event bit mask. See example below:
 
 ``` plantuml
 @startjson
@@ -1151,14 +1151,14 @@ For systems that have 4 subelements:
         "2": "CameraCableWrap",
         "3": "Balancing",
         "4": "MirrorCover",
-        "5": "MirroCoverLocks",
+        "5": "MirrorCoverLocks",
         "6": "AzimuthCableWrap",
         "7": "LockingPins",
         "8": "DeployablePlatforms",
         "9": "OilSupplySystem",
         "10": "AzimuthDrivesThermal",
-        "11": "ElevationDrivesThemal",
-        "12": "AZ0101CabinetThemal",
+        "11": "ElevationDrivesThermal",
+        "12": "AZ0101CabinetThermal",
         "13": "ModbusTemperatureControllers",
         "14": "MainCabinet",
         "15": "MainAxesPowerSupply",
@@ -1173,7 +1173,7 @@ For systems that have 4 subelements:
 
 #### azimuthToppleBlock
 
-This event reports the state of the azimuth topple block. See example bellow:
+This event reports the state of the azimuth topple block. See example below:
 
 ``` plantuml
 @startjson
@@ -1193,7 +1193,7 @@ This event reports the state of the azimuth topple block. See example bellow:
 
 #### cameraCableWrapSwitches
 
-This event reports the state of the camera cable wrap limits. See example bellow:
+This event reports the state of the camera cable wrap limits. See example below:
 
 ``` plantuml
 @startjson
@@ -1214,8 +1214,8 @@ This event reports the state of the camera cable wrap limits. See example bellow
 - negativeTravel is a boolean int (0 false 1 true).
 - positiveTravel is a boolean int (0 false 1 true).
 - interlock is a boolean int (0 false 1 true).
-- negativeDiviation is a boolean int (0 false 1 true).
-- positiveDiviation is a boolean int (0 false 1 true).
+- negativeDeviation is a boolean int (0 false 1 true).
+- positiveDeviation is a boolean int (0 false 1 true).
 
 #### Events generated by the mtmount_operation_manager
 
