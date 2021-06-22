@@ -121,16 +121,16 @@ This event reports the status of the safety interlocks. See example below:
 @endjson
 ```
 
-- causes: is a bit mask for the safety causes.
-- subcausesEmergencyStop: is a bit mask for the emergency stop trip buttons.
-- subcausesLimitSwitch: is a bit mask for the limits switches.
-- subcausesDeployablePlatform: is a bit mask for the deployable platform switches.
-- subcausesDoorHatchLadder: is a bit mask for the Doors, hatches and ladders status.
-- subcausesMirrorCover: is a bit mask for the mirror cover power off switches.
-- subcausesLockingPin: is a bit mask for the locking pin positions.
-- subcausesCapacitorDoor: is a bit mask for the phase capacitor banks doors.
-- subcausesBrakesFailed: is a bit mask for the brakes that failed.
-- effects: is a bit mask for the safety effects.
+- causes: is a bit mask for the safety causes. (u64)
+- subcausesEmergencyStop: is a bit mask for the emergency stop trip buttons. (u64)
+- subcausesLimitSwitch: is a bit mask for the limits switches. (u64)
+- subcausesDeployablePlatform: is a bit mask for the deployable platform switches. (u64)
+- subcausesDoorHatchLadder: is a bit mask for the Doors, hatches and ladders status. (u64)
+- subcausesMirrorCover: is a bit mask for the mirror cover power off switches. (u64)
+- subcausesLockingPin: is a bit mask for the locking pin positions. (u64)
+- subcausesCapacitorDoor: is a bit mask for the phase capacitor banks doors. (u64)
+- subcausesBrakesFailed: is a bit mask for the brakes that failed. (u64)
+- effects: is a bit mask for the safety effects. (u64)
 
 #### detailedSettingsApplied
 
