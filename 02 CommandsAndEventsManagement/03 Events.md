@@ -965,7 +965,7 @@ This event reports the position of the deployable platforms. See example below:
 
 This event reports the tripped status of the limits using a bit mask. See example below:
 
-For systems that have no subelements:
+For systems that have no subelements: Azimuth, Elevation, CCW and AzimuthCableWrap.
 
 ``` plantuml
 @startjson
@@ -982,7 +982,7 @@ For systems that have no subelements:
 @endjson
 ```
 
-For systems that have 4 subelements:
+For systems that have several subelements: Balancing (4), MirrorCover (4), MirrorCoverLocks (4), LockingPins (2) and DeployablePlatforms (4).
 
 ``` plantuml
 @startjson
