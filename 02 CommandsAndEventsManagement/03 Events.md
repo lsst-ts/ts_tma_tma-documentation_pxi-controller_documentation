@@ -821,16 +821,16 @@ This event reports the position of the elevation locking pins. See example below
 @endjson
 ```
 
-- position enum values:  #TODO: cambiar el enum para que tenga estos valores: LOCKED=0, TEST=1, UNLOCKED=2
+- position enum values:
 
 ``` plantuml
 @startjson
 {
     "<color:blue><b>LockingPinPosition": {
         "<b>id": "<b>value",
-        "0": "AT_1",
-        "1": "AT_2",
-        "2": "AT_3",
+        "0": "LOCKED",
+        "1": "TEST",
+        "2": "UNLOCKED",
         "3": "MOVING",
         "4": "MISMATCH"
     }
@@ -838,7 +838,7 @@ This event reports the position of the elevation locking pins. See example below
 @endjson
 ```
 
-- elementsPosition is an array of position enums.
+- elementsPosition is an array of 2 position enums.
 
 #### mirrorCoverPositions
 
@@ -879,7 +879,7 @@ This event reports the position of the mirror cover. See example below:
 @endjson
 ```
 
-- elementsPosition is an array of position enums.
+- elementsPosition is an array of 4 position enums.
 
 #### mirrorCoverLockPositions
 
@@ -920,7 +920,7 @@ This event reports the position of the mirror cover locks. See example below:
 @endjson
 ```
 
-- elementsPosition is an array of position enums.
+- elementsPosition is an array of 4 position enums.
 
 #### deployablePlatformPositions
 
@@ -959,7 +959,7 @@ This event reports the position of the deployable platforms. See example below:
 @endjson
 ```
 
-- elementsPosition is an array of position enums.
+- elementsPosition is an array of 2 position enums.
 
 #### limits
 
@@ -1112,6 +1112,8 @@ This event reports the enabled/disabled status of the special limits for azimuth
 
 This event reports the position for the software limits, bits 0 and 1 of the limits event bit mask. See example below:
 
+For systems that have no subelements: Azimuth, Elevation, CCW and AzimuthCableWrap.
+
 ``` plantuml
 @startjson
 {
@@ -1126,7 +1128,7 @@ This event reports the position for the software limits, bits 0 and 1 of the lim
 @endjson
 ```
 
-For systems that have 4 subelements:
+For systems that have 4 subelements: Balancing.
 
 ``` plantuml
 @startjson
