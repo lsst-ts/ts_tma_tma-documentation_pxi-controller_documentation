@@ -429,6 +429,8 @@ System with no subelements:
 @endjson
 ```
 
+The subsystems that have no subelements are: Azimuth, Elevation, CameraCableWrap, AzimuthCableWrap, OilSupplySystem, AZ0101CabinetThermal, MainCabinet, MainAxesPowerSupply and TopEndChiller.
+
 System with 4 subelements:
 
 ``` plantuml
@@ -449,6 +451,8 @@ System with 4 subelements:
 }
 @endjson
 ```
+
+The subsystems that have subelements are: Balancing (4), MirrorCover (4), MirrorCoverLocks (4), LockingPins (2), DeployablePlatforms (2), AzimuthDrivesThermal (4), ElevationDrivesThermal (2) and ModbusTemperatureControllers (5).
 
 - system enum:
 
