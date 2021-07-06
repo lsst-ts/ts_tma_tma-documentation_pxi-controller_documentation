@@ -817,7 +817,7 @@ This event reports the position of the elevation locking pins. See example below
 @endjson
 ```
 
-- position enum values:
+- position enum values:  #TODO: cambiar el enum para que tenga estos valores: LOCKED=0, TEST=1, UNLOCKED=2
 
 ``` plantuml
 @startjson
