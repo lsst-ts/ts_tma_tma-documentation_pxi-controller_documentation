@@ -492,9 +492,9 @@ The subsystems that have subelements are: Balancing (4), MirrorCover (4), Mirror
         "<b>id": "<b>value",
         "0": "OFF",
         "1": "ON",
-        "2": "TURNING_ON",
-        "3": "TURNING_OFF",
-        "4": "FAULT"
+        "2": "FAULT",
+        "3": "TURNING_ON",
+        "4": "TURNING_OFF"
     }
 }
 @endjson
