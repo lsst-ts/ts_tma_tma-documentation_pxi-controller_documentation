@@ -704,7 +704,7 @@ For systems that have subelements:
 
 #### motionControllerState
 
-This event reports the state of the motion controllers for Azimuth, Elevation, CCW, Balancing, MirrorCover, MirrorCoverLocks, AzimuthCableWrap, LockingPins and DeployablePlatforms. See example below:
+This event reports the state of the motion controllers for Azimuth (16), Elevation (12), CCW (2), Balancing (4), MirrorCover (4), MirrorCoverLocks (4), AzimuthCableWrap (2), LockingPins (2) and DeployablePlatforms (4). See example below:
 
 ``` plantuml
 @startjson
