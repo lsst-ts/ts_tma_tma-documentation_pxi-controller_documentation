@@ -502,7 +502,7 @@ The subsystems that have subelements are: Balancing (4), MirrorCover (4), Mirror
 
 - elementsPowerState is an array of powerState enums.
 
-#### motionState
+#### axisMotionState
 
 This event publishes the motion state of Azimuth, Elevation and CameraCableWrap. See example below:
 
@@ -513,7 +513,7 @@ This event publishes the motion state of Azimuth, Elevation and CameraCableWrap.
     "timestamp": 3700813075.739622,
     "parameters": {
         "axis": 0,
-        "motionState": 0,
+        "state": 0,
         "position": 0.00000000
     }
 }
