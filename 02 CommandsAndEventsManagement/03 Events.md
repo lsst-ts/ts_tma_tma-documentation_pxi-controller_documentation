@@ -1054,61 +1054,6 @@ For systems that have several subelements: Balancing (4), MirrorCover (4), Mirro
 
   bit 9 -> operationalSwitch max (special limit switch for Elevation)
 
-#### specialLimits
-
-This event reports the enabled/disabled status of the special limits for azimuth and elevation. See example below:
-
-``` plantuml
-@startjson
-{
-    "id": 301,
-    "timestamp": 3700547270.538420,
-    "parameters": {
-        "system": 0,
-        "adjustableSoftwareMax": 0,
-        "adjustableSoftwareMin": 0,
-        "adjustableSoftwareMaxPosition": 0.00,
-        "adjustableSoftwareMinPosition": 0.00,
-        "operationalSwitchMax": 0,
-        "operationalSwitchMin": 0
-    }
-}
-@endjson
-```
-
-- system enum:
-
-``` plantuml
-@startjson
-{
-    "<color:blue><b>system": {
-        "<b>id": "<b>value",
-        "0": "Azimuth",
-        "1": "Elevation",
-        "2": "CameraCableWrap",
-        "3": "Balancing",
-        "4": "MirrorCover",
-        "5": "MirrorCoverLocks",
-        "6": "AzimuthCableWrap",
-        "7": "LockingPins",
-        "8": "DeployablePlatforms",
-        "9": "OilSupplySystem",
-        "10": "AzimuthDrivesThermal",
-        "11": "ElevationDrivesThermal",
-        "12": "AZ0101CabinetThermal",
-        "13": "ModbusTemperatureControllers",
-        "14": "MainCabinet",
-        "15": "MainAxesPowerSupply",
-        "16": "TopEndChiller"
-    }
-}
-@endjson
-```
-
-- adjustableSoftwareMax/Min and operationalSwitchMax/Min are boolean int (0 disabled 1 enabled).
-
-- adjustableSoftwareMax/MinPosition are degrees float.
-
 #### softLimitPosition
 
 This event reports the position for the software limits, bits 0 and 1 of the limits event bit mask. See example below:
