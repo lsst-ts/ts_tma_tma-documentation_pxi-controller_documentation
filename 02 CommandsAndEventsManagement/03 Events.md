@@ -801,7 +801,7 @@ This event publishes when the Azimuth, Elevation and CameraCableWrap systems are
 
 - inPosition is a boolean int (0 false 1 true).
 
-#### elevationLockingPinPosition
+#### elevationLockingPinMotionState
 
 This event reports the position of the elevation locking pins. See example below:
 
@@ -811,8 +811,8 @@ This event reports the position of the elevation locking pins. See example below
     "id": 201,
     "timestamp": 3700813897.094651,
     "parameters": {
-        "position": 0,
-        "elementsPosition": [
+        "state": 0,
+        "elementsState": [
             0,
             0
         ]
@@ -840,7 +840,7 @@ This event reports the position of the elevation locking pins. See example below
 
 - elementsPosition is an array of 2 position enums.
 
-#### mirrorCoverPositions
+#### mirrorCoverMotionState
 
 This event reports the position of the mirror cover. See example below:
 
@@ -850,8 +850,8 @@ This event reports the position of the mirror cover. See example below:
     "id": 202,
     "timestamp": 3700814173.229395,
     "parameters": {
-        "position": 0,
-        "elementsPosition": [
+        "state": 0,
+        "elementsState": [
             0,
             0,
             0,
@@ -881,7 +881,7 @@ This event reports the position of the mirror cover. See example below:
 
 - elementsPosition is an array of 4 position enums.
 
-#### mirrorCoverLockPositions
+#### mirrorCoverLockMotionState
 
 This event reports the position of the mirror cover locks. See example below:
 
@@ -891,8 +891,8 @@ This event reports the position of the mirror cover locks. See example below:
     "id": 203,
     "timestamp": 3701053050.357125,
     "parameters": {
-        "position": 0,
-        "elementsPosition": [
+        "state": 0,
+        "elementsState": [
             0,
             0,
             0,
@@ -922,7 +922,7 @@ This event reports the position of the mirror cover locks. See example below:
 
 - elementsPosition is an array of 4 position enums.
 
-#### deployablePlatformPositions
+#### deployablePlatformMotionState
 
 This event reports the position of the deployable platforms. See example below:
 
@@ -932,8 +932,8 @@ This event reports the position of the deployable platforms. See example below:
     "id": 204,
     "timestamp": 3701053793.306807,
     "parameters": {
-        "position": 0,
-        "elementsPosition": [
+        "state": 0,
+        "elementsState": [
             0,
             0
         ]
