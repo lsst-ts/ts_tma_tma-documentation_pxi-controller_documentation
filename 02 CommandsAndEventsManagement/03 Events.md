@@ -546,7 +546,8 @@ This event publishes the motion state of Azimuth, Elevation and CameraCableWrap.
         "1": "STOPPED",
         "2": "MOVING_POINT_TO_POINT",
         "3": "JOGGING",
-        "4": "TRACKING"
+        "4": "TRACKING",
+        "5": "TRACKING_PAUSED"
     }
 }
 @endjson
