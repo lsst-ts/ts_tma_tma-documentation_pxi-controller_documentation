@@ -1054,6 +1054,10 @@ For systems that have several subelements: Balancing (4), MirrorCover (4), Mirro
 
   bit 9 -> operationalSwitch max (special limit switch for Elevation)
 
+  bit 10 -> camera cable wrap deviation negative (special limit switch for deviation between the camera rotator and the camera cable wrap)
+
+  bit 11 -> camera cable wrap deviation positive (special limit switch for deviation between the camera rotator and the camera cable wrap)
+
 #### softLimitPosition
 
 This event reports the position for the software limits, bits 0 and 1 of the limits event bit mask. See example below:
