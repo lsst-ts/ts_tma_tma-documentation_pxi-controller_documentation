@@ -535,12 +535,12 @@ This event publishes the motion state of Azimuth, Elevation and CameraCableWrap.
 @endjson
 ```
 
-- motionState enum values:
+- state enum values:
 
 ``` plantuml
 @startjson
 {
-    "<color:blue><b>motionState": {
+    "<color:blue><b>state": {
         "<b>id": "<b>value",
         "0": "STOPPING",
         "1": "STOPPED",
@@ -822,12 +822,12 @@ This event reports the position of the elevation locking pins. See example below
 @endjson
 ```
 
-- position enum values:
+- state enum values:
 
 ``` plantuml
 @startjson
 {
-    "<color:blue><b>LockingPinPosition": {
+    "<color:blue><b>state": {
         "<b>id": "<b>value",
         "0": "LOCKED",
         "1": "TEST",
@@ -839,7 +839,7 @@ This event reports the position of the elevation locking pins. See example below
 @endjson
 ```
 
-- elementsPosition is an array of 2 position enums.
+- elementsState is an array of 2 position enums.
 
 #### mirrorCoverMotionState
 
@@ -863,12 +863,12 @@ This event reports the position of the mirror cover. See example below:
 @endjson
 ```
 
-- position enum values:
+- state enum values:
 
 ``` plantuml
 @startjson
 {
-    "<color:blue><b>position": {
+    "<color:blue><b>state": {
         "<b>id": "<b>value",
         "0": "RETRACTED",
         "1": "DEPLOYED",
@@ -880,7 +880,7 @@ This event reports the position of the mirror cover. See example below:
 @endjson
 ```
 
-- elementsPosition is an array of 4 position enums.
+- elementsState is an array of 4 position enums.
 
 #### mirrorCoverLockMotionState
 
@@ -904,12 +904,12 @@ This event reports the position of the mirror cover locks. See example below:
 @endjson
 ```
 
-- position enum values:
+- state enum values:
 
 ``` plantuml
 @startjson
 {
-    "<color:blue><b>position": {
+    "<color:blue><b>state": {
         "<b>id": "<b>value",
         "0": "RETRACTED",
         "1": "DEPLOYED",
@@ -921,7 +921,7 @@ This event reports the position of the mirror cover locks. See example below:
 @endjson
 ```
 
-- elementsPosition is an array of 4 position enums.
+- elementsState is an array of 4 position enums.
 
 #### deployablePlatformMotionState
 
@@ -943,12 +943,12 @@ This event reports the position of the deployable platforms. See example below:
 @endjson
 ```
 
-- position enum values:
+- state enum values:
 
 ``` plantuml
 @startjson
 {
-    "<color:blue><b>position": {
+    "<color:blue><b>state": {
         "<b>id": "<b>value",
         "0": "RETRACTED",
         "1": "DEPLOYED",
@@ -960,7 +960,7 @@ This event reports the position of the deployable platforms. See example below:
 @endjson
 ```
 
-- elementsPosition is an array of 2 position enums.
+- elementsState is an array of 2 position enums.
 
 #### limits
 
