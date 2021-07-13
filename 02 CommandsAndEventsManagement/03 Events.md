@@ -1034,9 +1034,9 @@ For systems that have several subelements: Balancing (4), MirrorCover (4), Mirro
 
 - limits is an int array for the limits of each system element coded in a bit mask as follows:
 
-  bit 0 -> software min
+  bit 0 -> software min, the position of this limit is reported in the detailedSettingsApplied event for the following systems: Azimuth, Elevation, Balancing, CCW and AzimuthCableWrap.
 
-  bit 1 -> software max
+  bit 1 -> software max, the position of this limit is reported in the detailedSettingsApplied event for the following systems: Azimuth, Elevation, Balancing, CCW and AzimuthCableWrap.
 
   bit 2 -> travelSwitch min
 
@@ -1046,9 +1046,9 @@ For systems that have several subelements: Balancing (4), MirrorCover (4), Mirro
 
   bit 5 -> safetySwitch max
 
-  bit 6 -> adjustableSoftware min (special software limit for Azimuth and Elevation)
+  bit 6 -> adjustableSoftware min (special software limit for Azimuth and Elevation, the position of this limit is reported in the detailedSettingsApplied event)
 
-  bit 7 -> adjustableSoftware max (special software limit for Azimuth and Elevation)
+  bit 7 -> adjustableSoftware max (special software limit for Azimuth and Elevation, the position of this limit is reported in the detailedSettingsApplied event)
 
   bit 8 -> operationalSwitch min (special limit switch for Elevation)
 
@@ -1057,74 +1057,6 @@ For systems that have several subelements: Balancing (4), MirrorCover (4), Mirro
   bit 10 -> camera cable wrap deviation negative (special limit switch for deviation between the camera rotator and the camera cable wrap)
 
   bit 11 -> camera cable wrap deviation positive (special limit switch for deviation between the camera rotator and the camera cable wrap)
-
-#### softLimitPosition
-
-This event reports the position for the software limits, bits 0 and 1 of the limits event bit mask. See example below:
-
-For systems that have no subelements: Azimuth, Elevation, CCW and AzimuthCableWrap.
-
-``` plantuml
-@startjson
-{
-    "id": 302,
-    "timestamp": 3700547270.538420,
-    "parameters": {
-        "system": 0,
-        "max": [0.00],
-        "min": [0.00]
-    }
-}
-@endjson
-```
-
-For systems that have 4 subelements: Balancing.
-
-``` plantuml
-@startjson
-{
-    "id": 302,
-    "timestamp": 3700547270.538420,
-    "parameters": {
-        "system": 0,
-        "max": [0.00,0.00,0.00,0.00],
-        "min": [0.00,0.00,0.00,0.00]
-    }
-}
-@endjson
-```
-
-- system enum:
-
-``` plantuml
-@startjson
-{
-    "<color:blue><b>system": {
-        "<b>id": "<b>value",
-        "0": "Azimuth",
-        "1": "Elevation",
-        "2": "CameraCableWrap",
-        "3": "Balancing",
-        "4": "MirrorCover",
-        "5": "MirrorCoverLocks",
-        "6": "AzimuthCableWrap",
-        "7": "LockingPins",
-        "8": "DeployablePlatforms",
-        "9": "OilSupplySystem",
-        "10": "AzimuthDrivesThermal",
-        "11": "ElevationDrivesThermal",
-        "12": "AZ0101CabinetThermal",
-        "13": "ModbusTemperatureControllers",
-        "14": "MainCabinet",
-        "15": "MainAxesPowerSupply",
-        "16": "TopEndChiller"
-    }
-}
-@endjson
-```
-
-- max is a float that represents the maximum value of the software limit.
-- min is a float that represents the minimum value of the software limit.
 
 #### azimuthToppleBlock
 
