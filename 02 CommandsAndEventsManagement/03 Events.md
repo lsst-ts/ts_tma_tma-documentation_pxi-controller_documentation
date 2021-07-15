@@ -700,7 +700,7 @@ For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives 
 ```
 
 - trackAmbient is a boolean int (0 false 1 true).
-- temperature is a float in degree celsius.
+- temperature is the actual setpoint as float in degree celsius.
 - elementsChillerState is an array of chiller states that contains the status of each individual subelements.
 
 #### motionControllerState
