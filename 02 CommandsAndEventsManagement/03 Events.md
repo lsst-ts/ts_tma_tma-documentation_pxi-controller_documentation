@@ -626,7 +626,7 @@ This event reports the state of the oil supply system. See example below:
 
 #### chillerState
 
-This event reports the state of the TopEndChiller, Azimuth Drives Thermal, Elevation Drives Thermal, AZ 0101 Cabinet and ModbusTemperatureControllers. See examples below:
+This event reports the state of the TopEndChiller, Azimuth Drives Thermal, Elevation Drives Thermal, AZ 0101 Cabinet, OSS and ModbusTemperatureControllers. See examples below:
 
 For systems that have no subelements: TopEndChiller and AZ 0101 Cabinet.
 
@@ -644,7 +644,7 @@ For systems that have no subelements: TopEndChiller and AZ 0101 Cabinet.
 @endjson
 ```
 
-For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives Thermal (2) and ModbusTemperatureControllers(5).
+For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives Thermal (2), OSS (2) and ModbusTemperatureControllers(5).
 
 ``` plantuml
 @startjson
