@@ -115,7 +115,7 @@ This event reports the status of the safety interlocks. See example below:
         "subcausesLockingPin": 0,
         "subcausesCapacitorDoor": 0,
         "subcausesBrakesFailed": 0,
-        "effects": 0,
+        "effects": 0
     }
 }
 @endjson
