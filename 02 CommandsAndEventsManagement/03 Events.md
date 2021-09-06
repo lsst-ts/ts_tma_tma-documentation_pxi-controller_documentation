@@ -1829,7 +1829,7 @@ For systems that have no subelements: TopEndChiller and AZ 0101 Cabinet.
 @endjson
 ```
 
-For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives Thermal (2), OSS (2) and ModbusTemperatureControllers(5).
+For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives Thermal (2), OSS (3) and ModbusTemperatureControllers(5).
 
 ``` plantuml
 @startjson
