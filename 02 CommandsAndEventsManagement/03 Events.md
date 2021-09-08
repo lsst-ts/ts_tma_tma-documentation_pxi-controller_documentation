@@ -8,7 +8,7 @@ All the events generated in the PXI can have an additional field defined as "com
 
 Events list:
 
-- [waring](#warning)
+- [warning](#warning)
 - [alarm](#alarm)
 - [commander](#commander)
 - [safetyInterlocks](#safetyInterlocks)
