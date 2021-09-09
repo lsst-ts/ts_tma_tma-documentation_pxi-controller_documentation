@@ -2031,9 +2031,9 @@ This event reports the state of the oil supply system. See example below:
         "<b>id": "<b>value",
         "0": "OFF",
         "1": "ON",
-        "2": "TURNING_ON",
-        "3": "TURNING_OFF",
-        "4": "FAULT"
+        "2": "FAULT",
+        "3": "TURNING_ON",
+        "4": "TURNING_OFF"
     }
 }
 @endjson
@@ -2048,9 +2048,9 @@ This event reports the state of the oil supply system. See example below:
         "<b>id": "<b>value",
         "0": "OFF",
         "1": "ON",
-        "2": "TURNING_ON",
-        "3": "TURNING_OFF",
-        "4": "FAULT"
+        "2": "FAULT",
+        "3": "TURNING_ON",
+        "4": "TURNING_OFF"
     }
 }
 @endjson
@@ -2065,9 +2065,9 @@ This event reports the state of the oil supply system. See example below:
         "<b>id": "<b>value",
         "0": "OFF",
         "1": "ON",
-        "2": "TURNING_ON",
-        "3": "TURNING_OFF",
-        "4": "FAULT"
+        "2": "FAULT",
+        "3": "TURNING_ON",
+        "4": "TURNING_OFF"
     }
 }
 @endjson
@@ -2102,19 +2102,8 @@ For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives 
     "timestamp": 3701054465.650976,
     "parameters": {
         "system": 0,
-        "trackAmbient": 0,
-        "temperature": 0.00,
-        "elementsChillerState": [
-            {
-                "trackAmbient": 0,
-                "temperature": 0.00
-            },
-            {
-                "trackAmbient": 0,
-                "temperature": 0.00
-            }
-        ]
-    }
+       "trackAmbient": [0, 0],
+       "temperature": [0.00, 0.00]
 }
 @endjson
 ```
