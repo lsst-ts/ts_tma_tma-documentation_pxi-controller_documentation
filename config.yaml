@@ -20,6 +20,7 @@ variables:
   classoption: oneside
   book: true
   footer-center: ''
+  logo: Resources/Tekniker_Logo_H_600.png
 
 # Set the appropriate metadata
 metadata:
