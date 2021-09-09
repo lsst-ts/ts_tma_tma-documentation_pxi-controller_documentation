@@ -15,7 +15,7 @@ variables:
   fontsize: 12pt
   titlepage: true
   toc-own-page: true
-  listings-no-page-break: true
+  listings-no-page-break: false
   listings-disable-line-numbers: true
   classoption: oneside
   book: true
