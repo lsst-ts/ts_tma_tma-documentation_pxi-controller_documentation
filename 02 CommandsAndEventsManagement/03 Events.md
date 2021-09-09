@@ -2086,8 +2086,8 @@ For systems that have no subelements: TopEndChiller and AZ 0101 Cabinet.
     "timestamp": 3701054317.787135,
     "parameters": {
         "system": 0,
-        "trackAmbient": 0,
-        "temperature": 0.00
+       "trackAmbient": [0],
+       "temperature": [0.00]
     }
 }
 @endjson
