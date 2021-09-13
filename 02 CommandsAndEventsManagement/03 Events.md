@@ -2077,9 +2077,9 @@ This event reports the state of the oil supply system. See example below:
 
 #### chillerState
 
-This event reports the state of the TopEndChiller, Azimuth Drives Thermal, Elevation Drives Thermal, AZ 0101 Cabinet, OSS and ModbusTemperatureControllers. See examples below:
+This event reports the state of the MainCabinet, TopEndChiller, Azimuth Drives Thermal, Elevation Drives Thermal, AZ 0101 Cabinet, OSS and ModbusTemperatureControllers. See examples below:
 
-For systems that have no subelements: TopEndChiller and AZ 0101 Cabinet.
+For systems that have no subelements: MainCabinet, TopEndChiller and AZ 0101 Cabinet.
 
 ``` plantuml
 @startjson
@@ -2279,7 +2279,7 @@ This event reports the position of the elevation locking pins. See example below
 @endjson
 ```
 
-- elementsState is an array of 2 position enums.
+- elementsState is an array of 2 state enums.
 
 #### mirrorCoverMotionState
 
@@ -2320,7 +2320,7 @@ This event reports the position of the mirror cover. See example below:
 @endjson
 ```
 
-- elementsState is an array of 4 position enums.
+- elementsState is an array of 4 state enums.
 
 #### mirrorCoverLockMotionState
 
@@ -2361,7 +2361,7 @@ This event reports the position of the mirror cover locks. See example below:
 @endjson
 ```
 
-- elementsState is an array of 4 position enums.
+- elementsState is an array of 4 state enums.
 
 #### deployablePlatformMotionState
 
@@ -2400,7 +2400,7 @@ This event reports the position of the deployable platforms. See example below:
 @endjson
 ```
 
-- elementsState is an array of 2 position enums.
+- elementsState is an array of 2 state enums.
 
 #### limits
 
