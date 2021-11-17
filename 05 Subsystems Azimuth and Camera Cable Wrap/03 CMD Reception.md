@@ -25,14 +25,14 @@ This method allows the system to convert the ID in parameters to the appropriate
 #### SendTriggerToOMT
 This method will select the appropriate trigger to the statechart, depending on the received command. This selection will be done using two private methods, SelectOMTTrigger and GenerateOMTTrigger, that will be explained in next sections
 
-![Send trigger to OMT.\label{SendTriggerToOMT}](../Resources/figures/AzimuthAndCameraCableWrap/SendTriggerToOMT_ContextHelp.png)
+![Send trigger to OMT.\label{SendTriggerToOMT}](../Resources/figures/AzimuthAndCameraCableWrap/SendTriggerToOMT_ContextHelp.PNG)
 
-![Send trigger to OMT block diagram.\label{SendTriggerToOMTBlockDiagram}](../Resources/figures/AzimuthAndCameraCableWrap/SendTriggerToOMT_BlockDiagram.png)
+![Send trigger to OMT block diagram.\label{SendTriggerToOMTBlockDiagram}](../Resources/figures/AzimuthAndCameraCableWrap/SendTriggerToOMT_BlockDiagram.PNG)
 
 #### SelectOMTTrigger
 This method selects the balancing statechart trigger depending on the command received.
 
-![Select the OMT trigger.\label{SendOMTTrigger}](../Resources/figures/AzimuthAndCameraCableWrap/SelectOMTTrigger_ContextHelp.png)
+![Select the OMT trigger.\label{SendOMTTrigger}](../Resources/figures/AzimuthAndCameraCableWrap/SelectOMTTrigger_ContextHelp.PNG)
 
 
 If the command number is 0 it will do nothing, because it will be considered as communication error.
