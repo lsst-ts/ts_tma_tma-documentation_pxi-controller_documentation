@@ -292,7 +292,7 @@ In next points the bit mask for each number is shown.
 |12|sdiSWPARK1DPxN|Deployable Platform X minus Module 1 Parking Position (TMA-AZ-DB-CPD-0001)|
 |13|sdiSWPARK2DPxN|Deployable Platform X minus Module 2 Parking Position (TMA-AZ-DB-CPD-0002)|
 |14|sdiSWEXTM2DPxN|Deployable Platform X minus Extension 1 Inserted and blocked Position (TMA-AZ-DB-CPD-0003)|
-|15|sdiSWEXTM1M3DPxN|Deployable Platform X minus Extension 2 Inserted and blocked Position (TMA-AZ-DB-CPD-0004)|
+|16|sdiSWEXTM1M3DPxN|Deployable Platform X minus Extension 2 Inserted and blocked Position (TMA-AZ-DB-CPD-0004)|
 
 ##### Subcauses Doors Hatches and Ladders
 
