@@ -2724,7 +2724,7 @@ This event reports the state of the azimuth topple block. See example below:
 ``` plantuml
 @startjson
 {
-    "id": 303,
+    "id": 304,
     "timestamp": 3701054994.342060,
     "parameters": {
         "reverse": 0,
