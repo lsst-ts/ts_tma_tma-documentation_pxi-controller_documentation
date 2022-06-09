@@ -44,8 +44,7 @@ Events list:
 
 This event reports the occurred warnings. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 10,
     "timestamp": 0.000000,
@@ -58,7 +57,6 @@ This event reports the occurred warnings. See example below:
         "description": ""
     }
 }
-@endjson
 ```
 
 - name is a string that contains the alarm name.
@@ -72,8 +70,7 @@ This event reports the occurred warnings. See example below:
 
 This event reports the occurred alarms. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 11,
     "timestamp": 0.000000,
@@ -87,7 +84,6 @@ This event reports the occurred alarms. See example below:
         "description": ""
     }
 }
-@endjson
 ```
 
 - name is a string that contains the alarm name.
@@ -102,8 +98,7 @@ This event reports the occurred alarms. See example below:
 
 This event reports the actual commander. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 20,
     "timestamp": 3701058211.501903,
@@ -111,13 +106,11 @@ This event reports the actual commander. See example below:
         "actualCommander": 0
     }
 }
-@endjson
 ```
 
 - actualCommander enum:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>actualCommander": {
         "<b>id": "<b>value",
@@ -127,15 +120,13 @@ This event reports the actual commander. See example below:
         "3": "HHD"
     }
 }
-@endjson
 ```
 
 #### safetyInterlocks
 
 This event reports the status of the safety interlocks. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 30,
     "timestamp": 3703752871.185384,
@@ -152,7 +143,6 @@ This event reports the status of the safety interlocks. See example below:
         "effects": 0
     }
 }
-@endjson
 ```
 
 - causes: is a bit mask for the safety causes. (u64)
@@ -381,8 +371,7 @@ This is an event that reports the actual applied settings.
 
 Subset of the event as an example:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 40,
     "timestamp": 3697779303.717949,
@@ -618,7 +607,6 @@ Subset of the event as an example:
         }
     }
 }
-@endjson
 ```
 
 Complete event data:
@@ -2048,8 +2036,7 @@ Complete event data:
 
 This event reports the available settings sets to be specified by the applySettings command. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 41,
     "timestamp": 3698128943.441208,
@@ -2077,7 +2064,6 @@ This event reports the available settings sets to be specified by the applySetti
         }]
     }
 }
-@endjson
 ```
 
 #### powerState
@@ -2086,8 +2072,7 @@ This event can have just one power state, for systems that have no subelements, 
 
 System with no subelements:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 100,
     "timestamp": 3700809100.303714,
@@ -2096,15 +2081,13 @@ System with no subelements:
         "powerState": 0
     }
 }
-@endjson
 ```
 
 The subsystems that have no subelements are: Azimuth, Elevation, CameraCableWrap, AzimuthCableWrap, OilSupplySystem, AZ0101CabinetThermal, MainCabinet, MainAxesPowerSupply and TopEndChiller.
 
 System with 4 subelements:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 100,
     "timestamp": 3700810104.567383,
@@ -2119,15 +2102,13 @@ System with 4 subelements:
         ]
     }
 }
-@endjson
 ```
 
 The subsystems that have subelements are: Balancing (4), MirrorCover (4), MirrorCoverLocks (4), LockingPins (2), DeployablePlatforms (2), AzimuthDrivesThermal (4), ElevationDrivesThermal (2) and ModbusTemperatureControllers (5).
 
 - system enum:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>system": {
         "<b>id": "<b>value",
@@ -2150,13 +2131,11 @@ The subsystems that have subelements are: Balancing (4), MirrorCover (4), Mirror
         "16": "TopEndChiller"
     }
 }
-@endjson
 ```
 
 - powerState enum values:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>powerState": {
         "<b>id": "<b>value",
@@ -2167,7 +2146,6 @@ The subsystems that have subelements are: Balancing (4), MirrorCover (4), Mirror
         "4": "TURNING_OFF"
     }
 }
-@endjson
 ```
 
 - elementsPowerState is an array of powerState enums.
@@ -2176,8 +2154,7 @@ The subsystems that have subelements are: Balancing (4), MirrorCover (4), Mirror
 
 This event publishes the motion state of Azimuth, Elevation and CameraCableWrap. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 101,
     "timestamp": 3700813075.739622,
@@ -2187,13 +2164,11 @@ This event publishes the motion state of Azimuth, Elevation and CameraCableWrap.
         "position": 0.00000000
     }
 }
-@endjson
 ```
 
 - axis enum:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>axis": {
         "<b>id": "<b>value",
@@ -2202,13 +2177,11 @@ This event publishes the motion state of Azimuth, Elevation and CameraCableWrap.
         "2": "CameraCableWrap"
     }
 }
-@endjson
 ```
 
 - state enum values:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>state": {
         "<b>id": "<b>value",
@@ -2220,7 +2193,6 @@ This event publishes the motion state of Azimuth, Elevation and CameraCableWrap.
         "5": "TRACKING_PAUSED"
     }
 }
-@endjson
 ```
 
 - position is a float in degrees.
@@ -2229,8 +2201,7 @@ This event publishes the motion state of Azimuth, Elevation and CameraCableWrap.
 
 This event reports the state of the oil supply system. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 102,
     "timestamp": 3701053969.999932,
@@ -2240,13 +2211,11 @@ This event reports the state of the oil supply system. See example below:
         "mainPump": 0
     }
 }
-@endjson
 ```
 
 - cooling enum values:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>cooling": {
         "<b>id": "<b>value",
@@ -2257,13 +2226,11 @@ This event reports the state of the oil supply system. See example below:
         "4": "TURNING_OFF"
     }
 }
-@endjson
 ```
 
 - oil enum values:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>oil": {
         "<b>id": "<b>value",
@@ -2274,13 +2241,11 @@ This event reports the state of the oil supply system. See example below:
         "4": "TURNING_OFF"
     }
 }
-@endjson
 ```
 
 - mainPump enum values:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>mainPump": {
         "<b>id": "<b>value",
@@ -2291,7 +2256,6 @@ This event reports the state of the oil supply system. See example below:
         "4": "TURNING_OFF"
     }
 }
-@endjson
 ```
 
 #### chillerState
@@ -2300,8 +2264,7 @@ This event reports the state of the MainCabinet, TopEndChiller, Azimuth Drives T
 
 For systems that have no subelements: MainCabinet, TopEndChiller and AZ 0101 Cabinet.
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 103,
     "timestamp": 3701054317.787135,
@@ -2311,13 +2274,11 @@ For systems that have no subelements: MainCabinet, TopEndChiller and AZ 0101 Cab
        "temperature": [0.00]
     }
 }
-@endjson
 ```
 
 For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives Thermal (2), OSS (3) and ModbusTemperatureControllers(5).
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 103,
     "timestamp": 3701054465.650976,
@@ -2326,13 +2287,11 @@ For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives 
        "trackAmbient": [0, 0],
        "temperature": [0.00, 0.00]
 }
-@endjson
 ```
 
 - system enum:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>system": {
         "<b>id": "<b>value",
@@ -2355,7 +2314,6 @@ For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives 
         "16": "TopEndChiller"
     }
 }
-@endjson
 ```
 
 - trackAmbient is a boolean int (0 false 1 true).
@@ -2366,8 +2324,7 @@ For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives 
 
 This event reports the state of the motion controllers for Azimuth (16), Elevation (12), CCW (2), Balancing (4), MirrorCover (4), MirrorCoverLocks (4), AzimuthCableWrap (2), LockingPins (2) and DeployablePlatforms (4). See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 104,
     "timestamp": 3701055564.832080,
@@ -2380,13 +2337,11 @@ This event reports the state of the motion controllers for Azimuth (16), Elevati
         ]
     }
 }
-@endjson
 ```
 
 - system enum:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>system": {
         "<b>id": "<b>value",
@@ -2409,13 +2364,11 @@ This event reports the state of the motion controllers for Azimuth (16), Elevati
         "16": "TopEndChiller"
     }
 }
-@endjson
 ```
 
 - motionControllerState is an array of motionControllerState enum:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>motionControllerState": {
         "<b>id": "<b>value",
@@ -2424,15 +2377,13 @@ This event reports the state of the motion controllers for Azimuth (16), Elevati
         "2": "FAULT"
     }
 }
-@endjson
 ```
 
 #### inPosition
 
 This event publishes when the Azimuth, Elevation and CameraCableWrap systems are in the desired position. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 200,
     "timestamp": 3700813498.634085,
@@ -2441,13 +2392,11 @@ This event publishes when the Azimuth, Elevation and CameraCableWrap systems are
         "inPosition": 0
     }
 }
-@endjson
 ```
 
 - axis enum:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>axis": {
         "<b>id": "<b>value",
@@ -2456,7 +2405,6 @@ This event publishes when the Azimuth, Elevation and CameraCableWrap systems are
         "2": "CameraCableWrap"
     }
 }
-@endjson
 ```
 
 - inPosition is a boolean int (0 false 1 true).
@@ -2465,8 +2413,7 @@ This event publishes when the Azimuth, Elevation and CameraCableWrap systems are
 
 This event reports the position of the elevation locking pins. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 201,
     "timestamp": 3700813897.094651,
@@ -2478,13 +2425,11 @@ This event reports the position of the elevation locking pins. See example below
         ]
     }
 }
-@endjson
 ```
 
 - state enum values:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>state": {
         "<b>id": "<b>value",
@@ -2495,7 +2440,6 @@ This event reports the position of the elevation locking pins. See example below
         "4": "MISMATCH"
     }
 }
-@endjson
 ```
 
 - elementsState is an array of 2 state enums.
@@ -2504,8 +2448,7 @@ This event reports the position of the elevation locking pins. See example below
 
 This event reports the position of the mirror cover. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 202,
     "timestamp": 3700814173.229395,
@@ -2519,13 +2462,11 @@ This event reports the position of the mirror cover. See example below:
         ]
     }
 }
-@endjson
 ```
 
 - state enum values:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>state": {
         "<b>id": "<b>value",
@@ -2536,7 +2477,6 @@ This event reports the position of the mirror cover. See example below:
         "4": "LOST"
     }
 }
-@endjson
 ```
 
 - elementsState is an array of 4 state enums.
@@ -2545,8 +2485,7 @@ This event reports the position of the mirror cover. See example below:
 
 This event reports the position of the mirror cover locks. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 203,
     "timestamp": 3701053050.357125,
@@ -2560,13 +2499,11 @@ This event reports the position of the mirror cover locks. See example below:
         ]
     }
 }
-@endjson
 ```
 
 - state enum values:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>state": {
         "<b>id": "<b>value",
@@ -2577,7 +2514,6 @@ This event reports the position of the mirror cover locks. See example below:
         "4": "LOST"
     }
 }
-@endjson
 ```
 
 - elementsState is an array of 4 state enums.
@@ -2586,8 +2522,7 @@ This event reports the position of the mirror cover locks. See example below:
 
 This event reports the position of the deployable platforms. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 204,
     "timestamp": 3701053793.306807,
@@ -2599,13 +2534,11 @@ This event reports the position of the deployable platforms. See example below:
         ]
     }
 }
-@endjson
 ```
 
 - state enum values:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>state": {
         "<b>id": "<b>value",
@@ -2616,7 +2549,6 @@ This event reports the position of the deployable platforms. See example below:
         "4": "LOST"
     }
 }
-@endjson
 ```
 
 - elementsState is an array of 2 state enums.
@@ -2627,8 +2559,7 @@ This event reports the tripped status of the limits using a bit mask. See exampl
 
 For systems that have no subelements: Azimuth, Elevation, CCW and AzimuthCableWrap.
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 300,
     "timestamp": 3700547270.538420,
@@ -2639,13 +2570,11 @@ For systems that have no subelements: Azimuth, Elevation, CCW and AzimuthCableWr
         ]
     }
 }
-@endjson
 ```
 
 For systems that have several subelements: Balancing (4), MirrorCover (4), MirrorCoverLocks (4), LockingPins (2) and DeployablePlatforms (4).
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 300,
     "timestamp": 3700547270.538420,
@@ -2659,13 +2588,11 @@ For systems that have several subelements: Balancing (4), MirrorCover (4), Mirro
         ]
     }
 }
-@endjson
 ```
 
 - system enum:
 
-``` plantuml
-@startjson
+``` json
 {
     "<color:blue><b>system": {
         "<b>id": "<b>value",
@@ -2688,7 +2615,6 @@ For systems that have several subelements: Balancing (4), MirrorCover (4), Mirro
         "16": "TopEndChiller"
     }
 }
-@endjson
 ```
 
 - limits is an int array for the limits of each system element coded in a bit mask as follows:
@@ -2721,8 +2647,7 @@ For systems that have several subelements: Balancing (4), MirrorCover (4), Mirro
 
 This event reports the state of the azimuth topple block. See example below:
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 304,
     "timestamp": 3701054994.342060,
@@ -2731,7 +2656,6 @@ This event reports the state of the azimuth topple block. See example below:
         "forward": 0
     }
 }
-@endjson
 ```
 
 - reverse is a boolean int (0 false 1 true).
@@ -2745,8 +2669,7 @@ There are some events that are not generated by the TMA PXI, but reach the top l
 
 This event is sent when a client is connected and when the state of the mtmount_operation_manager changes, it can be "Enable" or "Connecting to PXI". This event is generated inside the mtmount_operation_manager, coded in C++.
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 50,
     "timestamp": 1624023925.122738,
@@ -2754,15 +2677,13 @@ This event is sent when a client is connected and when the state of the mtmount_
         "state": "stateInfoString"
     }
 }
-@endjson
 ```
 
 ##### versionInfo
 
 This event is a response to the 2003 (VERSION_INFO) command and reports the version of the mtmount_operation_manager. This event is generated inside the mtmount_operation_manager, coded in C++, and the command never reaches the PXI.
 
-``` plantuml
-@startjson
+``` json
 {
     "id": 51,
     "timestamp": 1624023925.122738,
@@ -2770,5 +2691,4 @@ This event is a response to the 2003 (VERSION_INFO) command and reports the vers
         "version": "versionString"
     }
 }
-@endjson
 ```
