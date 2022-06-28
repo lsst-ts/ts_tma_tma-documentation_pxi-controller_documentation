@@ -5,7 +5,7 @@ each command.
 
 ### Command format
 
-The field separator character is the Line Feed (\n) and the end-of-message indicator is a Carriage Return followed by a
+The field separator character is the Line Feed (`\n`) and the end-of-message indicator is a Carriage Return followed by a
 Line Feed (\r\n). A command must have the following format when it's sent to the OperationManager from any
 Commander (EUI, HHD, CSC):
 
