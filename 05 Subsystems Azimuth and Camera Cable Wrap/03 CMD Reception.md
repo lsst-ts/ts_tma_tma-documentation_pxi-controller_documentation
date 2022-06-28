@@ -1,42 +1,58 @@
 ## CMD Reception
 
-The command reception is managed by the Command Receiver, but this subsystem must be subscribed in the command receiver task in order to receive commands. Also this subsystems must define the class to be interface with them.
-The CCW always must be subscribed to the command receiver. The AZCW is not subscribed to the command receiver, since it receive the commands through the azimuth axis, but there is the ability to subscribe to command receiver for standalone testing of the AZCW.
+The command reception is managed by the Command Receiver, but this subsystem must be subscribed in the command receiver
+task in order to receive commands. Also this subsystems must define the class to be interface with them.
+The CCW always must be subscribed to the command receiver. The AZCW is not subscribed to the command receiver, since it
+receive the commands through the azimuth axis, but there is the ability to subscribe to command receiver for standalone
+testing of the AZCW.
 
 TODO: Write something about subscription code
 
 ### Cable Wrap subsystem definition class
-The subsystem definition object is an object of SubsystemCW class. This class is created for this subsystem specifically and overrides the parent class SubsystemGeneral class.
+
+The subsystem definition object is an object of SubsystemCW class. This class is created for this subsystem specifically
+and overrides the parent class SubsystemGeneral class.
 The methods that overrides parent methods are described in next sections.
 
 #### SendAlarmTrigger
 
-This method just sends the trigger “Fault” to the statechart instance of actual object (element). The error in the input has no effect on this method and just propagates to the output.
+This method just sends the trigger “Fault” to the statechart instance of actual object (element). The error in the input
+has no effect on this method and just propagates to the output.
 
 #### SendWarningTrigger
-This method just sends the trigger “Warning” to the statechart instance of actual object (element). The error in the input has no effect on this method and just propagates to the output.
+
+This method just sends the trigger “Warning” to the statechart instance of actual object (element). The error in the
+input has no effect on this method and just propagates to the output.
 
 #### SendDoneTrigger
-This method sends the trigger “Done” to the statechart instance of actual object (element). This done is for receiving done triggers for Bosch Task. The error in the input has no effect on this method and just propagates to the output.
+
+This method sends the trigger “Done” to the statechart instance of actual object (element). This done is for receiving
+done triggers for Bosch Task. The error in the input has no effect on this method and just propagates to the output.
 
 #### GetInstances
-This method allows the system to convert the ID in parameters to the appropriate element ID. The method looks for a negative number and in it will put in the output an array with four indexes that should be valid for this subsystem. If the ID is positive it will only just put in the output
+
+This method allows the system to convert the ID in parameters to the appropriate element ID. The method looks for a
+negative number and in it will put in the output an array with four indexes that should be valid for this subsystem.
+If the ID is positive it will only just put in the output
 
 #### SendTriggerToOMT
-This method will select the appropriate trigger to the statechart, depending on the received command. This selection will be done using two private methods, SelectOMTTrigger and GenerateOMTTrigger, that will be explained in next sections
+
+This method will select the appropriate trigger to the statechart, depending on the received command. This selection
+will be done using two private methods, SelectOMTTrigger and GenerateOMTTrigger, that will be explained in next sections
 
 ![Send trigger to OMT.\label{SendTriggerToOMT}](../Resources/figures/AzimuthAndCameraCableWrap/SendTriggerToOMT_ContextHelp.PNG)
 
 ![Send trigger to OMT block diagram.\label{SendTriggerToOMTBlockDiagram}](../Resources/figures/AzimuthAndCameraCableWrap/SendTriggerToOMT_BlockDiagram.PNG)
 
 #### SelectOMTTrigger
+
 This method selects the balancing statechart trigger depending on the command received.
 
 ![Select the OMT trigger.\label{SendOMTTrigger}](../Resources/figures/AzimuthAndCameraCableWrap/SelectOMTTrigger_ContextHelp.PNG)
 
-
 If the command number is 0 it will do nothing, because it will be considered as communication error.
-If the command number is not listed in the next tables it will ask command receiver task to send a no ack and will not send any trigger to statechart.
+If the command number is not listed in the next tables it will ask command receiver task to send a no ack and will not
+send any trigger to statechart.
 
 The next table are the commands for the camera cable wrap
 
@@ -89,7 +105,7 @@ The next table are the commands for the azimuth cable wrap
 ![Send trigger to OMT block diagram. Case Enable Track.\label{SendOMTTriggerEnableTrack}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd18.png)
 
 #### GenerateOMTTrigger
+
 The selected trigger by SelectOMTTrigger will be generated in the cable crap state machine instance.
 
-
-
+TODO: continue

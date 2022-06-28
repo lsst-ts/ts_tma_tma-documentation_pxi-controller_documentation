@@ -4,7 +4,10 @@ This component is the one sending events to the mtmount_operation_manager. This 
 
 ### Events list
 
-All the events generated in the PXI can have an additional field defined as "commander" with the values -> "0": "None", "1": "TCS", "2": "EUI", "3": "HHD". This field is only used by the mtmount_operation_manager to send the event only to that commander. If this field is not present the event is sent to all the commanders connected to the mtmount_operation_manager.
+All the events generated in the PXI can have an additional field defined as "commander" with the values -> "0": "None",
+"1": "TCS", "2": "EUI", "3": "HHD". This field is only used by the mtmount_operation_manager to send the event only to
+that commander. If this field is not present the event is sent to all the commanders connected to
+the mtmount_operation_manager.
 
 Events list:
 
@@ -2068,7 +2071,8 @@ This event reports the available settings sets to be specified by the applySetti
 
 #### powerState
 
-This event can have just one power state, for systems that have no subelements, or an additional field called "elementsPowerState" for systems that can have elements in different states. See examples below:
+This event can have just one power state, for systems that have no subelements, or an additional field called
+"elementsPowerState" for systems that can have elements in different states. See examples below:
 
 System with no subelements:
 
@@ -2083,7 +2087,8 @@ System with no subelements:
 }
 ```
 
-The subsystems that have no subelements are: Azimuth, Elevation, CameraCableWrap, AzimuthCableWrap, OilSupplySystem, AZ0101CabinetThermal, MainCabinet, MainAxesPowerSupply and TopEndChiller.
+The subsystems that have no subelements are: Azimuth, Elevation, CameraCableWrap, AzimuthCableWrap, OilSupplySystem,
+AZ0101CabinetThermal, MainCabinet, MainAxesPowerSupply and TopEndChiller.
 
 System with 4 subelements:
 
@@ -2104,7 +2109,8 @@ System with 4 subelements:
 }
 ```
 
-The subsystems that have subelements are: Balancing (4), MirrorCover (4), MirrorCoverLocks (4), LockingPins (2), DeployablePlatforms (2), AzimuthDrivesThermal (4), ElevationDrivesThermal (2) and ModbusTemperatureControllers (5).
+The subsystems that have subelements are: Balancing (4), MirrorCover (4), MirrorCoverLocks (4), LockingPins (2),
+DeployablePlatforms (2), AzimuthDrivesThermal (4), ElevationDrivesThermal (2) and ModbusTemperatureControllers (5).
 
 - system enum:
 
@@ -2260,7 +2266,8 @@ This event reports the state of the oil supply system. See example below:
 
 #### chillerState
 
-This event reports the state of the MainCabinet, TopEndChiller, Azimuth Drives Thermal, Elevation Drives Thermal, AZ 0101 Cabinet, OSS and ModbusTemperatureControllers. See examples below:
+This event reports the state of the MainCabinet, TopEndChiller, Azimuth Drives Thermal, Elevation Drives Thermal,
+AZ 0101 Cabinet, OSS and ModbusTemperatureControllers. See examples below:
 
 For systems that have no subelements: MainCabinet, TopEndChiller and AZ 0101 Cabinet.
 
@@ -2276,7 +2283,8 @@ For systems that have no subelements: MainCabinet, TopEndChiller and AZ 0101 Cab
 }
 ```
 
-For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives Thermal (2), OSS (3) and ModbusTemperatureControllers(5).
+For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives Thermal (2), OSS (3) and
+ModbusTemperatureControllers(5).
 
 ``` json
 {
@@ -2322,7 +2330,9 @@ For systems that have subelements: Azimuth Drives Thermal (4), Elevation Drives 
 
 #### motionControllerState
 
-This event reports the state of the motion controllers for Azimuth (16), Elevation (12), CCW (2), Balancing (4), MirrorCover (4), MirrorCoverLocks (4), AzimuthCableWrap (2), LockingPins (2) and DeployablePlatforms (4). See example below:
+This event reports the state of the motion controllers for Azimuth (16), Elevation (12), CCW (2), Balancing (4),
+MirrorCover (4), MirrorCoverLocks (4), AzimuthCableWrap (2), LockingPins (2) and DeployablePlatforms (4).
+See example below:
 
 ``` json
 {
@@ -2381,7 +2391,8 @@ This event reports the state of the motion controllers for Azimuth (16), Elevati
 
 #### inPosition
 
-This event publishes when the Azimuth, Elevation and CameraCableWrap systems are in the desired position. See example below:
+This event publishes when the Azimuth, Elevation and CameraCableWrap systems are in the desired position.
+See example below:
 
 ``` json
 {
@@ -2572,7 +2583,8 @@ For systems that have no subelements: Azimuth, Elevation, CCW and AzimuthCableWr
 }
 ```
 
-For systems that have several subelements: Balancing (4), MirrorCover (4), MirrorCoverLocks (4), LockingPins (2) and DeployablePlatforms (4).
+For systems that have several subelements: Balancing (4), MirrorCover (4), MirrorCoverLocks (4), LockingPins (2) and
+DeployablePlatforms (4).
 
 ``` json
 {
@@ -2619,9 +2631,11 @@ For systems that have several subelements: Balancing (4), MirrorCover (4), Mirro
 
 - limits is an int array for the limits of each system element coded in a bit mask as follows:
 
-  bit 0 -> software min, the position of this limit is reported in the detailedSettingsApplied event for the following systems: Azimuth, Elevation, Balancing, CCW and AzimuthCableWrap.
+  bit 0 -> software min, the position of this limit is reported in the detailedSettingsApplied event for the following
+  systems: Azimuth, Elevation, Balancing, CCW and AzimuthCableWrap.
 
-  bit 1 -> software max, the position of this limit is reported in the detailedSettingsApplied event for the following systems: Azimuth, Elevation, Balancing, CCW and AzimuthCableWrap.
+  bit 1 -> software max, the position of this limit is reported in the detailedSettingsApplied event for the following
+  systems: Azimuth, Elevation, Balancing, CCW and AzimuthCableWrap.
 
   bit 2 -> travelSwitch min
 
@@ -2631,17 +2645,21 @@ For systems that have several subelements: Balancing (4), MirrorCover (4), Mirro
 
   bit 5 -> safetySwitch max
 
-  bit 6 -> adjustableSoftware min (special software limit for Azimuth and Elevation, the position of this limit is reported in the detailedSettingsApplied event)
+  bit 6 -> adjustableSoftware min (special software limit for Azimuth and Elevation, the position of this limit is
+  reported in the detailedSettingsApplied event)
 
-  bit 7 -> adjustableSoftware max (special software limit for Azimuth and Elevation, the position of this limit is reported in the detailedSettingsApplied event)
+  bit 7 -> adjustableSoftware max (special software limit for Azimuth and Elevation, the position of this limit is
+  reported in the detailedSettingsApplied event)
 
   bit 8 -> operationalSwitch min (special limit switch for Elevation)
 
   bit 9 -> operationalSwitch max (special limit switch for Elevation)
 
-  bit 10 -> camera cable wrap deviation negative (special limit switch for deviation between the camera rotator and the camera cable wrap)
+  bit 10 -> camera cable wrap deviation negative (special limit switch for deviation between the camera rotator and the
+  camera cable wrap)
 
-  bit 11 -> camera cable wrap deviation positive (special limit switch for deviation between the camera rotator and the camera cable wrap)
+  bit 11 -> camera cable wrap deviation positive (special limit switch for deviation between the camera rotator and the
+  camera cable wrap)
 
 #### azimuthToppleBlock
 
@@ -2667,7 +2685,8 @@ There are some events that are not generated by the TMA PXI, but reach the top l
 
 ##### stateInfo
 
-This event is sent when a client is connected and when the state of the mtmount_operation_manager changes, it can be "Enable" or "Connecting to PXI". This event is generated inside the mtmount_operation_manager, coded in C++.
+This event is sent when a client is connected and when the state of the mtmount_operation_manager changes, it can be
+"Enable" or "Connecting to PXI". This event is generated inside the mtmount_operation_manager, coded in C++.
 
 ``` json
 {
@@ -2681,7 +2700,8 @@ This event is sent when a client is connected and when the state of the mtmount_
 
 ##### versionInfo
 
-This event is a response to the 2003 (VERSION_INFO) command and reports the version of the mtmount_operation_manager. This event is generated inside the mtmount_operation_manager, coded in C++, and the command never reaches the PXI.
+This event is a response to the 2003 (VERSION_INFO) command and reports the version of the mtmount_operation_manager.
+This event is generated inside the mtmount_operation_manager, coded in C++, and the command never reaches the PXI.
 
 ``` json
 {
