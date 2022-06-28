@@ -113,7 +113,7 @@ Line Feed (\r\n). A command must have the following format when it's sent to the
 Commander (EUI, HHD, CSC):
 
 ``` command
-<Seq_id>\n<Cmd_Id>\n<Source>\n<Timestamp>[\n<Param_1>\n<Param_2>\n ... <Param_n>\n]\r\n
+<Seq_id>\n<Cmd_Id>\n<Source>\n<Timestamp>[\n<Param_1>\n<Param_2>\n to <Param_n>\n]\r\n
 ```
 
 where:
@@ -122,7 +122,7 @@ where:
 * **Cmd_id**: The type of command identification number(defined in types.h).
 * **Source**: ID number of the command sender (1 = CSC, 2 = MCS, 3 = HDD, 100 = PXIs).
 * **Timestamp**: Timestamp in ISO-8601 format (e.g. 2016-05-31T10:44:35.321436).
-* **Param_1 ... Param_n**: Parameters of the command (this may or may not exist, depending on the command).
+* **Param_1 to Param_n**: Parameters of the command (this may or may not exist, depending on the command).
 
 Example of a command:
 
@@ -136,7 +136,7 @@ But the actual command that reaches the PXIs, sent from the OperationManager, ha
 This sequence is the OperationManager identifier for that specific command. Check format bellow:
 
 ``` command
-<OperationManager_Seq_id>\n<Seq_id>\n<Cmd_Id>\n<Source>\n<Timestamp>[\n<Param_1>\n<Param_2>\n ... <Param_n>\n]\r\n
+<OperationManager_Seq_id>\n<Seq_id>\n<Cmd_Id>\n<Source>\n<Timestamp>[\n<Param_1>\n<Param_2>\n to <Param_n>\n]\r\n
 ```
 
 ##### Commands available to be sent to the PXIs
