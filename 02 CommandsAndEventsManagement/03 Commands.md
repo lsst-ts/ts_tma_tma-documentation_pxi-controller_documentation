@@ -39,9 +39,10 @@ This sequence is the OperationManager identifier for that specific command. Chec
 ### Commands available to be sent to the PXIs
 
 Here the list of the available commands the PXI can receive are listed, note that this list may differ a bit from the
-available commands at the OperationManager, as it has some higher level commands that split into lower level commands
-listed here and some others specific to the OperationManager. To see the list of available commands for the OperationManager check
-[this json file](https://gitlab.tekniker.es/aut/projects/3151-LSST/OperationManager/lsst/-/blob/develop/tma_management/commands_definitions.json).
+available commands at the OperationManager, as it has some higher level commands (complex commands) that split into
+lower level commands listed here and some others specific to the OperationManager. To see the list of complex commands
+for the OperationManager check the documentation PDF from the latest release from the OperationManager repo
+[here](https://gitlab.tekniker.es/aut/projects/3151-LSST/OperationManager/lsst/-/releases).
 
 PXI commands:
 
