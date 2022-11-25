@@ -4,7 +4,8 @@ This component is the one the TMA connects to over TCP to
  send and receive the TCP messages. The message to send is specified to the
  task by a public method of the TCP server object, and the received messages
  are published in a user event created when the object is initialized. These events are then
-registered by another task to filter then and generate the proper triggers to the corresponding state machines within the application.
+registered by another task to filter then and generate the proper triggers to the corresponding state machines within
+the application.
 
 For this component, the Server.lvclass is used. This class is explained in
 [this section](#server.lvclass) in a generic way, as this task can be used in many different ways
@@ -17,7 +18,8 @@ specify the configuration of the task. For this specific case, the used
 configuration is specified in the “*CommandTCP_Config.xml*” file located at the
 Configuration folder inside the PXIController repo (RT Code -> Configuration -> CAR_TCP).
 
-The values of this configuration can be modified to improve the performance or if you need to change the port used to communicate to the TMA OMT (operation_manager).
+The values of this configuration can be modified to improve the performance or if you need to change the port used to
+communicate to the TMA OMT (operation_manager).
 
 ### Server.lvclass
 
@@ -30,10 +32,12 @@ This section explains how to use the Server.lvclass.
 
 1. Create a configuration file with the desired configuration.
 2. Add the Server_Init.vi to initialize the TCP server and pass to it the path to the previously defined config file.
-3. This init will return a reference to a user event where the received TCP messages are going to be published. Register this event in a event structure to get the TCP messages.
+3. This init will return a reference to a user event where the received TCP messages are going to be published. Register
+this event in a event structure to get the TCP messages.
 4. For sending TCP messages to the clients there are two options:
 
-  - SendDataTCP.vi: this vi sends the specified message to the specified client. The client is identified with a connection reference ID (i32).
+  - SendDataTCP.vi: this vi sends the specified message to the specified client. The client is identified with a
+  connection reference ID (i32).
   - SendDataTCP2All.vi: this vi sends the specified message to all the connected clients.
 
 5. For exiting use the CleanUp.vi.
@@ -79,7 +83,8 @@ Here the available methods for this task are explained.
 
 Initialize the TCP server task.
 
-If you have an XML with multiple configurations use the TypeDefName input to search for the configuration for this specific case, leave empty if you want to use the default searching string.
+If you have an XML with multiple configurations use the TypeDefName input to search for the configuration for this
+specific case, leave empty if you want to use the default searching string.
 
 ![Server.lvclass_Server_Init.vi context help](../Resources/figures/EcCPdfAWEbtGoMtXXAdPFaPJevPCiXiCfBNy_ContextHelp.png)
 
