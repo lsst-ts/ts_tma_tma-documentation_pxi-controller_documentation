@@ -1,8 +1,7 @@
 ## State Machine
 The behaviour of the system is managed by the state machine. The state machine for cable wraps is shown in next diagram
 
-@startuml
-
+```plantuml
 
 state NoInternalErrors {
   
@@ -56,4 +55,4 @@ NoInternalErrors --> InternalErrors
 CommandMemory --> InitActions : MemoryOk
 InitActions --> Idle : InitOK
 
-@enduml
+```
