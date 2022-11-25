@@ -19,9 +19,6 @@ This method just sends the trigger “Warning” to the statechart instance of a
 #### SendDoneTrigger
 This method sends the trigger “Done” to the statechart instance of actual object (element). This done is for receiving done triggers for Bosch Task. The error in the input has no effect on this method and just propagates to the output.
 
-#### GetInstances
-This method allows the system to convert the ID in parameters to the appropriate element ID. The method looks for a negative number and in it will put in the output an array with four indexes that should be valid for this subsystem. If the ID is positive it will only just put in the output
-
 #### SendTriggerToOMT
 This method will select the appropriate trigger to the statechart, depending on the received command. This selection will be done using two private methods, SelectOMTTrigger and GenerateOMTTrigger, that will be explained in next sections
 
@@ -89,7 +86,8 @@ The next table are the commands for the azimuth cable wrap
 ![Send trigger to OMT block diagram. Case Enable Track.\label{SendOMTTriggerEnableTrack}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd18.png)
 
 #### GenerateOMTTrigger
-The selected trigger by SelectOMTTrigger will be generated in the cable crap state machine instance.
+The selected trigger by SelectOMTTrigger will be generated in the cable wrap state machine instance.
+
 
 
 
