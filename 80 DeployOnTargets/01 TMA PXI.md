@@ -112,7 +112,8 @@ as a *.ini file, it uses `[sectionName]` to divide the file.
 
 - `log` section: here the configuration for the logging is defined.
   - Path: the absolute path for the log files, it needs to have a main file name, a date is going to be added to it.
-  - Active: a boolean "FALSE"/"TRUE" to disable/enable the logging.
+  Default value: `/home/lvuser/log/MainLogFile.log`
+  - Active: a boolean "FALSE"/"TRUE" to disable/enable the logging. Default value: "TRUE".
 
 ```bash
 [Log]
