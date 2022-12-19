@@ -76,7 +76,7 @@ Now each of the files is explained:
 - **ACWData.ini:** This file is automatically created if not existent, is used to store the active time of each of the ACW motors.
 - **CCWData.ini:** This file is automatically created if not existent, is used to store the active time of each of the CCW motors.
 - **TMA_PXI_RT_MainConfig.ini:** This file is automatically created if not existent, is used to define the general
-configuration. If empty the default values are used, this is the way it is created is nonexistent at boot.
+configuration. If empty the default values are used, this is the way it is created if nonexistent at boot.
 - **./CAR_TCP/CommandTCP_Config.xml:** This file is **necessary** at boot, here the configuration for the TCP server
 used to communicate with the MtMountOperationManager is specified. If not found at boot the code won't startup.
 - **./DiscreteStateReporting/DiscreteStateReporting.json:** This file is **necessary** at boot, here the configuration
