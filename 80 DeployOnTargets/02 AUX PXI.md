@@ -90,10 +90,10 @@ used to communicate with the MtMountOperationManager is specified. If not found 
 - **./DiscreteStateReporting/DiscreteStateReporting.json:** This file is **necessary** at boot, here the configuration
 for the discrete state reporting task is specified. If not found the system will start but it won't be managing the
 events properly, so duplicated events for the CSC could appear.
-- **./ModbusTemperatureControllers/\<cabinetName\>_config.ini:** This file is **necessary** at boot, here the configuration for the
+- **./ModbusTemperatureControllers/cabinetName_config.ini:** This file is **necessary** at boot, here the configuration for the
 modbus communication for each temperature controller is specified. If not found at boot the code for the modbus controllers
 won't startup.
-- **./ModbusTemperatureControllers/\<cabinetName\>_mapping.txt:** This file is **necessary** at boot, here the
+- **./ModbusTemperatureControllers/cabinetName_mapping.txt:** This file is **necessary** at boot, here the
 configuration for the modbus mapping (shared variables between the PXI and the temperature controllers) is defined. If
 not found at boot the code won't startup.
 - **./OSS/OSS_ModBusMapping.txt:** This file is **necessary** at boot, here the configuration for the OSS
