@@ -160,7 +160,7 @@ ln -s ../init.d/settai S30settai
 admin@TMA-PXI:/etc/rc5.d
 ```
 
-## Chrony installation
+### Chrony installation
 
 Steps are:
 
