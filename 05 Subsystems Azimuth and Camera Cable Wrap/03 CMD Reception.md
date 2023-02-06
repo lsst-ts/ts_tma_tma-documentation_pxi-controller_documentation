@@ -54,19 +54,19 @@ If the command number is 0 it will do nothing, because it will be considered as 
 If the command number is not listed in the next tables it will ask command receiver task to send a no ack and will not
 send any trigger to statechart.
 
-The next table are the commands for the camera cable wrap
+The next table are the commands for the camera cable wrap (commands are detailed in [commands](/01%20Commands.md#Commands))
 
 |Received Command|Command Number|StateChart Trigger|
-|------|-------|-----|
+|------|-------|-----|-----|
 |CAM_CW_POWER|1001|Power|
-|CAM_CW_STOP|1002|Stop|
-|CAM_CW_MOVE|1003|Move|
-|CAM_CW_TRACK_CAMERA|1004|Track|
-|CAM_CW_RESET_ALARM|1005|Reset|
-|CAM_CW_DRIVE_ENABLE|1006|EnableDrive|
-|CAM_CW_DRIVE_RESET|1007|ResetDrive|
-|CAM_CW_MOVE_VELOCITY|1008|MoveVelocity|
-|CAM_CW_ENABLE_TRACK_CAMERA|1009|EnableTrack|
+|CAM_CW_STOP|1002|Stop||
+|CAM_CW_MOVE|1003|Move|Position(DBL), Velocity (DBL), |
+|CAM_CW_TRACK_CAMERA|1004|Track||
+|CAM_CW_RESET_ALARM|1005|Reset||
+|CAM_CW_DRIVE_ENABLE|1006|EnableDrive||
+|CAM_CW_DRIVE_RESET|1007|ResetDrive||
+|CAM_CW_MOVE_VELOCITY|1008|MoveVelocity||
+|CAM_CW_ENABLE_TRACK_CAMERA|1009|EnableTrack||
 
 The next table are the commands for the azimuth cable wrap
 
@@ -109,3 +109,4 @@ The next table are the commands for the azimuth cable wrap
 The selected trigger by SelectOMTTrigger will be generated in the cable crap state machine instance.
 
 TODO: continue
+

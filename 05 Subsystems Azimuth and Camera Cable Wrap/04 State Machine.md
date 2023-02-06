@@ -3,23 +3,25 @@ The behaviour of the system is managed by the state machine. The state machine f
 
 ```plantuml
 
+@startuml
+
 state NoInternalErrors {
   
   state Idle
   state On {
     state WaitDrivesOn
     state ReleasingBrakes
-    state Enable
-    state ChangingDrive{
-    }
+    state Enable    
+    State PoweringOffFaultyDrive    
     state DiscreteMove
     state Stopping
     state JogMove
     state Tracking
     state ChangeDriveInTracking{
     }
+    state EngagingBrakes
     [*] --> WaitDrivesOn
-    WaitDrivesOn --> ReleasingBrakes
+    WaitDrivesOn --> ReleasingBrakes : DrivesDone
     ReleasingBrakes --> Enable
     Enable --> DiscreteMove : Move
     DiscreteMove --> Enable : MoveDone
@@ -33,26 +35,30 @@ state NoInternalErrors {
     ChangeDriveInTracking --> Tracking
     ChangeDriveInTracking --> Stopping : Stop
     Stopping --> Enable : StopDone
-    Enable --> ChangingDrive : ChangeDrive
-    ChangingDrive --> Enable : ChangeDriveDone
+    WaitDrivesOn --> PoweringOffFaultyDrive : ChangeDrive
+    PoweringOffFaultyDrive --> WaitDrivesOn : ChangeDriveDone
+    Enable -up-> EngagingBrakes : Power(off)
   }
   state Fault
   
   [*] --> Idle
   Idle -down-> On : Power(on)
   On -right-> Fault : Alarm
-  Fault -left-> Idle : Reset
-  On -up-> Idle : Power(off)
+  Fault --> Idle : Reset
+  EngagingBrakes --> Idle : BrakesEngaged
 
 }
 
 state InternalErrors {
 }
 
-NoInternalErrors --> InternalErrors 
+
 
 [*] --> CommandMemory
 CommandMemory --> InitActions : MemoryOk
 InitActions --> Idle : InitOK
+NoInternalErrors --> InternalErrors : Error
+
+@enduml
 
 ```
