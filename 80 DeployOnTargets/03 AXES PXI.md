@@ -1,6 +1,6 @@
 ## AXES PXI
 
-- Chassis: PXIe-1073 (this could be replaced with the bigger and better ventilated PXIe-1086, there is space in the cabinet for it)
+- Chassis: PXIe-1071 (this could be replaced with the bigger and better ventilated PXIe-1086, there is space in the cabinet for it)
 - CPU: PXIe-8880
 - Ethernet cards (x1): PXIe-8234
 
