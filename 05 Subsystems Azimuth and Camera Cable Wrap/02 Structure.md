@@ -1,6 +1,5 @@
 ## Software Structure
-The structure is slightly different for Azimuth or Camera cable wrap, since the first one is a subordinated subsystem,
-receives commands from Azimuth subsystem, and the second one is independent subsystem.
+The structure is slightly different for Azimuth or Camera cable wrap, since the first one is a subordinated subsystem, receives commands from Azimuth subsystem, and the second one is independent subsystem.
 
 ### Azimuth Cable Wrap
 
