@@ -153,3 +153,11 @@ state Homing{
 
 @enduml
 ```
+
+### Homing superstate
+
+As described in the [EIB hardware working](../06%20Subsystem%20EIB/06%20Hardware%20working.md/#Reference-Data), the get the absolute position of the encoder, a procedure where the axis is moved must be done. Then the obtained reference must be applied to the axis manager in order to generate setpoints for absolute values. This superstate, is in charge of managing all the actions to get the system ready to work as absolute position commanding.
+
+The first action of homing procedure is to ask the EIB task to start with the reference (see [command sequence](../06%20Subsystem%20EIB/05%20Commad%20sequences..md) for more info). When the reference is found then the axis is stopped. Then the system just waits for a stabilization time. This time ensures that the telescope is fully stopped in the desired position. After this time the absolute position published by the axis ([Axis control](20%20Axis%20Control.md)) of last 50ms is obtained and the mean of that time is applied as absolute position. With the configured stabilization time the error between the actual absolute position and the controlled position is always bellow the noise level of the encoder heads.
+
+Other states of the superstates allow to stop the homing process by the user or to handle a reference failed.

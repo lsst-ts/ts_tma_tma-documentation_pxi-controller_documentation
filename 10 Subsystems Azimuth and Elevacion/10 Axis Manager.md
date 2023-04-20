@@ -471,7 +471,3 @@ class libtrajectory << (L,#FF7700) LVLIB >> {
 @enduml
 ```
 
-
-
-
-
