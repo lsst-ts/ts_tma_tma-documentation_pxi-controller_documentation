@@ -30,7 +30,7 @@ node "EIB Hardware"{
 }
 node "SyncCRIO"
 node "AZ Drive 1"
-node "..."
+node others
 node "EL Drive 12"
 [commander]-down->[OMT]:CMD
 [OMT]-down->[Azimuth]:CMD
@@ -42,8 +42,8 @@ node "EL Drive 12"
 [EIB]-up->[EIB(AXES PXI)]:Head Data
 
 [EtherCAT] -down- "AZ Drive 1"
-"AZ Drive 1" -right- "..."
-"..." -right- "EL Drive 12"
+"AZ Drive 1" -right- others
+others -right- "EL Drive 12"
 "EL Drive 12" -right- SyncCRIO
 SyncCRIO-right--> EIB :Trigger
 

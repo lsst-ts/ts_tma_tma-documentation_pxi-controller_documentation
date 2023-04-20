@@ -14,6 +14,7 @@ develop_generate:
   script:
     - ./generate_pdf $CI_COMMIT_SHORT_SHA
   artifacts:
+    expire_in: 2 hrs
     paths:
       - LSST_PXI_SoftwareDocumentation.pdf
 
