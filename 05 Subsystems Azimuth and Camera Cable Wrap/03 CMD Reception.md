@@ -109,4 +109,3 @@ The next table are the commands for the azimuth cable wrap
 The selected trigger by SelectOMTTrigger will be generated in the cable crap state machine instance.
 
 TODO: continue
-

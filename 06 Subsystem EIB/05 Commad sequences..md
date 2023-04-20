@@ -2,7 +2,9 @@
 
 ### Power On
 
-Since the UPD for the EIB is command for Azimuth and Elevation heads, the power on command sequence depends if the EIB is already powered on or not. For the first power on, there are more actions to do, because the EIB starts sending data. In the second power on the EIb is already on, and just a configuration of the second axis heads is carried on. 
+Since the UPD for the EIB is command for Azimuth and Elevation heads, the power on command sequence depends if the EIB
+is already powered on or not. For the first power on, there are more actions to do, because the EIB starts sending data.
+In the second power on the EIb is already on, and just a configuration of the second axis heads is carried on.
 
 For the firs power the sequence is shown in next figure
 
@@ -59,7 +61,9 @@ Commander -> "TMA-PXI" : Power on
 
 ### Power off
 
-Since the UDP is common for azimuth and elevation heads, the EIB will be powered off only if both axis are powered off. This is, if a power off is received for elevation and azimuth is still on, the EIB will not switched off and data will be received for all heads.
+Since the UDP is common for azimuth and elevation heads, the EIB will be powered off only if both axis are powered off.
+This is, if a power off is received for elevation and azimuth is still on, the EIB will not switched off and data will
+be received for all heads.
 
 If power off is not required, because there is another axis still powered on
 
@@ -83,6 +87,7 @@ Commander -> "TMA-PXI" : Power off
 
 @enduml
 ```
+
 If the power of the EIB is possible, then the sequence is shown in next diagram.
 
 ```plantuml
@@ -111,7 +116,8 @@ Commander -> "TMA-PXI" : Power off
 
 ### Start Reference
 
-The reference search is the procedure to get the absolute position. The heads that fulfil this procedure without errors have a valid absolute position. The reference procedure is started in the home sequence of an axis.
+The reference search is the procedure to get the absolute position. The heads that fulfil this procedure without errors
+have a valid absolute position. The reference procedure is started in the home sequence of an axis.
 
 ```plantuml
 @startuml
