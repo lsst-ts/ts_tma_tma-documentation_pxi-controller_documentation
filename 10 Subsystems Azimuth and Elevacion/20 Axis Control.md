@@ -1,4 +1,5 @@
 ## Axis control
+
 This section describes the control algorithm for azimuth and elevation axis
 
 The control algorithm performs the main actions listed bellow. They are done in the written order. Some management actions are not listed for simplicity.
@@ -19,11 +20,11 @@ The control algorithm performs the main actions listed bellow. They are done in 
 
 ### Get position feedback
 
-The function wait up to 100us to get a new value from the EIB. If the data arrives in time it calculates the mean value for relative positions, speed from EIB, and absolute positions. 
+The function wait up to 100us to get a new value from the EIB. If the data arrives in time it calculates the mean value for relative positions, speed from EIB, and absolute positions.
 
 For relative positions, only the heads without error are used for the calculation. If one head fails while the system is working, the mean will not use failed head to calculate the mean automatically. This position is the one used by control algorithm to control the axis (see [Position control algorithm](#position-control-algorithm) section).
 
-For absolute position, only the heads with a reference valid flag are used to calculate the absolute mean value. This value is not used in the control algorithm for anything. 
+For absolute position, only the heads with a reference valid flag are used to calculate the absolute mean value. This value is not used in the control algorithm for anything.
 
 If data is not received in time, the data will be extrapolated with the last valid data.This extrapolation is done for each head data and for the axis data (valid heads data mean).
 
@@ -32,6 +33,7 @@ If data is not received in time, the data will be extrapolated with the last val
 In this function the control algorithms are executed. For both axis the position control algorithm is executed. For Azimuth, the damping control algorithm is also executed.
 
 #### Position control algorithm
+
 The position control algorithm calculate the torque to ensure that the position is close to the setpoint.
 
 The position control used is a standard used for precise positioning control.
