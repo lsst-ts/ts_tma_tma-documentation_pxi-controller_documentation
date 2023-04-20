@@ -53,15 +53,12 @@ but in case the value is out of range (compared with the azimuth cable wrap posi
 As it is explained in [Axis Control](../10%20Subsystems%20Azimuth%20and%20Elevacion/20%20Axis%20Control.md/#position-control-algorithm),
 if the head has not a valid reference flag it will not be used for calculations.
 
----
-**NOTE**
-
-The fixed zero telescope positions at the telescope startup for both axis were:
-
-* Azimuth. The Azimuth Cable Wrap is its center position. This is done visually, when all the tubes of the Azimuth
-Cable Wrap are straight.
-* Elevation. The locking pins go to the locked position with elevation at horizon. This was not exactly possible
-because the telescope was moving manually, so it was accepted as valid when one of the locking pins was able to move
-to the lock position.
-
----
+>**NOTE**
+>
+>The fixed zero telescope positions at the telescope startup for both axis were:
+>
+>* Azimuth. The Azimuth Cable Wrap is its center position. This is done visually, when all the tubes of the Azimuth
+>Cable Wrap are straight.
+>* Elevation. The locking pins go to the locked position with elevation at horizon. This was not exactly possible
+>because the telescope was moving manually, so it was accepted as valid when one of the locking pins was able to move
+>to the lock position.
