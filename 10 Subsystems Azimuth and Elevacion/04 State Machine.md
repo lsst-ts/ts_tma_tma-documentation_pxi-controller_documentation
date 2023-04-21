@@ -20,7 +20,7 @@ state NoInternalErrors ##[bold]{
     state Stopping
     state PoweringOff ##[bold]
     PoweringOff : Not shown substates inside
-    state ExitPoint <<exitPoint>> 
+    state Exit<<exitPoint>>
     
     [*] --> PoweringOn
     PoweringOn --> Enable
@@ -35,7 +35,7 @@ state NoInternalErrors ##[bold]{
     Homing -left-> Enable : HomeFailed    
     Tracking --> Stopping : Stop
     Enable -left-> PoweringOff : Power (off)
-    PoweringOff -left-> ExitPoint
+    PoweringOff -left-> Exit
     
   }
   state Fault ##[bold]
@@ -49,7 +49,7 @@ state NoInternalErrors ##[bold]{
   Fault -up-> Reset : Reset
   Idle -left-> Reset : Reset
   Reset -right-> Idle : ResetFinished
-  ExitPoint -up-> Idle
+  Exit -up-> Idle
  
 }
 
