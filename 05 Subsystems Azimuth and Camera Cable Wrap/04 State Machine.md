@@ -12,8 +12,8 @@ state NoInternalErrors {
   state On {
     state WaitDrivesOn
     state ReleasingBrakes
-    state Enable    
-    State PoweringOffFaultyDrive    
+    state Enable
+    State PoweringOffFaultyDrive
     state DiscreteMove
     state Stopping
     state JogMove
