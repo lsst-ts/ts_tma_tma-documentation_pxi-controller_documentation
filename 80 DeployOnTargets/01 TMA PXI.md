@@ -119,21 +119,21 @@ as a *.ini file, it uses `[sectionName]` to divide the file.
   Default value: `/home/lvuser/log/MainLogFile.log`
   - Active: a boolean "FALSE"/"TRUE" to disable/enable the logging. Default value: "TRUE".
 
-```bash
-[Log]
-Path = "/home/lvuser/log/MainTMA.log"
-Active = "TRUE"
-```
+  ```ini
+  [Log]
+  Path = "/home/lvuser/log/MainTMA.log"
+  Active = "TRUE"
+  ```
 
 - `TCPCMDReciver` section: here the configuration for the HHD (hand held device) behavior is defined.
   - HHD Mode To Safety: this is a boolean value of TRUE/FALSE.
     - If TRUE (default), when the commander is the HHD this information is sent to the TMA IS (safety).
     - If FALSE, no information of the commander is sent to the TMA IS (safety).
 
-```bash
-[TCPCMDReciver]
-HHD Mode To Safety = FALSE
-```
+  ```ini
+  [TCPCMDReciver]
+  HHD Mode To Safety = FALSE
+  ```
 
 - `Settings Database` section: here the configuration for connecting to the database is defined.
   - IP: the ip for the MCC machine that contains the database. Default: "192.168.209.200"
@@ -144,16 +144,16 @@ HHD Mode To Safety = FALSE
   - Password: the password to connect to the database. The default is the password for connecting to the database.
   - DataBase: the name of the database to connect to. Default: "lsst_settings"
 
-```bash
-[Settings Database]
-IP = "192.168.209.200"
-Port = 3306
-Timeout = 500
-ReadTimeout = 500
-UserName = "root"
-Password = "defaultPasswordValue"
-DataBase = "lsst_settings"
-```
+  ```ini
+  [Settings Database]
+  IP = "192.168.209.200"
+  Port = 3306
+  Timeout = 500
+  ReadTimeout = 500
+  UserName = "root"
+  Password = "defaultPasswordValue"
+  DataBase = "lsst_settings"
+  ```
 
 - `IPs` section: here the IPs for connecting to the different device targets are defined.
   - tmaPxiIp: specify the IP of the TMA PXI here, if not defined the default value will be used. Default: 192.168.209.10.

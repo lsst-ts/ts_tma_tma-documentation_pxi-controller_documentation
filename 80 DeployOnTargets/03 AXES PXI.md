@@ -62,11 +62,11 @@ as a *.ini file, it uses `[sectionName]` to divide the file.
   Default value: `/home/lvuser/log/MainLogFile.log`
   - Active: a boolean "FALSE"/"TRUE" to disable/enable the logging. Default value: "TRUE".
 
-```bash
-[Log]
-Path = "/home/lvuser/log/AuxTMA.log"
-Active = "TRUE"
-```
+  ```ini
+  [Log]
+  Path = "/home/lvuser/log/AuxTMA.log"
+  Active = "TRUE"
+  ```
 
 - `StartupDelays` section: here the waits (in ms) before starting each task are defined.
   - GeneralWait: general wait for pausing everything from starting. Default value: 5000
@@ -84,7 +84,7 @@ Active = "TRUE"
 
 - `Azimuth` and `Elevation` sections: here the configuration for each axis is defined.
   - ma to iu: conversion gain from miliampers to internal units.
-  - Torque To currrent Polynomial: conversion equation for converting from torque to current.
+  - Torque To current Polynomial: conversion equation for converting from torque to current.
   - Counter Value to allow error pass trough: counter for an ethercat error. Default value: 2147483500
   - dt (scan Engine Periods): the scan periods dt. Default value: 1
   - TrajectoryPriority: priority for the control loop. Default value: 65500
