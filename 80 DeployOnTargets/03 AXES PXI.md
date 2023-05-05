@@ -97,6 +97,22 @@ Active = "TRUE"
   - Drives: the list of ethercat variables for the drives.
   - HallSensor: the ethercat variable for the hall sensor.
 
+- `IPs` section: here the IPs for connecting to the different device targets are defined.
+  - tmaPxiIp: specify the IP of the TMA PXI here, if not defined the default value will be used. Default: 192.168.209.10.
+  - auxPxiIp: specify the IP of the AUX PXI here, if not defined the default value will be used. Default: 192.168.209.11.
+  - axesPxiIp: specify the IP of the AXES PXI here, if not defined the default value will be used. Default: 192.168.213.11.
+  - tmaIsIp: specify the IP of the TMA IS (safety PLC CPU module) here, if not defined the default value will be used. Default: 192.168.180.10.
+  - mcc: specify the IP of the MCC here, if not defined the default value will be used. Default: 192.168.209.200.
+
+  ```ini
+  [IPs]
+  tmaPxiIp = 139.229.171.3
+  auxPxiIp = 139.229.171.4
+  axesPxiIp = 139.229.171.26
+  tmaIsIp = 192.168.180.10
+  mcc = 139.229.171.6
+  ```
+
 ### Libraries
 
 The shared libraries (SO) used by the code must be stored in `/usr/local/lib`.
