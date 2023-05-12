@@ -2280,7 +2280,7 @@ For systems that have no subelements: MainCabinet, TopEndChiller and AZ 0101 Cab
     "timestamp": 3701054317.787135,
     "parameters": {
         "system": 0,
-       "trackAmbient": [0],
+       "chillerMode": [0],
        "temperature": [0.00]
     }
 }
@@ -2295,7 +2295,7 @@ ModbusTemperatureControllers(5).
     "timestamp": 3701054465.650976,
     "parameters": {
         "system": 0,
-       "trackAmbient": [0, 0],
+       "chillerMode": [0, 0],
        "temperature": [0.00, 0.00]
 }
 ```
@@ -2327,9 +2327,21 @@ ModbusTemperatureControllers(5).
 }
 ```
 
-- trackAmbient is a boolean int (0 false 1 true).
-- temperature is the actual setpoint as float in degree celsius.
-- elementsChillerState is an array of chiller states that contains the status of each individual subelements.
+- chillerMode enum with the following values:
+
+  ``` json
+  {
+    "<color:blue><b>system": {
+        "<b>id": "<b>value",
+        "0": "trackingAmbient",
+        "1": "trackingSetpoint",
+        "2": "manualValvePosition"
+    }
+  }
+  ```
+
+- temperature is the actual setpoint as float in degree celsius. Unless the chillerMode is manualValvePosition, that for
+  this engeneering mode the output is valve position in percentage.
 
 #### motionControllerState
 
