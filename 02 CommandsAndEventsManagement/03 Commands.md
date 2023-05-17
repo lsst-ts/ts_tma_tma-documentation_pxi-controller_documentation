@@ -392,12 +392,11 @@ PXI commands:
 * AZ_THERMAL_CONTROL_MODE
   * Id: 1602
   * Param_1: azimuth drive group ident [All: -1, Group_1: 0, Group_2: 1, Group_3: 2, Group_4: 3]
-  * Param_2: control type [TrackAmbient: 0, TrackSetpoint: 1, ManageValveSetpoint: 2, ManageAutoTune: 3]
+  * Param_2: control type [TrackAmbient: 0, TrackSetpoint: 1, ManageValveSetpoint: 2]
   * Param_3: depends on the control type:
     * TrackAmbient: not used
     * TrackSetpoint: Temperature setpoint value (C degrees, float)
     * ManageValveSetpoint: valve setpoint value [0-100] (%, float)
-    * ManageAutoTune: AutoTuneStart[1]/AutoTuneStop[0]
 * AZ_THERMAL_RESET_ALARM
   * Id: 1603
   * Param_1: azimuth drive group ident [All: -1, Group_1: 0, Group_2: 1, Group_3: 2, Group_4: 3]
@@ -409,12 +408,11 @@ PXI commands:
 * EL_THERMAL_CONTROL_MODE
   * Id: 1702
   * Param_1: elevation drive group ident [All: -1, Group_1: 0, Group_2: 1]
-  * Param_2: control type [TrackAmbient: 0, TrackSetpoint: 1, ManageValveSetpoint: 2, ManageAutoTune: 3]
+  * Param_2: control type [TrackAmbient: 0, TrackSetpoint: 1, ManageValveSetpoint: 2]
   * Param_3: depends on the control type:
     * TrackAmbient: not used
     * TrackSetpoint: Temperature setpoint value (C degrees, float)
     * ManageValveSetpoint: valve setpoint value [0-100] (%, float)
-    * ManageAutoTune: AutoTuneStart[1]/AutoTuneStop[0]
 * EL_THERMAL_RESET_ALARM
   * Id: 1703
   * Param_1: elevation drive group ident [All: -1, Group_1: 0, Group_2: 1]
@@ -438,12 +436,11 @@ PXI commands:
 * CABINET0101_THERMAL_CONTROL_MODE
   * Id: 1902
   * Param_1: cabinet ident use 0 always
-  * Param_2: control type [TrackAmbient: 0, TrackSetpoint: 1, ManageValveSetpoint: 2, ManageAutoTune: 3]
+  * Param_2: control type [TrackAmbient: 0, TrackSetpoint: 1, ManageValveSetpoint: 2]
   * Param_3: depends on the control type:
     * TrackAmbient: not used
     * TrackSetpoint: Temperature setpoint value (C degrees, float)
     * ManageValveSetpoint: valve setpoint value [0-100] (%, float)
-    * ManageAutoTune: AutoTuneStart[1]/AutoTuneStop[0]
 * CABINET0101_THERMAL_RESET_ALARM
   * Id: 1903
   * Param_1: cabinet ident use 0 always
