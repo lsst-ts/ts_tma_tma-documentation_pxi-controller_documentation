@@ -469,6 +469,8 @@ PXI commands:
 * APPLY_SETTINGS_SET
   * Id: 2403
   * Param_1: the name of the setting set to be applied (string)
+* RESTORE_DEFAULT_SETTINGS
+  * Id: 2404
 
 * REPORT_STATE
   * Id: 2501
