@@ -452,15 +452,50 @@ PXI commands:
   * Id: 2102
   * Param_1: just to ensure that this command is not sent without a real intention [only allowed value: ReallyIWantToExit]
 
-* TEC_POWER
+* TEC_POWER_ON
   * Id: 2201
-  * Param_1: TODO:
-* TEC_TRACK_AMBIENT
+* TEC_POWER_OFF
   * Id: 2202
-  * Param_1: TODO:
 * TEC_RESET_ALARM
   * Id: 2203
-  * Param_1: TODO:
+* TEC_ABORT_POWERING
+  * Id: 2204
+* TEC_LOCAL_PERMISSIVE
+  * Id: 2205
+  * Param_1: Enable[1]/Disable[0]
+* TEC_CAMERA_FANS
+  * Id: 2206
+  * Param_1: Enable[1]/Disable[0]
+* TEC_M2_FANS
+  * Id: 2207
+  * Param_1: Enable[1]/Disable[0]
+* TEC_AIR_COMPRESSED_VALVE
+  * Id: 2208
+  * Param_1: Open[1]/Close[0]
+* TEC_CABINET1_POWER
+  * Id: 2209
+  * Param_1: Enable[1]/Disable[0]
+* TEC_CABINET2_POWER
+  * Id: 2210
+  * Param_1: Enable[1]/Disable[0]
+* TEC_CABINET3_POWER
+  * Id: 2211
+  * Param_1: Enable[1]/Disable[0]
+* TEC_CABINET4_POWER
+  * Id: 2212
+  * Param_1: Enable[1]/Disable[0]
+* TEC_AUTO_MANUAL
+  * Id: 2213
+  * Param_1: change between auto and manual [Manual: 1, Auto: 0]
+* TEC_HEAT_EXCHANGER1_POWER
+  * Id: 2214
+  * Param_1: Enable[1]/Disable[0]
+* TEC_HEAT_EXCHANGER2_POWER
+  * Id: 2215
+  * Param_1: Enable[1]/Disable[0]
+* TEC_TEMPERATURE_SETPOINT
+  * Id: 2216
+  * Param_1: temperature setpoint value (C degrees, float)
 
 * GET_AVAILABLE_SET_SETTINGS
   * Id: 2401
@@ -494,5 +529,4 @@ PXI commands:
 * CLOCK
   * Id: 3000
   * Description: this command must be sent periodically, every 1s, to tell the PXI that the commander is okay.
-  * Important: this command has no response at all, no CMD_ACKNOWLEDGED, no CMD_REJECTED, no CMD_SUCCEEDED,
-  no CMD_FAILED and no CMD_SUPERSEDED.
+  * Important: this command has no response at all, no CMD_ACKNOWLEDGED, no CMD_REJECTED, no CMD_SUCCEEDED  no CMD_FAILED and no CMD_SUPERSEDED.
