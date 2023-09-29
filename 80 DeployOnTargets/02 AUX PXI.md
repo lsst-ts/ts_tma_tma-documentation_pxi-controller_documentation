@@ -32,52 +32,63 @@ AUX PXI `/c/Configuration` contents:
 ```bash
 admin@AuxSystems:/c/Configuration# ls -lR
 .:
-total 28
-drwxrwxrwx    2 admin    administ      4096 Jul 12 10:43 CAR_TCP/
-drwxr-xr-x    2 admin    administ      4096 Jul 12 10:43 DiscreteStateReporting/
-drwxrwxrwx    2 admin    administ      4096 Jul 12 10:43 ModbusTemperatureControllers/
-drwxrwxrwx    2 admin    administ      4096 Dec  6 16:47 OSS/
--rwxr-xr-x    1 admin    administ       283 Jul 12 10:43 TMA_PXI_RT_MainConfig.ini*
-drwxr-xr-x    2 admin    administ      4096 Jul 12 10:43 TekNSVs/
-drwxrwxrwx    2 admin    administ      4096 Jul 12 10:43 TelemetryConfig/
+total 32
+drwxrwxrwx    2 admin    administ      4096 Jul 12  2022 CAR_TCP/
+drwxr-xr-x    2 admin    administ      4096 Jul 12  2022 DiscreteStateReporting/
+drwxrwxrwx    2 admin    administ      4096 Jul 12  2022 ModbusTemperatureControllers/
+drwxrwxrwx    2 admin    administ      4096 Sep 13 13:06 OSS/
+drwxr-xr-x    2 admin    administ      4096 Sep 21 08:34 TEC/
+-rwxr-xr-x    1 admin    administ       434 May  4 12:20 TMA_PXI_RT_MainConfig.ini*
+drwxr-xr-x    2 admin    administ      4096 Jul 12  2022 TekNSVs/
+drwxrwxrwx    2 admin    administ      4096 Dec 19  2022 TelemetryConfig/
 
 ./CAR_TCP:
 total 4
--rwxr-xr-x    1 admin    administ       574 Nov 18 17:42 CommandTCP_Config.xml*
+-rwxr-xr-x    1 admin    administ       574 Nov 18  2022 CommandTCP_Config.xml*
 
 ./DiscreteStateReporting:
 total 4
--rwxr-xr-x    1 admin    administ       387 Nov 10 17:56 DiscreteStateReporting.json*
+-rwxr-xr-x    1 admin    administ       387 Nov 10  2022 DiscreteStateReporting.json*
 
 ./ModbusTemperatureControllers:
 total 40
--rwxr-xr-x    1 admin    administ       142 Oct 11 15:06 TMA_AX_DZ_CBT_0001_config.ini*
--rwxr-xr-x    1 admin    administ       839 Oct 11 15:06 TMA_AX_DZ_CBT_0001_mapping.txt*
--rwxr-xr-x    1 admin    administ       143 Oct 11 15:06 TMA_AZ_PD_CBT_0001_config.ini*
--rwxr-xr-x    1 admin    administ       839 Oct 11 15:06 TMA_AZ_PD_CBT_0001_mapping.txt*
--rwxr-xr-x    1 admin    administ       143 Oct 11 15:06 TMA_AZ_PD_TRM_0001_config.ini*
--rwxr-xr-x    1 admin    administ       839 Oct 11 15:06 TMA_AZ_PD_TRM_0001_mapping.txt*
--rwxr-xr-x    1 admin    administ       143 Oct 11 15:06 TMA_EL_PD_CBT_0001_config.ini*
--rwxr-xr-x    1 admin    administ       839 Oct 11 15:06 TMA_EL_PD_CBT_0001_mapping.txt*
--rwxr-xr-x    1 admin    administ       143 Oct 11 15:06 TMA_EL_PD_CBT_0002_config.ini*
--rwxr-xr-x    1 admin    administ       839 Oct 11 15:06 TMA_EL_PD_CBT_0002_mapping.txt*
+-rwxr-xr-x    1 admin    administ       142 May  4 07:07 TMA_AX_DZ_CBT_0001_config.ini*
+-rwxr-xr-x    1 admin    administ       839 Oct 11  2022 TMA_AX_DZ_CBT_0001_mapping.txt*
+-rwxr-xr-x    1 admin    administ       142 May  4 07:07 TMA_AZ_PD_CBT_0001_config.ini*
+-rwxr-xr-x    1 admin    administ       839 Oct 11  2022 TMA_AZ_PD_CBT_0001_mapping.txt*
+-rwxr-xr-x    1 admin    administ       142 May  4 07:07 TMA_AZ_PD_TRM_0001_config.ini*
+-rwxr-xr-x    1 admin    administ       839 Oct 11  2022 TMA_AZ_PD_TRM_0001_mapping.txt*
+-rwxr-xr-x    1 admin    administ       142 May  4 07:07 TMA_EL_PD_CBT_0001_config.ini*
+-rwxr-xr-x    1 admin    administ       839 Oct 11  2022 TMA_EL_PD_CBT_0001_mapping.txt*
+-rwxr-xr-x    1 admin    administ       142 May  4 07:07 TMA_EL_PD_CBT_0002_config.ini*
+-rwxr-xr-x    1 admin    administ       839 Oct 11  2022 TMA_EL_PD_CBT_0002_mapping.txt*
 
 ./OSS:
-total 60
--rwxr-xr-x    1 admin    administ     38788 Dec  6 16:45 OSS_ModBusMapping.txt*
--rwxr-xr-x    1 admin    administ     14651 Dec  6 15:53 OSS_ModBusMapping_ForReadWriteDefinition.txt*
--rwxr-xr-x    1 admin    administ       128 Jul 12 10:43 ServerConfig.ini*
+total 120
+-rwxr-xr-x    1 admin    administ       645 Sep 13 13:06 OSS_CabinetTemperatureMonitoring.json*
+-rwxr-xr-x    1 admin    administ     38800 Sep 13 13:06 OSS_ModBusMapping.txt*
+-rwxr-xr-x    1 admin    administ     38791 May 15 10:36 OSS_ModBusMapping.txt_old*
+-rwxr-xr-x    1 admin    administ     14663 Sep 13 13:06 OSS_ModBusMapping_ForReadWriteDefinition.txt*
+-rwxr-xr-x    1 admin    administ     14651 Dec  6  2022 OSS_ModBusMapping_ForReadWriteDefinition.txt_old*
+-rwxr-xr-x    1 admin    administ       128 May 11 14:42 ServerConfig.ini*
+
+./TEC:
+total 44
+-rwxr-xr-x    1 admin    administ       127 Sep 14 11:07 ServerConfig.ini*
+-rwxr-xr-x    1 admin    administ     13115 Sep 14 11:07 TEC_ModBusMapping.txt*
+-rwxr-xr-x    1 admin    administ      5437 Sep 14 11:07 TEC_ModBusMapping_ForReadWriteDefinition.txt*
+-rwxr-xr-x    1 lvuser   ni           14707 Sep 21 07:41 TopEndChillerCommandsAndMonitoringConfig.json*
 
 ./TekNSVs:
 total 68
--rwxr-xr-x    1 admin    administ       575 Nov 18 17:43 ReceiverConfig.xml*
--rwxr-xr-x    1 admin    administ     55983 Jul 12 10:43 TekNSVvariablesToCreate.json*
--rwxr-xr-x    1 admin    administ       544 Jul 12 10:43 VariablesToSubscribe.json*
--rwxr-xr-x    1 admin    administ       672 Jul 12 10:43 VariablesToSubscribeClientConfig.xml*
+-rwxr-xr-x    1 admin    administ       575 Nov 18  2022 ReceiverConfig.xml*
+-rwxr-xr-x    1 admin    administ     55983 Jul 12  2022 TekNSVvariablesToCreate.json*
+-rwxr-xr-x    1 admin    administ       544 Jul 12  2022 VariablesToSubscribe.json*
+-rwxr-xr-x    1 admin    administ       671 May  4 09:56 VariablesToSubscribeClientConfig.xml*
 
 ./TelemetryConfig:
-total 60
--rwxr-xr-x    1 admin    administ     32055 Jul 12 10:43 TelemetryConfig.ini*
+total 32
+-rwxr-xr-x    1 admin    administ     31809 May  4 09:28 TelemetryConfig.ini*
 admin@AuxSystems:/c/Configuration#
 ```
 
@@ -102,6 +113,15 @@ modbus mapping (shared variables between the PXI and the OSS) is defined. If not
 configuration for the OSS variables inside the PXI is defined. If not found at boot the code won't startup.
 - **./OSS/ServerConfig.ini:** This file is **necessary** at boot, here the configuration for the modbus communication
 is specified. If not found at boot the code won't startup.
+- **./TEC/ServerConfig.ini** This file is **necessary** at boot, here the configuration for the modbus communication
+is specified. If not found at boot the code won't startup.
+- **./TEC/TEC_ModBusMapping.txt** This file is **necessary** at boot, here the configuration for the TEC
+modbus mapping (shared variables between the PXI and the TEC) is defined. If not found at boot the code won't startup.
+- **./TEC/TEC_ModBusMapping_ForReadWriteDefinition.txt:** This file is **necessary** at boot, here the
+configuration for the TEC variables inside the PXI is defined. If not found at boot the code won't startup.
+- **./TEC/TopEndChillerCommandsAndMonitoringConfig.json:** This file is **necessary** at boot, here the commands TEC
+behavior is coded, a full explanation of the file can be found
+[**here**](https://gitlab.tekniker.es/aut/projects/3151-LSST/LabVIEWCode/PXIController/-/tree/develop/RT%20Code/TopEndChiller?ref_type=heads)
 - **./TekNSVs/ReceiverConfig.xml:** This file is **necessary** at boot, here the configuration for the TCP server that
 sends the TekNSV variables to the EUI is specified. If not found at boot the code won't startup.
 - **./TekNSVs/TekNSVvariablesToCreate.json:** This file is **necessary** at boot, this file defines the TekNSV variables
