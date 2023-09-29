@@ -1,14 +1,15 @@
 ## CMD Reception
 
 The command reception is managed by the Command Receiver, but this subsystem must be subscribed in the command receiver
-task in order to receive commands. Also this subsystems must define the class to be interface with them.
-The CCW always must be subscribed to the command receiver. The AZCW is not subscribed to the command receiver, since it
-receive the commands through the azimuth axis, but there is the ability to subscribe to command receiver for standalone
-testing of the AZCW.
+task in order to receive commands. Also this subsystems must define the class to be interface with it.
+
+TODO: Review info
 
 TODO: Write something about subscription code
 
-### Cable Wrap subsystem definition class
+### Main Axes definition class
+
+TODO: change text from this line on
 
 The subsystem definition object is an object of SubsystemCW class. This class is created for this subsystem specifically
 and overrides the parent class SubsystemGeneral class.

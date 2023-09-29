@@ -9,7 +9,8 @@ develop tools and tips are also included as part of the documentation.
 
 Important notes:
 
-- In the documentation there could be some misunderstandings due to the naming of the hardware devices and software. Mainly when using the abbreviations EUI and HHD.
+- In the documentation there could be some misunderstandings due to the naming of the hardware devices and software.
+Mainly when using the abbreviations EUI and HHD.
   - EUI stands for Engineering User Interface, but sometimes it is used to
     refer to the PC that runs the EUI itself. This PC is named MCC (Main
     Control Computer).
@@ -18,4 +19,5 @@ Important notes:
 
 - HMI stands for Human Machine Interface, but sometimes it is referred as EUI.
 
-- TMA: in the documentation TMA can refer both to the actual telescope and to the operation_manager software developed in C++.
+- TMA: in the documentation TMA can refer both to the actual telescope and to the operation_manager software
+developed in C++.

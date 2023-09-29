@@ -3,51 +3,65 @@
 This repo contains a library to replace the NI statechart module.
 
 ## Statechart template explanation
+
 The library **TeknikerStatechart.lvlib** has implemented a basic template for an state machine.
-This state machine has one state that is a superstate with another state machine inside, and this second state machine has another state that is a superstate with another state machine inside. Each superstate, and main state machine are one library inside the *SuperStates* folder in the TeknikerStatechart.lvlib library
-The template statechart is based on the state machine of the figure 
+This state machine has one state that is a superstate with another state machine inside, and this second state machine
+has another state that is a superstate with another state machine inside. Each superstate, and main state machine are
+one library inside the *SuperStates* folder in the TeknikerStatechart.lvlib library.
+The template statechart is based on the state machine of the figure
 
 ![Basic State Machine diagram\label{BasicStateMachineDiagram}](../Resources/figures/TeknikerStatechartFramework/StatechartExampleDiagram.png)
 
 
-The main state machine is composed by 4 states Init, NoError, InternalError and Deinit. The logic of this state machine is in the library *SuperState1.lvlib*.
+The main state machine is composed by 4 states Init, NoError, InternalError and Deinit. The logic of this state machine
+is in the library *SuperState1.lvlib*.
 
-The second state machine is inside the NoError superstate and has defined three states Idle, On  and Fault. The logic of this superstate is in the library *SuperState_NoError.lvlib*.
+The second state machine is inside the NoError superstate and has defined three states Idle, On  and Fault. The logic of
+this superstate is in the library *SuperState_NoError.lvlib*.
 
-In the second state machine, the On state is a superstate with the state machine shown in the next figure. This superstate has 4 states, Enable, DiscreteMove, ContinuousMove and Stop. The logic of this superstate is in the library *SuperState_On.lvlib*.
+In the second state machine, the On state is a superstate with the state machine shown in the next figure. This
+superstate has 4 states, Enable, DiscreteMove, ContinuousMove and Stop. The logic of this superstate is in the library
+*SuperState_On.lvlib*.
 
 ![On super state state machine\label{OnSuperstateStateMachine}](../Resources/figures/TeknikerStatechartFramework/OnSuperstate.png)
-
-
-
 
 ## How to use
 
 This section describes how to use a already programmed statechart. To program the statechart go to [How to program](#how-to-program) section.
 
 ### Init statechart
-This vi will start all necesary elements for usign the statechart. The VI has two mandatory inputs.
 
-* Instance. Define the instance of the statechart. Several instances of the statechart can be called. **At this moment of development there are three VIs that must be changed to reentrant for using the statechart as reentrant: Diagram.vi, DiagramBeforeCaseActions.vi and checkExternalTriggers.vi**. The last two are located in the *private/DiagramBeforeAndAfterCaseVIs* folder.
-* Inputs. This input is the inputs to the statechart that will be updated only in the init. This inputs will be available inside the statechart diagram.
+This vi will start all necessary elements for using the statechart. The VI has two mandatory inputs.
+
+* Instance. Define the instance of the statechart. Several instances of the statechart can be called. **At this moment
+of development there are three VIs that must be changed to reentrant for using the statechart as reentrant: Diagram.vi,
+DiagramBeforeCaseActions.vi and checkExternalTriggers.vi**. The last two are located in the
+*private/DiagramBeforeAndAfterCaseVIs* folder.
+* Inputs. This input is the inputs to the statechart that will be updated only in the init. This inputs will be
+available inside the statechart diagram.
 
 ![Init\label{InitVI}](../Resources/figures/TeknikerStatechartFramework/VI_Init.PNG)
 
 ### Diagram
-This VI is the statechart itself. This must be called in a loop. It has two ouputs, apart from the input/output with statechart data.
+
+This VI is the statechart itself. This must be called in a loop. It has two outputs, apart from the input/output with
+statechart data.
+
 * ActualState. This will provide the actual state of all state machines separated by a "\\"
-* ExitStatechart. This output will be true when the statechart has finished all the executions. All state machines goes to end point.
+* ExitStatechart. This output will be true when the statechart has finished all the executions. All state machines goes
+to end point.
 
 ![Diagram\label{DiagramVI}](../Resources/figures/TeknikerStatechartFramework/VI_Diagram.PNG)
 
-
 ### Exit
-This VI will execute the clean up actions related with the statechart. 
+
+This VI will execute the clean up actions related with the statechart.
 
 ![Exit\label{ExitVI}](../Resources/figures/TeknikerStatechartFramework/VI_Exit.PNG)
 
 ### Trigger statechart
-To trigger the statechart the TriggerStatechart.vi must be used. This VI could be use in a separate loop an it needs the instance of the statechart to trigger, and the trigger itself.
+To trigger the statechart the TriggerStatechart.vi must be used. This VI could be use in a separate loop an it needs the
+instance of the statechart to trigger, and the trigger itself.
 
 ![TriggerStatechart\label{TriggerStatechartVI}](../Resources/figures/TeknikerStatechartFramework/VI_TriggerStatechart.PNG)
 
@@ -58,9 +72,11 @@ Next figure shows an example of how to use the generated library.
 
 ## How to program
 
-The *TeknikerStatechart.lvlib* is a template so the first step is to **save a copy of the library *TeknikerStatechart.lvlib***. All modifications must be done in the copied library.
+The *TeknikerStatechart.lvlib* is a template so the first step is to **save a copy of the library
+*TeknikerStatechart.lvlib***. All modifications must be done in the copied library.
 
 Then next steps are recommended
+
  1. Rename superstates names to desired names
  2. If the statechart has more superstates, clone one of the supplied superstates libraries.
  3. Modify triggers for the state machine
@@ -70,16 +86,23 @@ Then next steps are recommended
 Next topics gives more information about different elements of the statechart and how to use them.
 
 ### Init and exit actions
-**DO NOT MODIFY** Init and Exit VIs. If initialization actions are needed put them in init and deinit states inside the statechart.
+
+**DO NOT MODIFY** Init and Exit VIs. If initialization actions are needed put them in init and deinit states inside the
+statechart.
 
 ### Triggers
-Triggers are general for all the the statechart and they can be defined in the **ExternalTriggers_TypeDef.ctl** under the *Controls* folder in the main lvlib. **DO NOT REMOVE/CHANGE**  the first (NULL) and last (InternalStatechart_Exit_NOTREMOVE) tiggers.
+
+Triggers are general for all the the statechart and they can be defined in the **ExternalTriggers_TypeDef.ctl** under
+the *Controls* folder in the main lvlib. **DO NOT REMOVE/CHANGE**  the first (NULL) and last
+(InternalStatechart_Exit_NOTREMOVE) triggers.
 
 To generate a trigger there are two different VIs
 
-* TriggerStatechart.vi. Use this vi to trigger the statechart from ousite the diagram. See [Trigger statecchart](#trigger-statechart) section.
+* TriggerStatechart.vi. Use this vi to trigger the statechart from ousite the diagram. See
+[Trigger statecchart](#trigger-statechart) section.
 
-* internalTriggerStatechart.vi. Use this vi to trigger the statechart form inside the diagram. Internal triggers will be checked before external trigger and no external trigger will be attended until all the internal triggers are attended. This vi needs the queue reference for internal triggers. This queue reference is only available in vis that belongs to the main library using the **Get_InternalTriggerQueue.vi**. The trigger is the other input of the vi.
+* internalTriggerStatechart.vi. Use this vi to trigger the statechart form inside the diagram. Internal triggers will
+be checked before external trigger and no external trigger will be attended until all the internal triggers are attended. This vi needs the queue reference for internal triggers. This queue reference is only available in vis that belongs to the main library using the **Get_InternalTriggerQueue.vi**. The trigger is the other input of the vi.
 
 ![InternalTriggerStatechart.vi\label{InternalTriggerStatechartVI}](../Resources/figures/TeknikerStatechartFramework/VI_InternalTriggerStatechart.PNG)
 
