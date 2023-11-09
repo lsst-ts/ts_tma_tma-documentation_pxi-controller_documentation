@@ -67,9 +67,7 @@ total 40
 total 120
 -rwxr-xr-x    1 admin    administ       645 Sep 13 13:06 OSS_CabinetTemperatureMonitoring.json*
 -rwxr-xr-x    1 admin    administ     38800 Sep 13 13:06 OSS_ModBusMapping.txt*
--rwxr-xr-x    1 admin    administ     38791 May 15 10:36 OSS_ModBusMapping.txt_old*
 -rwxr-xr-x    1 admin    administ     14663 Sep 13 13:06 OSS_ModBusMapping_ForReadWriteDefinition.txt*
--rwxr-xr-x    1 admin    administ     14651 Dec  6  2022 OSS_ModBusMapping_ForReadWriteDefinition.txt_old*
 -rwxr-xr-x    1 admin    administ       128 May 11 14:42 ServerConfig.ini*
 
 ./TEC:
@@ -107,6 +105,9 @@ won't startup.
 - **./ModbusTemperatureControllers/cabinetName_mapping.txt:** This file is **necessary** at boot, here the
 configuration for the modbus mapping (shared variables between the PXI and the temperature controllers) is defined. If
 not found at boot the code won't startup.
+- **./OSS/OSS_CabinetTemperatureMonitoring.json:** This file is **necessary** at boot, this file defines which variables
+are read for monitoring the temperature of the OSS cabinets. It also defines under which names are published to the
+event system.
 - **./OSS/OSS_ModBusMapping.txt:** This file is **necessary** at boot, here the configuration for the OSS
 modbus mapping (shared variables between the PXI and the OSS) is defined. If not found at boot the code won't startup.
 - **./OSS/OSS_ModBusMapping_ForReadWriteDefinition.txt:** This file is **necessary** at boot, here the
