@@ -27,3 +27,5 @@ was created to remove the old log files. To use this script follow these steps:
   # m  h  dom mon dow user       command
   0 9 * * * root python3 /home/admin/file-history-deletion/main.py
   ```
+
+  > This will execute the script every day at 9 AM to remove the old files
