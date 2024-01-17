@@ -320,6 +320,50 @@ TODO:correct this links and names
 
 The state machine is based on PLC open state machine.
 
+```plantuml
+@startuml
+state AnyState1 #line:transparent;text:transparent : Any State
+state internalError
+state normalOperation {
+    state AnyState2 #line:transparent;text:transparent : Any State
+    state disabled
+    state errorStop
+    state enabling
+    state disabling
+    state standstill
+    state continuosMotion
+    state homing
+    state discreteMotion
+    state stopping
+
+    [*]-->disabled
+    disabled-->enabling : PowerOn
+    enabling-->standstill : PUTTRIGGER
+    standstill -up-> disabling : PowerOff
+    disabling -up-> disabled
+
+    standstill --> discreteMotion
+    standstill --> continuosMotion
+    standstill --> homing
+    discreteMotion --> standstill
+    continuosMotion --> stopping
+    discreteMotion --> stopping
+    homing --> stopping
+
+    stopping --> standstill
+
+    AnyState2 --> errorStop : Fault
+}
+AnyState1--> internalError :InternalError, timeout
+[*]-->normalOperation
+internalError-->normalOperation :Reset
+
+
+
+
+@enduml
+```
+
 ### faultManagement class
 
 ```plantuml
