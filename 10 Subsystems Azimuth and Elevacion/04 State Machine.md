@@ -2,6 +2,8 @@
 
 The behavior of the system is managed by the state machine. The state machine for main axes is shown in next diagram. The states with bold line are superstates that have substates inside. In order to make the state machine more understandable, for some superstates their inner substates are not shown, and the "Not shown substates inside" label is shown. Refer to the diagrams bellow to get information about the inner substates for those superstates.
 
+For elevation axis the CW substates are skipeed.
+
 ```plantuml
 @startuml
 
@@ -21,7 +23,7 @@ state NoInternalErrors ##[bold]{
     state PoweringOff ##[bold]
     PoweringOff : Not shown substates inside
     state Exit<<exitPoint>>
-    
+  
     [*] --> PoweringOn
     PoweringOn --> Enable
     Enable --> DiscreteMove : Move
@@ -32,11 +34,11 @@ state NoInternalErrors ##[bold]{
     Enable -right-> Homing : Home
     Enable --> Tracking : EnableTrack
     Homing -left-> Enable : HomeDone
-    Homing -left-> Enable : HomeFailed    
+    Homing -left-> Enable : HomeFailed  
     Tracking --> Stopping : Stop
     Enable -left-> PoweringOff : Power (off)
     PoweringOff -left-> Exit
-    
+  
   }
   state Fault ##[bold]
   Fault : Not shown substates inside
@@ -141,12 +143,13 @@ state Homing{
       state StoppingReferencing
 
       [*]-->startingEIBreferenceMode 
-      startingEIBreferenceMode --> FindingReference : StartingEIBReferenceDone
+      startingEIBreferenceMode --> FindingReference : StartingEIBReferenceDone / StartMove
       FindingReference --> StoppingAxis : ReferenceFound
       StoppingAxis --> Stabilization : StopCompleted
       Stabilization --> SetAbsolutionPosition : Timer
       SetAbsolutionPosition --> [*] : GoOn
-      FindingReference --> NoReferenceStopping : Stop or ReferenceFailed
+      FindingReference --> NoReferenceStopping : Stop
+      FindingReference --> NoReferenceStopping : ReferenceFailed
       NoReferenceStopping --> Join : StopCompleted
       startingEIBreferenceMode --> Join : Stop
       Join --> StoppingReferencing : GoOn
@@ -164,7 +167,7 @@ applied to the axis manager in order to generate setpoints for absolute values. 
 managing all the actions to get the system ready to work as absolute position commanding.
 
 The first action of homing procedure is to ask the EIB task to start looking for the reference
-(see [command sequence](../06%20Subsystem%20EIB/05%20Commad%20sequences..md) for more info). Once the EIB is ready the
+(see [command sequence](../06%20Subsystem%20EIB/05%20Commad%20sequences..md) for more info). Once the EIB is ready, the
 axis is moved to search for the reference mark. When the reference is found the axis is stopped. Then the system just
 waits for a stabilization time. This time ensures that the telescope is fully stopped in the desired position. After
 this time the absolute position published by the axis ([Axis control](20%20Axis%20Control.md)) of the last 50ms is
