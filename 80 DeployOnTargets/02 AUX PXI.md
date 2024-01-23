@@ -65,6 +65,7 @@ total 40
 
 ./OSS:
 total 120
+-rwxr-xr-x    1 admin    administ     58800 Sep 13 13:06 OSS_AdditionalFaultMonitoring.json*
 -rwxr-xr-x    1 admin    administ       645 Sep 13 13:06 OSS_CabinetTemperatureMonitoring.json*
 -rwxr-xr-x    1 admin    administ     38800 Sep 13 13:06 OSS_ModBusMapping.txt*
 -rwxr-xr-x    1 admin    administ     14663 Sep 13 13:06 OSS_ModBusMapping_ForReadWriteDefinition.txt*
@@ -105,6 +106,9 @@ won't startup.
 - **./ModbusTemperatureControllers/cabinetName_mapping.txt:** This file is **necessary** at boot, here the
 configuration for the modbus mapping (shared variables between the PXI and the temperature controllers) is defined. If
 not found at boot the code won't startup.
+- **./OSS/OSS_AdditionalFaultMonitoring.json:** This file is **necessary** at boot, this file defines which variables
+are read for obtaining the detailed alarm list from the OSS system. Each variable has a list of bit in array format, this
+string values will be sent when the corresponding bit is active.
 - **./OSS/OSS_CabinetTemperatureMonitoring.json:** This file is **necessary** at boot, this file defines which variables
 are read for monitoring the temperature of the OSS cabinets. It also defines under which names are published to the
 event system.
