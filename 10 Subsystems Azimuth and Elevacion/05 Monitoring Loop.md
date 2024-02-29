@@ -42,9 +42,20 @@ This is an automatic table exported from the settings/events database.
 
 #### Events for state machine
 
-This events are used to perform triggers in the state machine. Those trigger will trigger some transitions in the state machine, if the actual state allows it (see [State Machine](./04%20State%20Machine.md#)). For instance, in the state NoInternalErrors/On/PowerinOn/EnablingAxis the state is waiting for the axis to be enabled. The axis is managed by [Axis Manager](./10%20Axis%20Manager.md) software implemented in the AXESPXI, so reading the data from the AXESPXI the monitoring loop will trigger the state machine with the trigger AxisEnabled when the AxisManger changes to enable state. This trigger will make the state machine to continue with the next state NoInternalErrors/On/PowerinOn/EnableTrackingCW.
+This events are used to perform triggers in the state machine. Those trigger will trigger some transitions in the state machine, if the actual state allows it (see [State Machine](./04%20State%20Machine.md)). For instance, in the state NoInternalErrors/On/PoweringOn/EnablingAxis the state is waiting for the axis to be enabled. The axis is managed by [Axis Manager](./10%20Axis%20Manager.md) software implemented in the AXESPXI, so reading the data from the AXESPXI the monitoring loop will trigger the state machine with the trigger AxisEnabled when the AxisManger changes to enable state. This trigger will make the state machine to continue with the next state NoInternalErrors/On/PoweringOn/EnableTrackingCW.
 
 ##### State machine triggered in event loop
+
+The communication between the monitoring loop and the state machine is done using an object of the class TaskOMTComm. The TaskOMTComm class has some methods that triggers the state machine. The class is more deeply explained in the [TaskOMTComm class](#taskomtcomm-class) section.
+
+The methods used to trigger the state machine are:
+
+* WriteDriveStatus. Triggers AxisEnabled or AxisDisabled.
+* WriteMoveComplete. Triggers MoveComplete (this is filtered for the first time when there is a fault active)
+* WriteSoftMotionFault. Triggers AxisReady when the axis fault is not on.
+* WriteBrakeStatus. Triggers BrakesReleased and BrakesEngaged.
+* LimitPreset. Triggers LimitePressed if any limit is pressed or exceed.
+* WriteTrackingStatus. Writes TrackingStarted and TrackingStopped.
 
 #### In position event
 
@@ -79,3 +90,51 @@ where  n = Softmotion in position buffer size
 The calculated values for every instant of time are sent to the TMAPXI.
 
 A change in the buffer size makes to restart the RMS calculation.
+
+### TaskOMTComm class
+
+This section describes the TaskOMTComm class used to communicate between the monitoring loop and the state machine.
+
+```plantuml
+@startuml
+class TaskOMTComm{
+    OMT to Task Comm : DVR RefNum
+    Task To OMT Comm : DVR RefNum
+    InstanceName : string
+    FixedPositionData DVR : DVR RefNum
+    SettingsClass DVR : DVR RefNum
+    
+    {method}
+    TaskOMTComm_Init()
+    CleanUp()
+    AskTaskToExit()
+    FixPosition()
+    GetFixedPosition()
+    LimitPressed()
+    ReadBrakeStatus()
+    ReadCWTrack()
+    ReadExitTask()
+    ReadInPositionEnableStatus()
+    ReadMoveCompleteStatus()
+    ReadOverideMonitorWord1()
+    ReadPositionVelocityDataInDegrees()
+    ReadSettingsObject()
+    ReadSoftMotionFault()
+    ReadTaskError()
+    ReadTrackingStatus()
+    WriteBrakeStatus()
+    WriteCWTrack()
+    WriteDriveStatus()
+    WriteInclinometerError()
+    WriteInPositionEnableStatus()
+    WriteMoveComplete()
+    WriteOverideMonitorWord1()
+    WritePositionVelocityDataInDegrees()
+    WriteSettingsObject()
+    WriteSoftMotionFault()
+    WriteTaskError()
+    WriteTrackingStatus()       
+    }
+
+@enduml
+```
