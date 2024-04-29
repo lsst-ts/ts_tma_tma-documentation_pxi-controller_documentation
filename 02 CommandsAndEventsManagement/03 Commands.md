@@ -526,6 +526,9 @@ PXI commands:
   * Id: 2701
   * Param_1: ambient temperature value (C degrees, float)
 
+* TELEMETRY_RESET_ALARM
+  * Id: 2801
+
 * CLOCK
   * Id: 3000
   * Description: this command must be sent periodically, every 1s, to tell the PXI that the commander is okay.
