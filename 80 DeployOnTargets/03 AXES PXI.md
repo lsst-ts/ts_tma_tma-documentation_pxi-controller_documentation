@@ -49,7 +49,7 @@ is empty the default values are used.
 - **./axisManagementComm/ServerConfig.xml:** This file is **necessary** at boot, here the configuration for the
 TCP server used to communicate with the TMA PXI server is specified. If not found at boot the code won't startup.
 
-The default configuration for all the **necessary** files listed here can be found in [this repo](https://gitlab.tekniker.es/aut/projects/3151-LSST/LabVIEWCode/PXIController)
+The default configuration for all the **necessary** files listed here can be found in [this repo](https://github.com/lsst-ts/ts_tma_labview_pxi-controller)
 inside the `ESIFiles` directory.
 
 #### MainAxisConfig

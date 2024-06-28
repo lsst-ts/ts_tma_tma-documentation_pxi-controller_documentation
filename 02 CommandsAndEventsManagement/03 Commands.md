@@ -42,7 +42,7 @@ Here the list of the available commands the PXI can receive are listed, note tha
 available commands at the OperationManager, as it has some higher level commands (complex commands) that split into
 lower level commands listed here and some others specific to the OperationManager. To see the list of complex commands
 for the OperationManager check the documentation PDF from the latest release from the OperationManager repo
-[here](https://gitlab.tekniker.es/aut/projects/3151-LSST/OperationManager/lsst/-/releases).
+[here](https://github.com/lsst-ts/ts_tma_operation-manager_mt-mount-operation-manager/releases).
 
 PXI commands:
 

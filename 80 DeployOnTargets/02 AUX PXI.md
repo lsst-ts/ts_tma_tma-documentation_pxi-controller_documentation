@@ -126,7 +126,7 @@ modbus mapping (shared variables between the PXI and the TEC) is defined. If not
 configuration for the TEC variables inside the PXI is defined. If not found at boot the code won't startup.
 - **./TEC/TopEndChillerCommandsAndMonitoringConfig.json:** This file is **necessary** at boot, here the commands TEC
 behavior is coded, a full explanation of the file can be found
-[**here**](https://gitlab.tekniker.es/aut/projects/3151-LSST/LabVIEWCode/PXIController/-/tree/develop/RT%20Code/TopEndChiller?ref_type=heads)
+[**here**](https://github.com/lsst-ts/ts_tma_labview_pxi-controller/tree/develop/RT%20Code/TopEndChiller)
 - **./TekNSVs/ReceiverConfig.xml:** This file is **necessary** at boot, here the configuration for the TCP server that
 sends the TekNSV variables to the EUI is specified. If not found at boot the code won't startup.
 - **./TekNSVs/TekNSVvariablesToCreate.json:** This file is **necessary** at boot, this file defines the TekNSV variables
@@ -139,7 +139,7 @@ TCP client to connect to the TekNSV server in the TMA PXI is defined. If not fou
 - **./TelemetryConfig/TelemetryConfig.ini:** This file is **necessary** at boot, this file defines the input signals to
 read from the TMA PXI and the TekNSV variables to be published. If not found at boot the code won't startup.
 
-The default configuration for all the **necessary** files listed here can be found in [this repo](https://gitlab.tekniker.es/aut/projects/3151-LSST/LabVIEWCode/PXIController)
+The default configuration for all the **necessary** files listed here can be found in [this repo](https://github.com/lsst-ts/ts_tma_labview_pxi-controller)
 inside the `ESIFiles` directory.
 
 #### TMA_PXI_RT_MainConfig

@@ -2,7 +2,7 @@
 
 This document explains the structure for the real time (RT)
 software located in the PXIController,
-[here](https://gitlab.tekniker.es/aut/projects/3151-LSST/LabVIEWCode/PXIController).
+[here](https://github.com/lsst-ts/ts_tma_labview_pxi-controller).
 The purpose of this documentation is to explain the architecture design of the
 real time software. To do so, the main components of the code are explained. The
 develop tools and tips are also included as part of the documentation.

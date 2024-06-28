@@ -106,7 +106,7 @@ TCP client to connect to the TekNSV server in the AUX PXI is defined. If not fou
 - **./axisManagementComm/SenderConfig.xml:** This file is **necessary** at boot, here the configuration for the
 TCP client to connect to the AXES PXI server to send the low level commands to it. If not found at boot the code won't startup.
 
-The default configuration for all the **necessary** files listed here can be found in [this repo](https://gitlab.tekniker.es/aut/projects/3151-LSST/LabVIEWCode/PXIController)
+The default configuration for all the **necessary** files listed here can be found in [this repo](https://github.com/lsst-ts/ts_tma_labview_pxi-controller)
 inside the `ESIFiles` directory.
 
 #### TMA_PXI_RT_MainConfig

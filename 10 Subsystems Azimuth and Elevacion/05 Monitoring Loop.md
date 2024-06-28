@@ -32,7 +32,7 @@ There are 3 kind of events that are monitored in this loop.
 
 These events are managed by the axis object of the EventManagement class. Here all the axis alarms and warnings are included, except the ones programmed as [General events](#general-events).
 
-The data for these events (see [TMA Faults](https://gitlab.tekniker.es/publico/3151-lsst/documentation/tma-faults) for more info) are taken reading directly form the axis, or using the telemetry tasks that publishes data in variables or safety task All these values are sent to the Evaluate method of the EventManagement class.
+The data for these events (see [TMA Faults](https://github.com/lsst-ts/ts_tma_tma-documentation_tma-faults) for more info) are taken reading directly form the axis, or using the telemetry tasks that publishes data in variables or safety task All these values are sent to the Evaluate method of the EventManagement class.
 
 ##### Axis events evaluation criteria
 
