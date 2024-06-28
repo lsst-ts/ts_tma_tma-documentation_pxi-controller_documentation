@@ -4,4 +4,4 @@ This repo contains the documentation for the [PXIController repo](https://github
 
 The latest version of the generated PDF file can be found [**HERE**](https://github.com/lsst-ts/ts_tma_tma-documentation_pxi-controller_documentation/releases)
 
-![Latest PDF version of the documentation](../Resources/figures/ReleasesScreenShot.png)
+![Latest PDF version of the documentation](./Resources/figures/ReleasesScreenShot.png)
