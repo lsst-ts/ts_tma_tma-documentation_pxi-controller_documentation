@@ -56,31 +56,31 @@ send any trigger to statechart.
 
 The next table are the commands for the camera cable wrap (commands are detailed in [commands](/01%20Commands.md#Commands))
 
-|Received Command|Command Number|StateChart Trigger|
-|------|-------|-----|-----|
-|CAM_CW_POWER|1001|Power|
-|CAM_CW_STOP|1002|Stop||
-|CAM_CW_MOVE|1003|Move|Position(DBL), Velocity (DBL), |
-|CAM_CW_TRACK_CAMERA|1004|Track||
-|CAM_CW_RESET_ALARM|1005|Reset||
-|CAM_CW_DRIVE_ENABLE|1006|EnableDrive||
-|CAM_CW_DRIVE_RESET|1007|ResetDrive||
-|CAM_CW_MOVE_VELOCITY|1008|MoveVelocity||
-|CAM_CW_ENABLE_TRACK_CAMERA|1009|EnableTrack||
+| Received Command           | Command Number | StateChart Trigger | Parameters                     |
+| -------------------------- | -------------- | ------------------ | ------------------------------ |
+| CAM_CW_POWER               | 1001           | Power              |                                |
+| CAM_CW_STOP                | 1002           | Stop               |                                |
+| CAM_CW_MOVE                | 1003           | Move               | Position(DBL), Velocity (DBL), |
+| CAM_CW_TRACK_CAMERA        | 1004           | Track              |                                |
+| CAM_CW_RESET_ALARM         | 1005           | Reset              |                                |
+| CAM_CW_DRIVE_ENABLE        | 1006           | EnableDrive        |                                |
+| CAM_CW_DRIVE_RESET         | 1007           | ResetDrive         |                                |
+| CAM_CW_MOVE_VELOCITY       | 1008           | MoveVelocity       |                                |
+| CAM_CW_ENABLE_TRACK_CAMERA | 1009           | EnableTrack        |                                |
 
 The next table are the commands for the azimuth cable wrap
 
-|Received Command|Command Number|StateChart Trigger|
-|------|-------|-----|
-|AZ_CW_POWER|301|Power|
-|AZ_CW_STOP|302|Stop|
-|AZ_CW_MOVE|303|Move|
-|AZ_CW_TRACK_AZIMUTH|305|Track|
-|AZ_CW_RESET_ALARM|306|Reset|
-|AZ_CW_DRIVE_ENABLE|308|EnableDrive|
-|AZ_CW_DRIVE_RESET|307|ResetDrive|
-|AZ_CW_MOVE_VELOCITY|304|MoveVelocity|
-|AZ_CW_ENABLE_TRACK_CAMERA|309|EnableTrack|
+| Received Command          | Command Number | StateChart Trigger |
+| ------------------------- | -------------- | ------------------ |
+| AZ_CW_POWER               | 301            | Power              |
+| AZ_CW_STOP                | 302            | Stop               |
+| AZ_CW_MOVE                | 303            | Move               |
+| AZ_CW_TRACK_AZIMUTH       | 305            | Track              |
+| AZ_CW_RESET_ALARM         | 306            | Reset              |
+| AZ_CW_DRIVE_ENABLE        | 308            | EnableDrive        |
+| AZ_CW_DRIVE_RESET         | 307            | ResetDrive         |
+| AZ_CW_MOVE_VELOCITY       | 304            | MoveVelocity       |
+| AZ_CW_ENABLE_TRACK_CAMERA | 309            | EnableTrack        |
 
 ![Send trigger to OMT block diagram. Case Move velocity.\label{SendOMTTriggerMoveVelocity}](../Resources/figures/AzimuthAndCameraCableWrap/SubsystemCW_lvclass_SelectOMTTriggerd.png)
 
