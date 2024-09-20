@@ -181,8 +181,6 @@ Inputs:
 
 ### Init actions
 
-![InitActions](../Resources/boschTask/image13.png)
-
 Init actions of the bosch task:
 
 - Create StopHelpingTask_Event Reference
@@ -196,9 +194,9 @@ Init actions of the bosch task:
 - Init the error task
 - Send Connect to the PLC
 
-### Exit actions
+![InitActions](../Resources/boschTask/image13.png)
 
-![ExitActions](../Resources/boschTask/image14.png)
+### Exit actions
 
 Exit actions of the bosch task:
 
@@ -211,14 +209,16 @@ Exit actions of the bosch task:
   - FGV_CMD_ExecuterQueues
   - FGV_AxisMonitoringIDs
 
+![ExitActions](../Resources/boschTask/image14.png)
+
 ## Task loops
+
+The bosch task has 5 tasks inside that manage different parts needed to operate the bosch system, each of them is
+explained in the upcoming sections.
 
 ![BoschTaskStructure](../Resources/boschTask/image15.png)
 
 ![Bosch Task block diagram](../Resources/boschTask/image16.png)
-
-The bosch task has 5 tasks inside that manage different parts needed to operate the bosch system, each of them is
-explained in the upcoming sections.
 
 ### CMD Receiver loop
 
@@ -252,8 +252,6 @@ Here the code for the different task states is explained.
 
 ##### Init Subsystem state
 
-![Init Subsystem state block diagram](../Resources/boschTask/image21.png)
-
 The code here is used when a new subsystem is added, the reference for this subsystem will be the MotorID. To initialize
 this new system the following actions are executed:
 
@@ -269,9 +267,9 @@ this new system the following actions are executed:
 5. Finally, a response is sent to the calling method, the response is just the error line, this way the calling VI will
     know if everything was ok while initializing.
 
-##### Exit Subsystem state
+![Init Subsystem state block diagram](../Resources/boschTask/image21.png)
 
-![Exit Subsystem state block diagram](../Resources/boschTask/image22.png)
+##### Exit Subsystem state
 
 The code here is used when an existing subsystem is removed, the reference for this subsystem will be the MotorID. To
 exit the existing system the following actions are executed:
@@ -288,59 +286,61 @@ exit the existing system the following actions are executed:
 5. Finally, a response is sent to the calling method, the response is just the error line, this way the calling VI will
     know if everything was ok while initializing.
 
+![Exit Subsystem state block diagram](../Resources/boschTask/image22.png)
+
 ##### Close Task State
 
-#TODO:
+Stops the rest of the tasks executed in the bosch task, as well as this one, while closing any open connections.
 
 ##### Move State
 
-![Move state block diagram](../Resources/boschTask/image23.png)
-
 The code is executed when the move method is used, here the MoveCMD private method from the Executer task is called.
 
-##### Move Velocity State
+![Move state block diagram](../Resources/boschTask/image23.png)
 
-![Move Velocity state block diagram](../Resources/boschTask/image24.png)
+##### Move Velocity State
 
 The code is executed when the moveVelocity method is used, here the MoveVelocityCMD private method from the Executer
 task is called.
 
-##### Power State
+![Move Velocity state block diagram](../Resources/boschTask/image24.png)
 
-![Power state block diagram](../Resources/boschTask/image25.png)
+##### Power State
 
 The code is executed when the power method is used, here the PowerCMD private method from the Executer task is called.
 
-##### Track State
+![Power state block diagram](../Resources/boschTask/image25.png)
 
-![Track state block diagram](../Resources/boschTask/image26.png)
+##### Track State
 
 The code is executed when the track method is used, here the TrackCMD private method from the Executer task is called.
 
-##### Stop State
+![Track state block diagram](../Resources/boschTask/image26.png)
 
-![Stop state block diagram](../Resources/boschTask/image27.png)
+##### Stop State
 
 The code is executed when the stop method is used, here the StopCMD private method from the Executer task is called.
 
-##### Reset State
+![Stop state block diagram](../Resources/boschTask/image27.png)
 
-![Reset state block diagram](../Resources/boschTask/image28.png)
+##### Reset State
 
 The code is executed when the reset method is used, here the ResetCMD private method from the Executer task is called.
 
-##### Get Axis Status State
+![Reset state block diagram](../Resources/boschTask/image28.png)
 
-![GetAxisStatus state block diagram](../Resources/boschTask/image29.png)
+##### Get Axis Status State
 
 The code is executed when the getAxisStatus method is used, here the CheckAxisStatus private method from the Executer
 task is called.
 
+![GetAxisStatus state block diagram](../Resources/boschTask/image29.png)
+
 ##### Error Handling State
 
-![ErrorHandling state block diagram](../Resources/boschTask/image30.png)
-
 The code is executed when an error occurs at the error line, here the method from the error task send error is used.
+
+![ErrorHandling state block diagram](../Resources/boschTask/image30.png)
 
 ### CMD Executer loop
 
