@@ -1,4 +1,4 @@
-# Deploy On Targets
+# Deploy On Targets introduction
 
 For a new target there are several things that must be copied to it in order for it to work:
 

@@ -1,4 +1,4 @@
-# Azimuth And Camera Cable Wrap
+# Azimuth And Camera Cable Wrap introduction
 
 In the TMA there are 2 motorized cable wraps, one for azimuth and other for camera rotator.
 The cable wrap rotates the cables to ensure that a moving part don’t breaks cables. So, the cable wrap must follow the

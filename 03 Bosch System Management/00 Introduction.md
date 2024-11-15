@@ -1,4 +1,4 @@
-# Bosch System Management
+# Bosch System Management introduction
 
 For managing the bosch system there are two main task:
 

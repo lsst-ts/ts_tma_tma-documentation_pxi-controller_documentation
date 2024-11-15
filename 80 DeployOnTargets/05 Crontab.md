@@ -1,4 +1,4 @@
-## Time synchronization
+## Crontab
 
 This section describes how to configure crontab tasks in the PXI.
 

@@ -1,4 +1,4 @@
-# Settings
+# Settings introduction
 
 This section contains the documentation of the LabVIEW classes used for accessing the settings and events stored in the
 database from LabVIEW. All the VIs used for communicating with the database are all hold in a separated

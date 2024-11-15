@@ -1,4 +1,4 @@
-# EIB
+# Encoder System (EIB) introduction
 
 The EIB is a hardware that enables the reading of the encoder positions. The hardware converts the analog data get from
 the heads into a counting data. The hardware has 8 inputs.
