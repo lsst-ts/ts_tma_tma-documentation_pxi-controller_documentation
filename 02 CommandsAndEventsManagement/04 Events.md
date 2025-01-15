@@ -166,48 +166,44 @@ In next points the bit mask for each number is shown.
 
 ##### Causes word bit mask
 
-| Bit | Signal Name       | Description                                                    |
-| --- | ----------------- | -------------------------------------------------------------- |
-| 0   | AZlimP            | Azimuth Positive power off limit switch AND topple block pos A |
-| 1   | AZlimN            | Azimuth Negative power off limit switch AND topple block pos B |
-| 2   | AZoverspeed       | AZ Overspeed                                                   |
-| 3   | AZpressBrk        | AZ press brake                                                 |
-| 4   | AZbrake           | AZ brake NO actuated                                           |
-| 5   | ELlimP            | Elevation Positive power off limit switch                      |
-| 6   | ELlimN            | Elevation Negative power off limit switch                      |
-| 7   | ELoverspeed       | EL Overspeed                                                   |
-| 8   | ELpressBrk        | EL press brake                                                 |
-| 9   | ELbrake           | EL brake NO actuated                                           |
-| 10  | MCclosed          | Mirror cover position NO Closed                                |
-| 11  | MCcutOffSwitch    | Mirror cover manual locked power cut-off switch                |
-| 12  | AZCWlimP          | AZ cable wrap lim +                                            |
-| 13  | AZCWlimN          | AZ cable wrap lim -                                            |
-| 14  | ELlockIns         | EL locking pin inserted                                        |
-| 15  | ELlockTest        | EL locking pin test position                                   |
-| 16  | ELlockRet         | EL locking pin retracted                                       |
-| 17  | DoorClosed        | Azimuth platform Access door NO closed                         |
-| 18  | DoorLadParked     | Access door ladder NO parked                                   |
-| 19  | HatchClosed       | Central Section Hatches NO closed                              |
-| 20  | DPnoparked        | Platform NO parking                                            |
-| 21  | DPnoextended      | Platform NO total extended                                     |
-| 22  | DPextnoInserted   | Platform extension NO inserted                                 |
-| 23  | PullCordP         | Camera Cable Wrap Safety device limit positive(Pull cord)      |
-| 24  | PullCordN         | Camera Cable Wrap Safety device limit negative(Pull cord)      |
-| 25  | ETPBtma           | ETPB TMA                                                       |
-| 26  | ETPBphase         | ETPB Phase                                                     |
-| 27  | ETPBgis           | ETPB GIS (from GIS)                                            |
-| 28  | Earthquake        | Earthquake (from GIS)                                          |
-| 29  | OSSbad            | OSS malfunction                                                |
-| 30  | Phasebad          | Phase NO ok Any (Capacitor Bank Cabinet No closed)             |
-| 31  | Watchdog          | MCS watchdog                                                   |
-| 32  | LossComm          | Loss communication                                             |
-| 33  | GISfailure        | GIS internal failure (from GIS)                                |
-| 34  | PierAccess        | Unauthorized Pier access (from GIS)                            |
-| 35  | DomeAccess        | Unauthorized Dome access (from GIS)                            |
-| 36  | ETPBdome          | Dome ETPBs (from GIS)                                          |
-| 37  | DomeCraneNoParked | Dome crane NOT Parked (from GIS)                               |
-| 38  | M1M3Interlock     | M1M3 Interlock (from GIS)                                      |
-| 39  | ManLiftNoParked   | Man Lift NOT Parked (from GIS)                                 |
+| Bit | Signal Name        | Description                                                    |
+| --- | ------------------ | -------------------------------------------------------------- |
+| 0   | AZlimP             | Azimuth Positive power off limit switch AND topple block pos A |
+| 1   | AZlimN             | Azimuth Negative power off limit switch AND topple block pos B |
+| 2   | AZoverspeed        | AZ Overspeed                                                   |
+| 3   | AZpressBrk         | AZ press brake                                                 |
+| 4   | AZbrake            | AZ brake NO actuated                                           |
+| 5   | ELlimP             | Elevation Positive power off limit switch                      |
+| 6   | ELlimN             | Elevation Negative power off limit switch                      |
+| 7   | ELoverspeed        | EL Overspeed                                                   |
+| 8   | ELpressBrk         | EL press brake                                                 |
+| 9   | ELbrake            | EL brake NO actuated                                           |
+| 10  | MCclosed           | Mirror cover position NO Closed                                |
+| 11  | MCcutOffSwitch     | Mirror cover manual locked power cut-off switch                |
+| 12  | AZCWlimP           | AZ cable wrap lim +                                            |
+| 13  | AZCWlimN           | AZ cable wrap lim -                                            |
+| 14  | ELlockIns          | EL locking pin inserted                                        |
+| 15  | ELlockTest         | EL locking pin test position                                   |
+| 16  | ELlockRet          | EL locking pin retracted                                       |
+| 17  | DoorClosed         | Azimuth platform Access door NO closed                         |
+| 18  | DoorLadParked      | Access door ladder NO parked                                   |
+| 19  | HatchClosed        | Central Section Hatches NO closed                              |
+| 20  | DPnoparked         | Platform NO parking                                            |
+| 21  | DPnoextended       | Platform NO total extended                                     |
+| 22  | DPextnoInserted    | Platform extension NO inserted                                 |
+| 23  | PullCordP          | Camera Cable Wrap Safety device limit positive(Pull cord)      |
+| 24  | PullCordN          | Camera Cable Wrap Safety device limit negative(Pull cord)      |
+| 25  | ETPBtma            | ETPB TMA                                                       |
+| 26  | ETPBphase          | ETPB Phase                                                     |
+| 27  | OSSbad             | OSS malfunction                                                |
+| 28  | CapBankNoClosed    | Any Capacitor cabinet NO closed                                |
+| 29  | Watchdog           | MCS watchdog                                                   |
+| 30  | LossComm           | Loss communication                                             |
+| 31  | PierAccess         | GIS Unauthorized Pier access                                   |
+| 32  | DischargeCapacitor | GIS Discharge Capacitors Bank                                  |
+| 33  | DisableOther       | GIS disable other equipment                                    |
+| 34  | MainDrivesSto      | GIS Main drives-STO and engage the brakes                      |
+| 35  | CcwSTO             | GIS Camera cable wrap drives STO                               |
 
 ##### Subcauses Emergency Stop
 
