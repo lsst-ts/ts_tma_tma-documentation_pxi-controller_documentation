@@ -207,48 +207,48 @@ In next points the bit mask for each number is shown.
 
 ##### Subcauses Emergency Stop
 
-| Bit | Signal Name | Description                                            |
-| --- | ----------- | ------------------------------------------------------ |
-| 0   | sdiETMCS    | ETPB for Startup or CCWAUX Cabinet                     |
-| 1   | sdiETAZBP1  | ETPB Azimuth area +X beam 1 (TMA-AZ-IS-PSB-0001)       |
-| 2   | sdiETAZBP2  | ETPB Azimuth area +X beam 2 (TMA-AZ-IS-PSB-0002)       |
-| 3   | sdiETAZBP3  | ETPB Azimuth area +X beam 3 (TMA-AZ-IS-PSB-0003)       |
-| 4   | sdiETAZSP1  | ETPB Azimuth stair +X section 1 (TMA-AZ-IS-PSB-0004)   |
-| 5   | sdiETAZSP2  | ETPB Azimuth stair +X section 2 (TMA-AZ-IS-PSB-0005)   |
-| 6   | sdiETAZSP3  | ETPB Azimuth stair +X section 3 (TMA-AZ-IS-PSB-0006)   |
-| 7   | sdiETDP1    | ETPB Deployable platform +X (TMA-AZ-IS-PSB-0007)       |
-| 8   | sdiETHHD1   | ETPB Handheld emergency 1 (TMA-AZ-CS-CBT-0102)         |
-| 9   | sdiETHHD2   | ETPB Handheld emergency 2 (TMA-AZ-CS-CBT-0103)         |
-| 10  | sdiETPHASE  | ETPB Phase cabinet (TMA-AZ-DR-CBT-0001)                |
-| 11  | sdiETAZBN1  | ETPB Azimuth area -X beam 1 (TMA-AZ-IS-PSB-0008)       |
-| 12  | sdiETAZBN2  | ETPB Azimuth area -X beam 2 (TMA-AZ-IS-PSB-0009)       |
-| 13  | sdiETAZBN3  | ETPB Azimuth area -X beam 3 (TMA-AZ-IS-PSB-0010)       |
-| 14  | sdiETAZSN1  | ETPB Azimuth stair -X section 1 (TMA-AZ-IS-PSB-0011)   |
-| 15  | sdiETAZSN2  | ETPB Azimuth stair -X section 2 (TMA-AZ-IS-PSB-0012)   |
-| 16  | sdiETAZSN3  | ETPB Azimuth stair -X section 3 (TMA-AZ-IS-PSB-0013)   |
-| 17  | sdiETDP2    | ETPB Deployable platform -X (TMA-AZ-IS-PSB-0014)       |
-| 18  | sdiETELRP1  | ETPB Elevation ring +X section 1 (TMA-EL-IS-PSB-0001)  |
-| 19  | sdiETELRP2  | ETPB Elevation ring +X section 2 (TMA-EL-IS-PSB-0005)  |
-| 20  | sdiETELRP3  | ETPB Elevation ring +X section 3 (TMA-EL-IS-PSB-0006)  |
-| 21  | sdiETELPP1  | ETPB Elevation +X pylon 1 (TMA-EL-IS-PSB-0002)         |
-| 22  | sdiETELPP2  | ETPB Elevation +X pylon 2                              |
-| 23  | sdiETTEA1   | ETPB Elevation +X TEA 1 (TMA-EL-IS-PSB-0008)           |
-| 24  | sdiETTEA2   | ETPB Elevation +X TEA 2 (TMA-EL-IS-PSB-0009)           |
-| 25  | sdiETHHD3   | ETPB Handheld emergency 3 (TMA-EL-CS-CBT-0103)         |
-| 26  | sdiETELRN1  | ETPB Elevation ring -X section 1 ()                    |
-| 27  | sdiETELRN2  | ETPB Elevation ring -X section 2 (TMA-EL-IS-PSB-0003)  |
-| 28  | sdiETELRN3  | ETPB Elevation ring -X section 3                       |
-| 29  | sdiETELPN1  | ETPB Elevation -X pylon 1                              |
-| 30  | sdiETELPN2  | ETPB Elevation -X pylon 2                              |
-| 31  | sdiETTEA3   | ETPB Elevation -X TEA 3 (TMA-EL-IS-PSB-0007)           |
-| 32  | sdiETTEA4   | ETPB Elevation -X TEA 4                                |
-| 33  | sdiETHHD4   | ETPB Handheld emergency 4 (TMA-EL-CBT-0104)            |
-| 34  | sdiETACWT1  | ETPB AZCW handrail top floor 1 (TMA-PI-IS-PSB-0001)    |
-| 35  | sdiETACWT2  | ETPB AZCW handrail top floor 2 (TMA-PI-IS-PSB-0002)    |
-| 36  | sdiETACWT3  | ETPB AZCW handrail top floor 3 (TMA-PI-IS-PSB-0003)    |
-| 37  | sdiETACWM1  | ETPB AZCW handrail middle floor 1 (TMA-PI-IS-PSB-0004) |
-| 38  | sdiETACWM2  | ETPB AZCW handrail middle floor 2 (TMA-PI-IS-PSB-0005) |
-| 39  | sdiETACWM3  | ETPB AZCW handrail middle floor 3 (TMA-PI-IS-PSB-0006) |
+| Bit | Signal Name | Description                                                         |
+| --- | ----------- | ------------------------------------------------------------------- |
+| 0   | sdiETMCS    | ETPB for Startup or CCWAUX Cabinet                                  |
+| 1   | sdiETAZBP1  | ETPB Azimuth area +X beam 1 (TMA-AZ-IS-PSB-0001) or CCWAUX HandHeld |
+| 2   | sdiETAZBP2  | ETPB Azimuth area +X beam 2 (TMA-AZ-IS-PSB-0002)                    |
+| 3   | sdiETAZBP3  | ETPB Azimuth area +X beam 3 (TMA-AZ-IS-PSB-0003)                    |
+| 4   | sdiETAZSP1  | ETPB Azimuth stair +X section 1 (TMA-AZ-IS-PSB-0004)                |
+| 5   | sdiETAZSP2  | ETPB Azimuth stair +X section 2 (TMA-AZ-IS-PSB-0005)                |
+| 6   | sdiETAZSP3  | ETPB Azimuth stair +X section 3 (TMA-AZ-IS-PSB-0006)                |
+| 7   | sdiETDP1    | ETPB Deployable platform +X (TMA-AZ-IS-PSB-0007)                    |
+| 8   | sdiETHHD1   | ETPB Handheld emergency 1 (TMA-AZ-CS-CBT-0102)                      |
+| 9   | sdiETHHD2   | ETPB Handheld emergency 2 (TMA-AZ-CS-CBT-0103)                      |
+| 10  | sdiETPHASE  | ETPB Phase cabinet (TMA-AZ-DR-CBT-0001)                             |
+| 11  | sdiETAZBN1  | ETPB Azimuth area -X beam 1 (TMA-AZ-IS-PSB-0008)                    |
+| 12  | sdiETAZBN2  | ETPB Azimuth area -X beam 2 (TMA-AZ-IS-PSB-0009)                    |
+| 13  | sdiETAZBN3  | ETPB Azimuth area -X beam 3 (TMA-AZ-IS-PSB-0010)                    |
+| 14  | sdiETAZSN1  | ETPB Azimuth stair -X section 1 (TMA-AZ-IS-PSB-0011)                |
+| 15  | sdiETAZSN2  | ETPB Azimuth stair -X section 2 (TMA-AZ-IS-PSB-0012)                |
+| 16  | sdiETAZSN3  | ETPB Azimuth stair -X section 3 (TMA-AZ-IS-PSB-0013)                |
+| 17  | sdiETDP2    | ETPB Deployable platform -X (TMA-AZ-IS-PSB-0014)                    |
+| 18  | sdiETELRP1  | ETPB Elevation ring +X section 1 (TMA-EL-IS-PSB-0001)               |
+| 19  | sdiETELRP2  | ETPB Elevation ring +X section 2 (TMA-EL-IS-PSB-0005)               |
+| 20  | sdiETELRP3  | ETPB Elevation ring +X section 3 (TMA-EL-IS-PSB-0006)               |
+| 21  | sdiETELPP1  | ETPB Elevation +X pylon 1 (TMA-EL-IS-PSB-0002)                      |
+| 22  | sdiETELPP2  | ETPB Elevation +X pylon 2                                           |
+| 23  | sdiETTEA1   | ETPB Elevation +X TEA 1 (TMA-EL-IS-PSB-0008)                        |
+| 24  | sdiETTEA2   | ETPB Elevation +X TEA 2 (TMA-EL-IS-PSB-0009)                        |
+| 25  | sdiETHHD3   | ETPB Handheld emergency 3 (TMA-EL-CS-CBT-0103)                      |
+| 26  | sdiETELRN1  | ETPB Elevation ring -X section 1 ()                                 |
+| 27  | sdiETELRN2  | ETPB Elevation ring -X section 2 (TMA-EL-IS-PSB-0003)               |
+| 28  | sdiETELRN3  | ETPB Elevation ring -X section 3                                    |
+| 29  | sdiETELPN1  | ETPB Elevation -X pylon 1                                           |
+| 30  | sdiETELPN2  | ETPB Elevation -X pylon 2                                           |
+| 31  | sdiETTEA3   | ETPB Elevation -X TEA 3 (TMA-EL-IS-PSB-0007)                        |
+| 32  | sdiETTEA4   | ETPB Elevation -X TEA 4                                             |
+| 33  | sdiETHHD4   | ETPB Handheld emergency 4 (TMA-EL-CBT-0104)                         |
+| 34  | sdiETACWT1  | ETPB AZCW handrail top floor 1 (TMA-PI-IS-PSB-0001)                 |
+| 35  | sdiETACWT2  | ETPB AZCW handrail top floor 2 (TMA-PI-IS-PSB-0002)                 |
+| 36  | sdiETACWT3  | ETPB AZCW handrail top floor 3 (TMA-PI-IS-PSB-0003)                 |
+| 37  | sdiETACWM1  | ETPB AZCW handrail middle floor 1 (TMA-PI-IS-PSB-0004)              |
+| 38  | sdiETACWM2  | ETPB AZCW handrail middle floor 2 (TMA-PI-IS-PSB-0005)              |
+| 39  | sdiETACWM3  | ETPB AZCW handrail middle floor 3 (TMA-PI-IS-PSB-0006)              |
 
 ##### Subcauses Limit Switch
 
