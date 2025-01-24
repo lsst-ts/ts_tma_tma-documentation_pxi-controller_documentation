@@ -529,6 +529,66 @@ PXI commands:
 * TELEMETRY_RESET_ALARM
   * Id: 2801
 
+* ECAT_GET_CONFIGURED_MASTER
+  * Id: 2901
+  * Param_1 ... Param_N: IP array for the requested hosts
+
+* ECAT_GET_FAULT_LIST
+  * Id: 2902
+  * Param_1: IP of the host to get the fault list from
+
+* ECAT_CLEAR_ALL_FAULTS
+  * Id: 2903
+  * Param_1: IP of the host to clear the faults from
+
+* ECAT_REFRESH_MODULES
+  * Id: 2904
+  * Param_1: IP of the host to refresh the modules from
+
+* ECAT_GET_MASTER_ALL_DATA
+  * Id: 2905
+  * Param_1: IP of the host to get the master data from
+  * Param_2: name of the master to get the data from
+
+* ECAT_GET_SLAVES_DATA
+  * Id: 2906
+  * Param_1: IP of the host to get the master data from
+  * Param_2: name of the master to get the slaves list from
+
+* ECAT_SET_SLAVE_STATE
+  * Id: 2907
+  * Param_1: IP of the host to get the master data from
+  * Param_2: name of the master to set the slave
+  * Param_3: name of the slave to set
+  * Param_4: state of the slave
+    * Valid slave states:
+
+      | Value | Slave State |
+      | ----- | ----------- |
+      | 1     | Init        |
+      | 2     | PreOP       |
+      | 3     | BootStrap   |
+      | 4     | SafeOP      |
+      | 8     | OP          |
+
+* ECAT_GET_SCAN_ENGINE_STATUS
+  * Id: 2908
+  * Param_1: IP of the host to get the master scan engine state from
+
+* ECAT_SET_SCAN_ENGINE_STATUS
+  * Id: 2909
+  * Param_1: IP of the host to set the master scan engine state to
+  * Param_2: scan engine state value
+    * Valid slave states:
+
+      | Value | Scan Engine State  |
+      | ----- | ------------------ |
+      | 1     | Configuration Mode |
+      | 2     | Active Mode        |
+
+* ECAT_GET_VERSION
+  * Id: 2910
+
 * CLOCK
   * Id: 3000
   * Description: this command must be sent periodically, every 1s, to tell the PXI that the commander is okay.
