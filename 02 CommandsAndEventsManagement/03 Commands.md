@@ -557,7 +557,7 @@ PXI commands:
 
 * ECAT_SET_SLAVE_STATE
   * Id: 2907
-  * Param_1: IP of the host to get the master data from
+  * Param_1: IP of the host to set the master data to
   * Param_2: name of the master to set the slave
   * Param_3: name of the slave to set
   * Param_4: state of the slave

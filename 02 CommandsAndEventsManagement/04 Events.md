@@ -2744,8 +2744,6 @@ The parameters section contains:
 
 - *eventType*: this tells which kind of ethercat status event is contained in the *eventData* json object
   - options are:
-    - *GetScanEngineStatus*
-    - *SetScanEngineStatus*
     - *GetConfiguredMaster*
     - *GetFaultList*
     - *ClearAllFaults*
@@ -2753,6 +2751,8 @@ The parameters section contains:
     - *GetMasterAllData*
     - *GetSlavesData*
     - *SetSlaveState*
+    - *GetScanEngineStatus*
+    - *SetScanEngineStatus*
     - *GetVersion*
 - *eventData*: this is a json object for the event type data, for more details see documentation on
   [EtherCAT Line Management package by Tekniker](https://gitlab.tekniker.es/TEKNIKER/lib/labview/communication-protocols/ethercat-line-management#ethercat-line-status-and-management)
