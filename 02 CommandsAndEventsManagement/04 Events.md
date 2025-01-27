@@ -2727,7 +2727,7 @@ This event reports the state of the ethercat status, state, fault list, slave st
 
 ``` json
 {
-   "id": 304,
+   "id": 400,
    "timestamp": 3701054994.342060,
    "parameters": {
      "commander": 2,
