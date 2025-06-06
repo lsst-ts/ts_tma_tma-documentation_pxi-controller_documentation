@@ -158,6 +158,36 @@ state Homing{
 
 @enduml
 ```
+For Fault superstate the inner substates are shown in next diagram.
+
+```plantuml
+@startuml
+state Fault{
+      state StoppingAxis
+      state SafetyStopAxis
+      state EngagingBrakes
+      state DisablingAxis
+      state StoppingCableWrap
+      state PoweringCableWrap  
+      state WaitingForReset 
+      state fork_state <<fork>>  
+
+      [*]-->fork_state : FaultInitialTranstionActions
+      fork_state --> StoppingAxis 
+      fork_state --> SafetyStopAxis
+      StoppingAxis-->StoppingAxis : Check every 100ms
+      StoppingAxis-left->SafetyStopAxis : FollowingError or NoAckFromAxiManager or NotStopping
+      SafetyStopAxis-->EngagingBrakes
+      StoppingAxis-->EngagingBrakes : MoveComplete or AxisManagerFault
+      EngagingBrakes-->DisablingAxis : BrakesReleased or timeout
+      DisablingAxis-->StoppingCableWrap : AxisDisabled or timeout
+      StoppingCableWrap-->PoweringCableWrap : CableWrapStopped or timeout
+      PoweringCableWrap-->WaitingForReset : CableWrapDisabled or timeout
+      WaitingForReset --> [*] : Reset
+    }
+
+@enduml
+```
 
 ### Homing superstate
 
@@ -175,3 +205,19 @@ obtained and the mean of that period is applied as absolute position. With the c
 between the actual absolute position and the controlled position is always bellow the noise level of the encoder heads.
 
 Other states of the superstates allow stopping the homing process by the user or to handle a failed reference.
+
+### Fault superstate
+
+When entering the fault superstate the axis is commanded to stop, if there is no a FollowingError fault active. In the case the FollowingError is active or the axisManager does not answer to the stop state, state machine will go to safetyStopAxis state instead of to the stoppingAxis state.
+
+In safetyStopAxis the safety system is asked to stop the axis.
+
+The stoppingAxis state is checked every 100 ms (or faster, due to alarm triggers). This state will check if there FollowingError gets active and that the axis is stopping at a minimum speed rate of 1%. If one of these two conditions is not meet, then the safetyStop is triggered.
+
+The stoppingAxis continues to EngagingBrakes if the axisManager detects a Fault or if the axisManager sends a movementCompleted.
+
+The EngagingBrakes continues if Brakes are engaged or a timeout is ocurred.
+
+From next substates up to WaitingForReset, the state machine goes on if the action is completed or a timeout for the action is reached. Also, for those cable wrap states, that are executed only for azimuth, a command failed also makes the system to continue to next state.
+
+In last state WaitingForReset, the state machine will wait for a Reset command from the user or CSC.
