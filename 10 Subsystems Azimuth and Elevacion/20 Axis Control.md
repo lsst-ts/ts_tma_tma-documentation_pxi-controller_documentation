@@ -70,43 +70,44 @@ This offset value is updated with the command writeReference (see [Axis Manager]
 
 This method will prepare the data to send to the TMA-PXI. The data sent is:
 
-* Axis State. The state of the axis Manager. It is an U32 number where the first byte indicates de plcOpenState and the second byte is the overallState. The other two bytes are free.
-* Excitation Data. It is the excitation value used for axis identification
-* Axis Absolute Position. It is the axis absolute position read from active heads.
-* Axis Position. It is the relative position used by the axis controller + the reference data. It should be very similar to the absolute position all around the telescope range, but ti must be same in the position where the homing was done.
-* Axis Speed. It is the speed of the axis calculated byt derivation of the position. This speed is used by the controller for closing the speed loop.
-* Hall 1 Electrical Angle. Electrical angle measured by the hall sensor 1. This is the only sensor for azimuth axis.
-* Hall 2 Electrical Angle. Electrical angle measured by the hall sensor 2. No data in azimuth axis.
-* Encoder Electrical Angle 1. Electrical angle calculated with encoder heads data (axis position), this data is equivalent to the Hall 1 Electrical Angle.
-* Encoder Electrical Angle 2. Electrical angle calculated with encoder heads data (axis position), this data is equivalent to the Hall 2 Electrical Angle.
-* Control Torque 1. Force demanded by the active damping control algorithm for the X direction. In elevation axis this value is 0.
-* Control Torque 2. Force demanded by the active damping control algorithm for the Y direction. In elevation axis this value is 0.
-* Control Torque 3. Torque demanded in drive 15 produced by active damping control algorithms in X and Y directions. In elevation axis this value is 0.
-* Control Torque 4. Torque demanded in drive 0 produced by active damping control algorithms in X and Y directions. In elevation axis this value is 0.
-* Control Torque 5. Torque demanded by the position control algorithm.
-* Control Torque 6. Troque demanded by the position control algorithm before any filtering
-* Control Torque 7. Torque demanded by the position control algorithm before lowpass filtering but after max torque variation filter.
-* Control Troque 8. Free.
-* Active drives. Number of active drives in the axis.
-* Axis Torque. Torque demanded by the position control algorithm.
-* Head 1. Encoder Head 1 position info. All the offset are included to allow a better comparison with the absolute value.
-* Head 2. Encoder Head 2 position info. All the offset are included to allow a better comparison with the absolute value.
-* Head 3. Encoder Head 3 position info. All the offset are included to allow a better comparison with the absolute value.
-* Head 4. Encoder Head 4 position info. All the offset are included to allow a better comparison with the absolute value.
-* Position Setpoint. Position setpoint calculated by the trajectory generator and used by the control algorithm in the position loop.
-* Speed Setpoint. Speed setpoint calculated by the trajectory generator and used by the control algorithm in the speed loop.
-* us counter. It is a counter of us. Allows to debug timings in the control algorithm
-* ControllerTime us. us used by the control algorithm task to fulfill all the tasks in one iteration
-* FinishedLateCounter. It is counter that counts the number of times that the control algorithm code uses too much time to execute. The counter resets to zero when the axis is reset.
-* Timestamp. Timestamp of the AXES-PXI when all publishing data is packed to sent.
-* ObserverABSCorrection. Correction value made by the position observer. Allow debugging the observer status.
-* Debug1. Free value that could be used for testing or debugging.
-* FollowingDistanceRMS. Following error RMS value (see [following error RMS calculation](./05%20Monitoring%20Loop.md/#following-error-RMS-calculation) for more info)
-* Encoder Data Received Time. The time when the data from the encoder is gotten in the AXES-PXI.
-* Encoder Data Requiered Time. The time when the data from the encoder is needed in the axis control algorithm.
-* Encoder Frame Counter. A counter sent by the EIB to know if any data sent from the EIB is lost. No data is lost if the counter has all the numbers from 0 to 255.
-* Axis Acceleration. Actual axis acceleration (see [Acceleration and jerk calculation](#acceleration-and-jerk-calculation))
-* Axis Jerk. Actual axis jerk (see [Acceleration and jerk calculation](#acceleration-and-jerk-calculation))
+* **Axis State**. The state of the axis Manager. It is an U32 number where the first byte indicates de plcOpenState and the second byte is the overallState. The other two bytes are free.
+* **Excitation Data**. It is the excitation value used for axis identification
+* **Axis Absolute Position**. It is the axis absolute position read from active heads.
+* **Axis Position**. It is the relative position used by the axis controller + the reference data. It should be very similar to the absolute position all around the telescope range, but ti must be same in the position where the homing was done.
+* **Axis Speed**. It is the speed of the axis calculated byt derivation of the position. This speed is used by the controller for closing the speed loop.
+* **Hall 1 Electrical Angle**. Electrical angle measured by the hall sensor 1. This is the only sensor for azimuth axis.
+* **Hall 2 Electrical Angle**. Electrical angle measured by the hall sensor 2. No data in azimuth axis.
+* **Encoder Electrical Angle 1**. Electrical angle calculated with encoder heads data (axis position), this data is equivalent to the Hall 1 Electrical Angle.
+* **Encoder Electrical Angle 2**. Electrical angle calculated with encoder heads data (axis position), this data is equivalent to the Hall 2 Electrical Angle.
+* **Control Torque 1**. Force demanded by the active damping control algorithm for the X direction. In elevation axis this value is 0.
+* **Control Torque 2**. Force demanded by the active damping control algorithm for the Y direction. In elevation axis this value is 0.
+* **Control Torque 3**. Torque demanded in drive 15 produced by active damping control algorithms in X and Y directions. In elevation axis this value is 0.
+* **Control Torque 4**. Torque demanded in drive 0 produced by active damping control algorithms in X and Y directions. In elevation axis this value is 0.
+* **Control Torque 5**. Torque demanded by the position control algorithm.
+* **Control Torque 6**. Torque demanded by the position control algorithm before any filtering
+* **Control Torque 7**. Torque demanded by the position control algorithm before low-pass filtering but after max torque variation filter.
+* **Control Torque 8**. Free.
+* **Active drives**. Number of active drives in the axis.
+* **Axis Torque**. Torque demanded by the position control algorithm.
+* **Head 1**. Encoder Head 1 position info. All the offset are included to allow a better comparison with the absolute value.
+* **Head 2**. Encoder Head 2 position info. All the offset are included to allow a better comparison with the absolute value.
+* **Head 3**. Encoder Head 3 position info. All the offset are included to allow a better comparison with the absolute value.
+* **Head 4**. Encoder Head 4 position info. All the offset are included to allow a better comparison with the absolute value.
+* **Position Setpoint**. Position setpoint calculated by the trajectory generator and used by the control algorithm in the position loop.
+* **Speed Setpoint**. Speed setpoint calculated by the trajectory generator and used by the control algorithm in the speed loop.
+* **us counter**. The latest value of the us counter. Allows debugging control loop timing
+* **ControllerTime us**. us used by the control algorithm task to fulfill all the tasks in one iteration
+* **FinishedLateCounter**. It is counter that counts the number of times that the control algorithm code uses too much time to execute. The counter resets to zero when the axis is reset.
+* **Timestamp**. Timestamp of the AXES-PXI when all publishing data is packed to sent.
+* **ObserverABSCorrection**. Correction value made by the position observer. Allow debugging the observer status.
+* **Debug1**. Free value that could be used for testing or debugging.
+  * In version 6.1.0 used to display late trajectory generation value
+* **FollowingDistanceRMS**. Following error RMS value (see [following error RMS calculation](./05%20Monitoring%20Loop.md/#following-error-RMS-calculation) for more info)
+* **Encoder Data Received Time**. The time when the data from the encoder is gotten in the AXES-PXI.
+* **Encoder Data Required Time**. The time when the data from the encoder is needed in the axis control algorithm.
+* **Encoder Frame Counter**. A counter sent by the EIB to know if any data sent from the EIB is lost. No data is lost if the counter has all the numbers from 0 to 255.
+* **Axis Acceleration**. Actual axis acceleration (see [Acceleration and jerk calculation](#acceleration-and-jerk-calculation))
+* **Axis Jerk**. Actual axis jerk (see [Acceleration and jerk calculation](#acceleration-and-jerk-calculation))
 
 ##### Acceleration and Jerk calculation
 
