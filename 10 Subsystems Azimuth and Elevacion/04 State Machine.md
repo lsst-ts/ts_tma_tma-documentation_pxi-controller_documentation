@@ -169,9 +169,12 @@ state Fault{
       state DisablingAxis
       state StoppingCableWrap
       state PoweringCableWrap  
-      state WaitingForReset   
+      state WaitingForReset 
+      state fork_state <<fork>>  
 
-      [*]-->StoppingAxis 
+      [*]-->fork_state : FaultInitialTranstionActions
+      fork_state --> StoppingAxis 
+      fork_state --> SafetyStopAxis
       StoppingAxis-->StoppingAxis : Check every 100ms
       StoppingAxis-left->SafetyStopAxis : FollowingError or NoAckFromAxiManager or NotStopping
       SafetyStopAxis-->EngagingBrakes
@@ -205,7 +208,7 @@ Other states of the superstates allow stopping the homing process by the user or
 
 ### Fault superstate
 
-When entering the fault superstate the axis is commanded to stop, if there is no a FollowingError fault active. In the case the FollowingError is active, the internal trigger safetyStop is sent and the state machine will do the transition to safetyStopAxis. Also if the axisManager does not answer to the stop axis the internal trigger safetyStop is sent.
+When entering the fault superstate the axis is commanded to stop, if there is no a FollowingError fault active. In the case the FollowingError is active or the axisManager does not answer to the stop state, state machine will go to safetyStopAxis state instead of to the stoppingAxis state.
 
 In safetyStopAxis the safety system is asked to stop the axis.
 
