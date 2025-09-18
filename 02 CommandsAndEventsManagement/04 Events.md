@@ -293,8 +293,8 @@ In next points the bit mask for each number is shown.
 | --- | ------------- | --------------------------------------------------------- |
 | 0   | sdiDOORACC1   | AZ platform access Door switch 1 (TMA-AZ-IS-CPD-0001)     |
 | 1   | sdiDOORACC2   | AZ platform access Door switch 2 (TMA-AZ-IS-CPD-0003)     |
-| 2   | sdiWLADDER1   | Access door 1 ladder parker position (TMA-AZ-IS-CPD-0002) |
-| 3   | sdiWLADDER2   | Access door 2 ladder parker position (TMA-AZ-IS-CPD-0004) |
+| 2   | sdiWLADDER1   | Access door 1 ladder parked position (TMA-AZ-IS-CPD-0002) |
+| 3   | sdiWLADDER2   | Access door 2 ladder parked position (TMA-AZ-IS-CPD-0004) |
 | 4   | sdiDOORHATCH1 | Hatch switch 1 (TMA-EL-CS-CPD-0001)                       |
 | 5   | sdiDOORHATCH2 | Hatch switch 2 (TMA-EL-CS-CPD-0002)                       |
 | 6   | sdiDOORHATCH3 | Hatch switch 3 (TMA-EL-CS-CPD-0003)                       |
