@@ -29,3 +29,23 @@ was created to remove the old log files. To use this script follow these steps:
   ```
 
   > This will execute the script every day at 9 AM to remove the old files
+
+Note there should be suttle difference in `main.py` as the following:
+
+- TMA PXI
+
+```python
+date_search_pattern = "MainTMA_(\d\d)(\d\d)(\d\d)_(\d\d)(\d\d)"
+```
+
+- AXES PXI
+
+```python
+date_search_pattern = "MainLogFile_(\d\d)(\d\d)(\d\d)_(\d\d)(\d\d)"
+```
+
+- AUX PXI
+
+```python
+date_search_pattern = "AuxTMA_(\d\d)(\d\d)(\d\d)_(\d\d)(\d\d)"
+```
