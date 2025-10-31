@@ -212,18 +212,10 @@ TMA PXI `/usr/local/lib` contents:
 
 ```bash
 admin@AuxSystems:/usr/local/lib# ls -l
-total 23748
--rwxr-xr-x    1 admin    administ   7397619 Jan 13  2025 32libmysqlclient.so*
--rwxr-xr-x    1 admin    administ   8538815 Jan 13  2025 64libmysqlclient.so*
--rwxr-xr-x    1 admin    administ     11128 Jan 13  2025 libGetClocks.so*
--rwxr-xr-x    1 admin    administ     77770 Jan 13  2025 libaci.so*
--rwxr-xr-x    1 admin    administ   2273440 Jan 13  2025 libcrypto.so.1.0.0*
--rwxr-xr-x    1 admin    administ   1324454 Jan 13  2025 libmlpi.so*
--rwxr-xr-x    1 admin    administ   1178222 Feb 28  2024 libpcap.a*
--rwxr-xr-x    1 admin    administ    990416 Feb 28  2024 libpcap.so*
--rwxr-xr-x    1 admin    administ    990416 Feb 28  2024 libpcap.so.1*
--rwxr-xr-x    1 admin    administ    990416 Feb 28  2024 libpcap.so.1.10.4*
--rwxr-xr-x    1 admin    administ    517200 Jan 13  2025 libssl.so.1.0.0*
--rwxr-xr-x    1 admin    administ      7824 Jan 13  2025 lvimptsl.so*
+total 15588
+-rwxr-xr-x    1 admin    administ   7397619 Jul 12 10:46 32libmysqlclient.so*
+-rwxr-xr-x    1 admin    administ   8538815 Jul 12 10:46 64libmysqlclient.so*
+-rwxr-xr-x    1 admin    administ     11128 Jul 12 10:46 libGetClocks.so*
+-rwxr-xr-x    1 admin    administ      7824 Jul 12 10:46 lvimptsl.so*
 admin@AuxSystems:/usr/local/lib#
 ```

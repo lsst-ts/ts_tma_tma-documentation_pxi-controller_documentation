@@ -55,7 +55,6 @@ total 4
 ./EIB:
 total 24
 -rwxr-xr-x    1 lvuser   ni           11164 Jan 13  2025 multi_ext.txt*
--rwxr-xr-x    1 lvuser   ni           11071 Jan 13  2025 multi_ext.txt_old*
 
 ./Safety:
 total 40
@@ -180,22 +179,16 @@ TMA PXI `/usr/local/lib` contents:
 
 ```bash
 admin@TMA-PXI:/usr/local/lib# ls -l
-total 26068
-drwxr-xr-x    2 admin    administ      4096 Jan 13  2025 ./
-drwxr-xr-x    5 admin    administ      4096 Jan  8  2022 ../
--rwxr-xr-x    1 admin    administ   7397619 Jan 13  2025 32libmysqlclient.so*
--rwxr-xr-x    1 admin    administ   8538815 Jan 13  2025 64libmysqlclient.so*
--rwxr-xr-x    1 admin    administ   1182414 Jan 13  2025 EIB8Driver32.so*
--rwxr-xr-x    1 admin    administ   1182414 Jan 13  2025 libEIB8Driver.so*
--rwxr-xr-x    1 admin    administ     11128 Jan 13  2025 libGetClocks.so*
--rwxr-xr-x    1 admin    administ     77770 Jan 13  2025 libaci.so*
--rwxr-xr-x    1 admin    administ   2273440 Jan 13  2025 libcrypto.so.1.0.0*
--rwxr-xr-x    1 admin    administ   1324454 Jan 13  2025 libmlpi.so*
--rwxr-xr-x    1 admin    administ   1178222 Feb 28  2024 libpcap.a*
--rwxr-xr-x    1 admin    administ    990416 Feb 28  2024 libpcap.so*
--rwxr-xr-x    1 admin    administ    990416 Feb 28  2024 libpcap.so.1*
--rwxr-xr-x    1 admin    administ    990416 Feb 28  2024 libpcap.so.1.10.4*
--rwxr-xr-x    1 admin    administ    517200 Jan 13  2025 libssl.so.1.0.0*
--rwxr-xr-x    1 admin    administ      7824 Jan 13  2025 lvimptsl.so*
+total 22020
+-rwxr-xr-x    1 admin    administ   7397619 Feb 15  2022 32libmysqlclient.so*
+-rwxr-xr-x    1 admin    administ   8538815 Feb 15  2022 64libmysqlclient.so*
+-rwxr-xr-x    1 admin    administ   1182414 Feb 15  2022 EIB8Driver32.so*
+-rwxr-xr-x    1 admin    administ   1182414 Feb 15  2022 libEIB8Driver.so*
+-rwxr-xr-x    1 admin    administ     11128 Feb 15  2022 libGetClocks.so*
+-rwxr-xr-x    1 admin    administ     77770 Feb 15  2022 libaci.so*
+-rwxr-xr-x    1 admin    administ   2273440 Feb 15  2022 libcrypto.so.1.0.0*
+-rwxr-xr-x    1 admin    administ   1324454 Feb 15  2022 libmlpi.so*
+-rwxr-xr-x    1 admin    administ    517200 Feb 15  2022 libssl.so.1.0.0*
+-rwxr-xr-x    1 admin    administ      7824 Feb 15  2022 lvimptsl.so*
 admin@TMA-PXI:/usr/local/lib#
 ```
