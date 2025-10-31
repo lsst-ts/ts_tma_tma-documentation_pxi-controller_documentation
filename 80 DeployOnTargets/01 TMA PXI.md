@@ -34,44 +34,44 @@ TMA PXI `/c/Configuration` contents:
 admin@TMA-PXI:/c/Configuration# ls -lR
 .:
 total 36
--rwxr-xr-x    1 admin    administ        96 Nov  5  2021 ACWData.ini*
-drwxrwxrwx    2 admin    administ      4096 Nov  5  2021 CAR_TCP/
--rwxr-xr-x    1 admin    administ        95 Nov  5  2021 CCWData.ini*
-drwxr-xr-x    2 admin    administ      4096 Jun  7 15:27 DiscreteStateReporting/
-drwxrwxrwx    2 admin    administ      4096 Nov  5  2021 EIB/
-drwxrwxrwx    2 admin    administ      4096 Nov  5  2021 Safety/
--rwxr-xr-x    1 admin    administ       100 Jul 14 11:29 TMA_PXI_RT_MainConfig.ini*
-drwxr-xr-x    2 admin    administ      4096 Apr 18  2022 TekNSVs/
-drwxrwxrwx    2 admin    administ      4096 Nov  5  2021 axisManagementComm/
+-rwxr-xr-x    1 lvuser   ni              96 Jan 13  2025 ACWData.ini*
+drwx--x--x    2 lvuser   ni            4096 Jan 13  2025 CAR_TCP/
+-rwxr-xr-x    1 lvuser   ni              95 Jan 13  2025 CCWData.ini*
+drwx--x--x    2 lvuser   ni            4096 Jan 13  2025 DiscreteStateReporting/
+drwx--x--x    2 lvuser   ni            4096 Jan 13  2025 EIB/
+drwx--x--x    2 lvuser   ni            4096 Jan 13  2025 Safety/
+-rwxr-xr-x    1 lvuser   ni             272 Jan 13  2025 TMA_PXI_RT_MainConfig.ini*
+drwx--x--x    2 lvuser   ni            4096 Jan 13  2025 TekNSVs/
+drwx--x--x    2 lvuser   ni            4096 Jan 13  2025 axisManagementComm/
 
 ./CAR_TCP:
 total 4
--rwxr-xr-x    1 admin    administ       574 Nov 18 17:38 CommandTCP_Config.xml*
+-rwxr-xr-x    1 lvuser   ni             574 Jan 13  2025 CommandTCP_Config.xml*
 
 ./DiscreteStateReporting:
 total 4
--rwxr-xr-x    1 lvuser   ni             377 Nov 10 17:55 DiscreteStateReporting.json*
+-rwxr-xr-x    1 lvuser   ni             377 Jan 13  2025 DiscreteStateReporting.json*
 
 ./EIB:
-total 12
--rwxr-xr-x    1 admin    administ     11070 Nov  4 16:34 multi_ext.txt*
+total 24
+-rwxr-xr-x    1 lvuser   ni           11164 Jan 13  2025 multi_ext.txt*
 
 ./Safety:
 total 40
--rwxr-xr-x    1 admin    administ     23464 May  6  2022 Safety_ModBusMapping.txt*
--rwxr-xr-x    1 admin    administ     10231 May  6  2022 Safety_ModBusMapping_ForReadWriteDefinition.txt*
--rwxr-xr-x    1 admin    administ       128 Nov  5  2021 ServerConfig.ini*
+-rwxr-xr-x    1 lvuser   ni           23524 Jan 13  2025 Safety_ModBusMapping.txt*
+-rwxr-xr-x    1 lvuser   ni           10251 Jan 13  2025 Safety_ModBusMapping_ForReadWriteDefinition.txt*
+-rwxr-xr-x    1 lvuser   ni             128 Jan 13  2025 ServerConfig.ini*
 
 ./TekNSVs:
 total 64
--rwxr-xr-x    1 admin    administ       575 Nov 18 17:45 ReceiverConfig.xml*
--rwxr-xr-x    1 admin    administ     51311 Apr 18  2022 TekNSVvariablesToCreate.json*
--rwxr-xr-x    1 admin    administ       542 Apr  5  2022 VariablesToSubscribe.json*
--rwxr-xr-x    1 admin    administ       672 Apr  5  2022 VariablesToSubscribeClientConfig.xml*
+-rwxr-xr-x    1 lvuser   ni             575 Jan 13  2025 ReceiverConfig.xml*
+-rwxr-xr-x    1 lvuser   ni           51311 Jan 13  2025 TekNSVvariablesToCreate.json*
+-rwxr-xr-x    1 lvuser   ni             542 Jan 13  2025 VariablesToSubscribe.json*
+-rwxr-xr-x    1 lvuser   ni             671 Jan 13  2025 VariablesToSubscribeClientConfig.xml*
 
 ./axisManagementComm:
 total 4
--rwxr-xr-x    1 admin    administ       707 Nov  5  2021 SenderConfig.xml*
+-rwxr-xr-x    1 lvuser   ni             707 Jan 13  2025 SenderConfig.xml*
 admin@TMA-PXI:/c/Configuration#
 ```
 
@@ -189,7 +189,6 @@ total 22020
 -rwxr-xr-x    1 admin    administ   2273440 Feb 15  2022 libcrypto.so.1.0.0*
 -rwxr-xr-x    1 admin    administ   1324454 Feb 15  2022 libmlpi.so*
 -rwxr-xr-x    1 admin    administ    517200 Feb 15  2022 libssl.so.1.0.0*
--rwxr-xr-x    1 admin    administ     13672 Feb 15  2022 libtrajectory.so*
 -rwxr-xr-x    1 admin    administ      7824 Feb 15  2022 lvimptsl.so*
 admin@TMA-PXI:/usr/local/lib#
 ```

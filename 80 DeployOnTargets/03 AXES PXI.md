@@ -32,13 +32,15 @@ AXES PXI `/c/Configuration` contents:
 ```bash
 admin@AxesPXI:/c/Configuration# ls -lR
 .:
-total 16
--rwxr-xr-x    1 lvuser   ni            5117 Nov 24 21:41 MainAxisConfig.ini*
-drwxr-xr-x    2 lvuser   ni            4096 Oct 21 01:56 axisManagementComm/
+total 44
+-rwxr-xr-x    1 lvuser   administ      1130 Feb 28  2024 Cases.json*
+-rwxr-xr-x    1 admin    administ      5569 Jun 16 14:30 MainAxisConfig.ini*
+-rwxr-xr-x    1 lvuser   administ         0 Feb 28  2024 TMA_PXI_RT_MainConfig.ini*
+drwxrwxrwx    2 lvuser   administ      4096 Feb 28  2024 axisManagementComm/
 
 ./axisManagementComm:
 total 4
--rwxr-xr-x    1 lvuser   ni             568 Nov 18 17:37 ServerConfig.xml*
+-rwxr-xr-x    1 lvuser   administ       568 Feb 28  2024 ServerConfig.xml*
 admin@AxesPXI:/c/Configuration#
 ```
 

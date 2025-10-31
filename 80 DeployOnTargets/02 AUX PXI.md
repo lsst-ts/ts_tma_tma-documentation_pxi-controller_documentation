@@ -32,62 +32,72 @@ AUX PXI `/c/Configuration` contents:
 ```bash
 admin@AuxSystems:/c/Configuration# ls -lR
 .:
-total 32
-drwxrwxrwx    2 admin    administ      4096 Jul 12  2022 CAR_TCP/
-drwxr-xr-x    2 admin    administ      4096 Jul 12  2022 DiscreteStateReporting/
-drwxrwxrwx    2 admin    administ      4096 Jul 12  2022 ModbusTemperatureControllers/
-drwxrwxrwx    2 admin    administ      4096 Sep 13 13:06 OSS/
-drwxr-xr-x    2 admin    administ      4096 Sep 21 08:34 TEC/
--rwxr-xr-x    1 admin    administ       434 May  4 12:20 TMA_PXI_RT_MainConfig.ini*
-drwxr-xr-x    2 admin    administ      4096 Jul 12  2022 TekNSVs/
-drwxrwxrwx    2 admin    administ      4096 Dec 19  2022 TelemetryConfig/
+total 40
+drwxr-xr-x    2 admin    administ      4096 Oct  2 06:40 CAR_TCP/
+drwxr-xr-x    2 admin    administ      4096 Oct  2 12:55 CpuTempMonitoring/
+drwxr-xr-x    2 admin    administ      4096 Oct  2 06:41 DiscreteStateReporting/
+drwxr-xr-x    2 admin    administ      4096 Oct  2 12:56 EthercatManagement/
+drwxr-xr-x    2 admin    administ      4096 Oct  2 06:45 ModbusTemperatureControllers/
+drwxr-xr-x    2 admin    administ      4096 Oct  2 06:48 OSS/
+drwxr-xr-x    2 admin    administ      4096 Oct  2 06:49 TEC/
+-rw-r--r--    1 admin    administ       232 Oct  2 06:54 TMA_PXI_RT_MainConfig.ini
+drwxr-xr-x    2 admin    administ      4096 Oct  2 06:51 TekNSVs/
+drwxr-xr-x    2 admin    administ      4096 Oct  2 06:51 TelemetryConfig/
 
 ./CAR_TCP:
 total 4
--rwxr-xr-x    1 admin    administ       574 Nov 18  2022 CommandTCP_Config.xml*
+-rw-r--r--    1 admin    administ       565 Oct  2 06:40 CommandTCP_Config.xml
+
+./CpuTempMonitoring:
+total 4
+-rw-r--r--    1 admin    administ       641 Oct  2 12:55 PxiCpuMonitoringConfiguration.json
 
 ./DiscreteStateReporting:
 total 4
--rwxr-xr-x    1 admin    administ       387 Nov 10  2022 DiscreteStateReporting.json*
+-rw-r--r--    1 admin    administ       373 Oct  2 06:41 DiscreteStateReporting.json
+
+./EthercatManagement:
+total 4
+-rw-r--r--    1 admin    administ        62 Oct  2 12:56 config.json
 
 ./ModbusTemperatureControllers:
 total 40
--rwxr-xr-x    1 admin    administ       142 May  4 07:07 TMA_AX_DZ_CBT_0001_config.ini*
--rwxr-xr-x    1 admin    administ       839 Oct 11  2022 TMA_AX_DZ_CBT_0001_mapping.txt*
--rwxr-xr-x    1 admin    administ       142 May  4 07:07 TMA_AZ_PD_CBT_0001_config.ini*
--rwxr-xr-x    1 admin    administ       839 Oct 11  2022 TMA_AZ_PD_CBT_0001_mapping.txt*
--rwxr-xr-x    1 admin    administ       142 May  4 07:07 TMA_AZ_PD_TRM_0001_config.ini*
--rwxr-xr-x    1 admin    administ       839 Oct 11  2022 TMA_AZ_PD_TRM_0001_mapping.txt*
--rwxr-xr-x    1 admin    administ       142 May  4 07:07 TMA_EL_PD_CBT_0001_config.ini*
--rwxr-xr-x    1 admin    administ       839 Oct 11  2022 TMA_EL_PD_CBT_0001_mapping.txt*
--rwxr-xr-x    1 admin    administ       142 May  4 07:07 TMA_EL_PD_CBT_0002_config.ini*
--rwxr-xr-x    1 admin    administ       839 Oct 11  2022 TMA_EL_PD_CBT_0002_mapping.txt*
+-rw-r--r--    1 admin    administ       138 Oct  2 06:42 TMA_AX_DZ_CBT_0001_config.ini
+-rw-r--r--    1 admin    administ       833 Oct  2 06:43 TMA_AX_DZ_CBT_0001_mapping.txt
+-rw-r--r--    1 admin    administ       137 Oct  2 06:43 TMA_AZ_PD_CBT_0001_config.ini
+-rw-r--r--    1 admin    administ       833 Oct  2 06:44 TMA_AZ_PD_CBT_0001_mapping.txt
+-rw-r--r--    1 admin    administ       137 Oct  2 06:44 TMA_AZ_PD_TRM_0001_config.ini
+-rw-r--r--    1 admin    administ       833 Oct  2 06:44 TMA_AZ_PD_TRM_0001_mapping.txt
+-rw-r--r--    1 admin    administ       137 Oct  2 06:44 TMA_EL_PD_CBT_0001_config.ini
+-rw-r--r--    1 admin    administ       833 Oct  2 06:45 TMA_EL_PD_CBT_0001_mapping.txt
+-rw-r--r--    1 admin    administ       137 Oct  2 06:45 TMA_EL_PD_CBT_0002_config.ini
+-rw-r--r--    1 admin    administ       833 Oct  2 06:45 TMA_EL_PD_CBT_0002_mapping.txt
 
 ./OSS:
-total 120
--rwxr-xr-x    1 admin    administ     58800 Sep 13 13:06 OSS_AdditionalFaultMonitoring.json*
--rwxr-xr-x    1 admin    administ       645 Sep 13 13:06 OSS_CabinetTemperatureMonitoring.json*
--rwxr-xr-x    1 admin    administ     38800 Sep 13 13:06 OSS_ModBusMapping.txt*
--rwxr-xr-x    1 admin    administ     14663 Sep 13 13:06 OSS_ModBusMapping_ForReadWriteDefinition.txt*
--rwxr-xr-x    1 admin    administ       128 May 11 14:42 ServerConfig.ini*
+total 128
+-rw-r--r--    1 admin    administ     54506 Oct  2 06:46 OSS_AdditionalFaultMonitoring.json
+-rw-r--r--    1 admin    administ       626 Oct  2 06:47 OSS_CabinetTemperatureMonitoring.json
+-rw-r--r--    1 admin    administ     43696 Oct  2 12:53 OSS_ModBusMapping.txt
+-rw-r--r--    1 admin    administ     16537 Oct  2 06:47 OSS_ModBusMapping_ForReadWriteDefinition.txt
+-rw-r--r--    1 admin    administ       123 Oct  2 06:48 ServerConfig.ini
 
 ./TEC:
 total 44
--rwxr-xr-x    1 admin    administ       127 Sep 14 11:07 ServerConfig.ini*
--rwxr-xr-x    1 admin    administ     13115 Sep 14 11:07 TEC_ModBusMapping.txt*
--rwxr-xr-x    1 admin    administ      5437 Sep 14 11:07 TEC_ModBusMapping_ForReadWriteDefinition.txt*
--rwxr-xr-x    1 lvuser   ni           14707 Sep 21 07:41 TopEndChillerCommandsAndMonitoringConfig.json*
+-rw-r--r--    1 admin    administ       123 Oct  2 06:48 ServerConfig.ini
+-rw-r--r--    1 admin    administ     13171 Oct  2 12:46 TEC_ModBusMapping.txt
+-rw-r--r--    1 admin    administ      5662 Oct  2 12:46 TEC_ModBusMapping_ForReadWriteDefinition.txt
+-rw-r--r--    1 admin    administ     14404 Oct  2 06:49 TopEndChillerCommandsAndMonitoringConfig.json
 
 ./TekNSVs:
 total 68
--rwxr-xr-x    1 admin    administ       575 Nov 18  2022 ReceiverConfig.xml*
--rwxr-xr-x    1 admin    administ     55983 Jul 12  2022 TekNSVvariablesToCreate.json*
--rwxr-xr-x    1 admin    administ       544 Jul 12  2022 VariablesToSubscribe.json*
--rwxr-xr-x    1 admin    administ       671 May  4 09:56 VariablesToSubscribeClientConfig.xml*
+-rw-r--r--    1 admin    administ       564 Oct  2 06:50 ReceiverConfig.xml
+-rw-r--r--    1 admin    administ     54029 Oct  2 06:50 TekNSVvariablesToCreate.json
+-rw-r--r--    1 admin    administ       521 Oct  2 06:50 VariablesToSubscribe.json
+-rw-r--r--    1 admin    administ       658 Oct  2 06:51 VariablesToSubscribeClientConfig.xml
 
 ./TelemetryConfig:
-total 32
--rwxr-xr-x    1 admin    administ     31809 May  4 09:28 TelemetryConfig.ini*
+total 48
+-rw-r--r--    1 admin    administ     49011 Oct  2 06:51 TelemetryConfig.ini
 admin@AuxSystems:/c/Configuration#
 ```
 

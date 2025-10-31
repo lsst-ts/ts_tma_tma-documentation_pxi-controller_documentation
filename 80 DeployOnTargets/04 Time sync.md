@@ -160,7 +160,7 @@ ln -s ../init.d/settai S30settai
 admin@TMA-PXI:/etc/rc5.d
 ```
 
-### Chrony installation
+### Chrony installation (Network Time Protocol, NTP)
 
 Steps are:
 
@@ -241,3 +241,26 @@ export LD_LIBRARY_PATH=.
 ./chronyd
 admin@TMA-PXI:/etc/rc5.d#
 ```
+
+Note. Although there is the requirement of precision time protocol (PTP), the current using on the summit is NTP actually.
+
+### Alternative NTP Setup with OPKG
+
+Install the NTP client by following: [Synchronize Linux Real Time Targets with Network Time Protocol (NTP) Server](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA03q000000YIF2CAO&l=en-US).
+For the servers in `/etc/ntp.conf`, use the followings:
+
+```text
+server 1.cl.pool.ntp.org iburst
+server 1.south-america.pool.ntp.org iburst
+server ntp.cp.lsst.org iburst
+server ntp.shoa.cl iburst
+```
+
+For the new setting to be effective, you need to soft-reboot the real-time target.
+To check the time synchronization, do:
+
+```bash
+ntpq -p
+```
+
+Note the output of the time unit is millisecond.
