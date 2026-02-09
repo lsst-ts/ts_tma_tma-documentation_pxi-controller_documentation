@@ -219,3 +219,12 @@ total 15588
 -rwxr-xr-x    1 admin    administ      7824 Jul 12 10:46 lvimptsl.so*
 admin@AuxSystems:/usr/local/lib#
 ```
+
+### SSH keys for CPU temperatures
+
+- Create a SSH key for the `lvuser`
+  - `su lvuser`
+  - `ssh-keygen`
+- Copy the public key generated to the AXES and TMA PXIs, to allow reading the CPU temperatures.
+- Test that the connection works from the `lvuser` user in the AUX PXI to both PXIs (AXES and TMA), connecting from the
+  AUX PXI to each of the PXIs using SSH.
