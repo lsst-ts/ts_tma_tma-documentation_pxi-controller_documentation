@@ -287,6 +287,10 @@ In next points the bit mask for each number is shown.
 | 14  | sdiSWEXTM2DPxN      | Deployable Platform X minus Extension 1 Inserted and blocked Position (TMA-AZ-DB-CPD-0003) |
 | 16  | sdiSWEXTM1M3DPxN    | Deployable Platform X minus Extension 2 Inserted and blocked Position (TMA-AZ-DB-CPD-0004) |
 
+> Note how the last bit is not the 15, this is because the data comes from two different words from the communication
+> with the TMA IS (PILZ controller). The first word has 15 bits and the last is not used, therefore, the `sdiSWEXTM1M3DPxN`
+> is the first of that second word, thus the 16bit of the u64.
+
 ##### Subcauses Doors Hatches and Ladders
 
 | Bit | Signal Name   | Description                                               |
