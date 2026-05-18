@@ -3,6 +3,16 @@
 When configuring a PXI from scratch, there are several tools and shortcuts that could be implemented to simplify routine
 procedures or debugging these are:
 
+### Script for copying all the required configuration files onto a fresh installed PXI from an old one
+
+The script is called `CopyFromOldPxi.sh` and is meant to be executed from the PXI we want to configure.
+[This script](https://github.com/lsst-ts/ts_tma_tma-documentation_pxi-controller_documentation/blob/master/80%20DeployOnTargets/CopyFromOldPxi.sh)
+requires the IP of the PXI to copy from as an input:
+
+```bash
+./CopyFromOldPxi.sh 139.229.171.26
+```
+
 ### Adding an alias to read the log messages the `rtexe` app logs during boot
 
 - SSH into the PXI, using the *admin* user
