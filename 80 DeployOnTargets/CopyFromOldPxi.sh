@@ -34,6 +34,7 @@ ln -s /etc/rc5.d/../init.d/settai /etc/rc5.d/S30settai
 
 echo "Copy libs ..."
 scp admin@"$REMOTE_PXI_TO_COPY_FROM":/usr/local/lib/* /usr/local/lib/
+ln -s /usr/local/lib/ /c/ni-rt/system
 
 echo "Add bashrc aliases ..."
 cat <<'EOF' >> "/home/admin/.bashrc"
