@@ -593,3 +593,36 @@ PXI commands:
   * Id: 3000
   * Description: this command must be sent periodically, every 1s, to tell the PXI that the commander is okay.
   * Important: this command has no response at all, no CMD_ACKNOWLEDGED, no CMD_REJECTED, no CMD_SUCCEEDED  no CMD_FAILED and no CMD_SUPERSEDED.
+
+* CHANGE_TO_BB
+  * Id: 3101
+
+* CHANGE_TO_P0
+  * Id: 3102
+
+* CHANGE_AUX_DRIVES_TO_DISABLE
+  * Id: 3103
+
+* CHANGE_AUX_DRIVES_TO_ENABLE
+  * Id: 3104
+
+* CUT_POWER_TO_AUX_DRIVES
+  * Id: 3105
+
+* RESTORE_POWER_TO_AUX_DRIVES
+  * Id: 3106
+
+* CHANGE_TO_OBSERVATION_MODE
+  * Id: 3107
+
+* CHANGE_TO_ENGINEERING_MODE
+  * Id: 3108
+
+* AUXILIARY_PS_CHARGE
+  * Id: 3109
+
+* AUXILIARY_PS_DISCHARGE
+  * Id: 3110
+
+* BOSCH_CONTROLLER_REBOOT
+  * Id: 3111
