@@ -3,6 +3,8 @@
 This document describes the task used to communicate with the bosch system, from now on called Bosch task. This task
 contains some public methods that must be used to send the required actions to the wanted bosch axis.
 
+<!-- TODO update to the new Bosch task -->
+
 ## Task public methods
 
 Here the methods for the Bosch task are explained.
@@ -177,6 +179,17 @@ Inputs:
     - Deceleration
     - Jerk
 
+### WaitTaskReady
+
+Wait for the bosch task to be ready. This is used to avoid starting the subsystems that use the bosch task before the
+Bosch task is ready.
+
+### PrePowerSupplyWaitActions
+
+This VI executes the actions required before waiting for the bosch power supply to be ready. Actions:
+
+- Set the variables GBL_BoschTaskReady and GBL_StopWaitTaskReady to FALSE
+
 ## Init and Exit Actions
 
 ### Init actions
@@ -246,11 +259,11 @@ state is executed and the last CMD will be dequeued in the next iteration, see f
 
 The methods of this loop are explained before as public methods of the bosch task.
 
-#### Task states
+#### Task commands
 
-Here the code for the different task states is explained.
+Here the code for the different task commands is explained.
 
-##### Init Subsystem state
+##### Init Subsystem
 
 The code here is used when a new subsystem is added, the reference for this subsystem will be the MotorID. To initialize
 this new system the following actions are executed:
@@ -267,9 +280,9 @@ this new system the following actions are executed:
 5. Finally, a response is sent to the calling method, the response is just the error line, this way the calling VI will
     know if everything was ok while initializing.
 
-![Init Subsystem state block diagram](../Resources/boschTask/image21.png)
+![Init Subsystem block diagram](../Resources/boschTask/image21.png)
 
-##### Exit Subsystem state
+##### Exit Subsystem
 
 The code here is used when an existing subsystem is removed, the reference for this subsystem will be the MotorID. To
 exit the existing system the following actions are executed:
@@ -286,61 +299,61 @@ exit the existing system the following actions are executed:
 5. Finally, a response is sent to the calling method, the response is just the error line, this way the calling VI will
     know if everything was ok while initializing.
 
-![Exit Subsystem state block diagram](../Resources/boschTask/image22.png)
+![Exit Subsystem block diagram](../Resources/boschTask/image22.png)
 
-##### Close Task State
+##### Close Task
 
 Stops the rest of the tasks executed in the bosch task, as well as this one, while closing any open connections.
 
-##### Move State
+##### Move
 
 The code is executed when the move method is used, here the MoveCMD private method from the Executer task is called.
 
-![Move state block diagram](../Resources/boschTask/image23.png)
+![Move block diagram](../Resources/boschTask/image23.png)
 
-##### Move Velocity State
+##### Move Velocity
 
 The code is executed when the moveVelocity method is used, here the MoveVelocityCMD private method from the Executer
 task is called.
 
-![Move Velocity state block diagram](../Resources/boschTask/image24.png)
+![Move Velocity block diagram](../Resources/boschTask/image24.png)
 
-##### Power State
+##### Power
 
 The code is executed when the power method is used, here the PowerCMD private method from the Executer task is called.
 
-![Power state block diagram](../Resources/boschTask/image25.png)
+![Power block diagram](../Resources/boschTask/image25.png)
 
-##### Track State
+##### Track
 
 The code is executed when the track method is used, here the TrackCMD private method from the Executer task is called.
 
-![Track state block diagram](../Resources/boschTask/image26.png)
+![Track block diagram](../Resources/boschTask/image26.png)
 
-##### Stop State
+##### Stop
 
 The code is executed when the stop method is used, here the StopCMD private method from the Executer task is called.
 
-![Stop state block diagram](../Resources/boschTask/image27.png)
+![Stop block diagram](../Resources/boschTask/image27.png)
 
-##### Reset State
+##### Reset
 
 The code is executed when the reset method is used, here the ResetCMD private method from the Executer task is called.
 
-![Reset state block diagram](../Resources/boschTask/image28.png)
+![Reset block diagram](../Resources/boschTask/image28.png)
 
-##### Get Axis Status State
+##### Get Axis Status
 
 The code is executed when the getAxisStatus method is used, here the CheckAxisStatus private method from the Executer
 task is called.
 
-![GetAxisStatus state block diagram](../Resources/boschTask/image29.png)
+![GetAxisStatus block diagram](../Resources/boschTask/image29.png)
 
-##### Error Handling State
+##### Error Handling
 
 The code is executed when an error occurs at the error line, here the method from the error task send error is used.
 
-![ErrorHandling state block diagram](../Resources/boschTask/image30.png)
+![ErrorHandling block diagram](../Resources/boschTask/image30.png)
 
 ### CMD Executer loop
 
@@ -595,74 +608,50 @@ when reading the limits.
 
 #### Axis values monitoring loop
 
-This loop publishes the telemetry given by the GetAxisValues function from the MLPI library, this function returns:
-actual position, actual velocity, actual acceleration, actual torque, state, state extended, diagnosis number and
-condition. From all this data the wanted one is only published, to do so at the initSubsystem the wanted variables must
-be specified, if no variable is specified that value is not published.
+This loop publishes the telemetry given by the TCP communication with the PLC code in the Bosch Controller. The received
+values are parsed with the structure defined in the `BoschTcpTelemetry_TypeDef.ctl`. From all this data the wanted
+defined one is only published, to do so at the initSubsystem the wanted variables must be specified, if no variable is
+specified that value is not published.
 
-The telemetry vars published here are opened at the InitSubsystem state of the CMD Receiver and closed at the
-ExitSubsystem state.
+The telemetry vars published here are opened at the InitSubsystem stage of the CMD Receiver and closed at the
+ExitSubsystem stage.
 
-![Axis monitoring task: axis values monitoring loop block diagram](../Resources/boschTask/image65.png)
+![Axis monitoring task: axis values monitoring loop block diagram](../Resources/boschTask/BoschTaskAxesMonitoringLoop.png)
 
 #### Task communication
 
-This task has no communication, this task is checking if the connection is established to the bosch system and if done
-the initialized subsystems variables are published constantly.
+This task has no communication with the rest of the tasks, but it contains the TCP communication with the Bosch Controller
+to obtain the telemetry values, which are published periodically.
 
-The only communication is the stop event launched from the CMD receiver Close task state.
-
-![StopHelpingTask_Event event case](../Resources/boschTask/image66.png)
+The only communication is the stop flag read from a DVR for stopping the loop.
 
 ##### Publishing vars
 
-Here the variables that the system can publish are shown.
+Here the variables that can be published for each motor id:
 
-- Position var ref. DBL array type var.
-- Velocity var ref. DBL array type var.
-- Status var ref. String type var.
-- Status code var ref. I32 type var.
-- Torque var ref. DBL array type var.
-- Acceleration var ref. DBL array type var.
+| Name           | Variable Type |
+| -------------- | ------------- |
+| Position       | DBL           |
+| Velocity       | DBL           |
+| Acceleration   | DBL           |
+| Torque         | DBL           |
+| Timestamp      | DBL           |
+| Status         | String        |
+| Status Code    | I32           |
+| Positive Limit | Bool          |
+| Negative Limit | Bool          |
 
-![Axis monitoring: axis values monitoring loop variable publishing](../Resources/boschTask/image67.png)
-
-#### Limits monitoring loop
-
-This loop publishes the status of each axis limits, the values for are given by the ReadDataULong function from the MLPI
-library, this function returns the value of the specified parameter. This code is executed for all axis that have the
-apply limit control to true when initialized.
-
-The telemetry vars published here are opened at the InitSubsystem state of the CMD Receiver and closed at the
-ExitSubsystem state.
-
-![Axis monitoring task: Limits monitoring loop block diagram](../Resources/boschTask/image68.png)
-
-### Task communication
-
-This task has no communication, this task is checking if the connection is established to the bosch system and if done
-the initialized subsystems variables are published constantly.
-
-The only communication is the stop event launched from the CMD receiver Close task state.
-
-![StopHelpingTask_Event event case](../Resources/boschTask/image66.png)
-
-#### Publishing vars
-
-Here the variables that the system can publish are shown.
-
-- Positive Limit var ref. Boolean type var.
-- Negative Limit var ref. Boolean type var.
-
-![Axis monitoring: Limits monitoring loop variable publishing](../Resources/boschTask/image69.png)
+![Axis monitoring: axis values monitoring loop variable publishing](../Resources/boschTask/BoschMonitoringTaskVariablePublication.png)
 
 ### Watchdog
 
-This task monitors the connection between the PXI and the Bosch PLC, if the connection fails several times an alarm is
-triggered. Additionally, this task publishes the status of the connection and the bosch controller state
-(possible controller estates are: BB, P0, P1, P2 and P3).
+This task is responsible of keeping the connection between the PXI and the Bosch system.
 
-![Watchdog task block diagram](../Resources/boschTask/image70.png)
+- If the connection is Okay this task does nothing.
+- If the connection is NotOkay this task Sends a Connect CMD to the executer task and a warning to the HMI. If this happens
+  more than 5 times a fault is sent to all the initialized subsystems.
+
+![Watchdog task block diagram](../Resources/boschTask/BoschTaskWatchdogLoop.png)
 
 #### Task communication
 
@@ -677,7 +666,7 @@ The only communication is the stop event launched from the CMD receiver Close ta
 
 This task publishes the software errors and warnings related to the Bosch task.
 
-![Error task block diagram](../Resources/boschTask/image71.png)
+![Error task block diagram](../Resources/boschTask/BoschTaskErrorLoop.png)
 
 #### Task communication
 
