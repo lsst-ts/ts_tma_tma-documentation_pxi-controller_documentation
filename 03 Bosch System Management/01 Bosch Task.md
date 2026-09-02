@@ -703,3 +703,139 @@ This method enqueues the send warning state of the error task and sends the Wari
 as CMD data.
 
 ![Error task methods: Send Warning](../Resources/boschTask/image75.png)
+
+### External CMD Receiver Loop
+
+This loop manages the external commands for the task, the ones that can come from the EUI/CSC/HHD. For doing so, this task
+receives, accepts/rejects, executes and fails/completes/supersedes the commands.
+
+![Bosch Task External Cmd Receiver Loop](../Resources/boschTask/BoschTaskExternalCmdReceiverLoop.png)
+
+#### Task communication
+
+This task receives the external commands as a normal subsystem would, using the CAR implementation, which enqueues a
+trigger depending on the requested command. The queue is dequeued in this loop and processed.
+
+#### Available Commands
+
+| Command Number | Command Name                                          |
+| -------------- | ----------------------------------------------------- |
+| 3101           | [ChangeToBB](#changetobb)                             |
+| 3102           | [ChangeToP0](#changetop0)                             |
+| 3103           | [ChangeAuxDrivesToDisable](#changeauxdrivestodisable) |
+| 3104           | [ChangeAuxDrivesToEnable](#changeauxdrivestoenable)   |
+| 3105           | [CutPowerToAuxDrives](#cutpowertoauxdrives)           |
+| 3106           | [RestorePowerToAuxDrives](#restorepowertoauxdrives)   |
+| 3107           | [ChangeToObservationMode](#changetoobservationmode)   |
+| 3108           | [ChangeToEngineeringMode](#changetoengineeringmode)   |
+| 3109           | [AuxiliaryPSCharge](#auxiliarypscharge)               |
+| 3110           | [AuxiliaryPSDischarge](#auxiliarypsdischarge)         |
+| 3111           | [BoschControllerReboot](#boschcontrollerreboot)       |
+
+##### ChangeToBB
+
+- Interlocks: None
+- Actions:
+  1. Accept the command
+  2. Set the Bosch Controller mode to `BB`
+  3. Wait for the Bosch Controller to be in `BB` mode
+  4. Send completed or failed depending on previous step outcome (the failed can be either a software error or a wait timeout)
+
+##### ChangeToP0
+
+- Interlocks: None
+- Actions:
+  1. Accept the command
+  2. Set the Bosch Controller mode to `P0`
+  3. Wait for the Bosch Controller to be in `P0` mode
+  4. Send completed or failed depending on previous step outcome (the failed can be either a software error or a wait timeout)
+
+##### ChangeAuxDrivesToDisable
+
+- Interlocks:
+  - Bosch Controller must be in `P0`
+- Actions:
+  1. Accept/reject the command depending on the controller mode
+  2. Change the drives listed in the `AuxiliaryDrivesMotorIDs` setting to *disabled* state
+  3. Send completed or failed depending on previous step outcome
+
+##### ChangeAuxDrivesToEnable
+
+- Interlocks:
+  - Bosch Controller must be in `P0`
+- Actions:
+  1. Accept/reject the command depending on the controller mode
+  2. Change the drives listed in the `AuxiliaryDrivesMotorIDs` setting to *enabled* state
+  3. Send completed or failed depending on previous step outcome
+
+##### CutPowerToAuxDrives
+
+- Interlocks:
+  - Auxiliary Drives Power Supply must be **OFF**
+  - Bosch Controller must be in `P0`
+- Actions:
+  1. Accept/reject the command depending on the active interlocks
+  2. Set the value of the digital signals controlling the 24V and 380V contactors to *FALSE*
+  3. Send completed or failed depending on previous step outcome
+
+##### RestorePowerToAuxDrives
+
+- Interlocks:
+  - Auxiliary Drives Power Supply must be **OFF**
+  - Bosch Controller must be in `P0`
+- Actions:
+  1. Accept/reject the command depending on the active interlocks
+  2. Set the value of the digital signals controlling the 24V and 380V contactors to *TRUE*
+  3. Send completed or failed depending on previous step outcome
+
+##### ChangeToObservationMode
+
+- Interlocks: None
+- Actions:
+  1. Accept the command
+  2. Discharge the auxiliary drives power supply and wait for it to be discharged
+  3. Set the Bosch Controller mode to `P0` and wait for it to be in `P0`
+  4. Change the drives listed in the `AuxiliaryDrivesMotorIDs` setting to *disabled* state
+  5. Set the value of the digital signals controlling the 24V and 380V contactors to *FALSE*
+  6. Set the Bosch Controller mode to `BB` and wait for it to be in `BB`
+  7. Send completed or failed depending on previous steps outcome
+
+##### ChangeToEngineeringMode
+
+- Interlocks: None
+- Actions:
+  1. Accept the command
+  2. Set the value of the digital signals controlling the 24V and 380V contactors to *TRUE*
+  3. Set the Bosch Controller mode to `P0` and wait for it to be in `P0`
+  4. Change the drives listed in the `AuxiliaryDrivesMotorIDs` setting to *enabled* state
+  5. Set the Bosch Controller mode to `BB` and wait for it to be in `BB`
+  6. Charge the auxiliary drives power supply and wait for it to be charged
+  7. Send completed or failed depending on previous steps outcome
+
+##### AuxiliaryPSCharge
+
+- Interlocks:
+  - The digital signals controlling the 24V and 380V contactors must be **TRUE**
+  - Bosch Controller must be in `BB`
+- Actions:
+  1. Accept/reject the command depending on the active interlocks
+  2. Charge the auxiliary drives power supply and wait for it to be charged
+  3. Send completed or failed depending on previous step outcome
+
+##### AuxiliaryPSDischarge
+
+- Interlocks: None
+- Actions:
+  1. Accept the command
+  2. Discharge the auxiliary drives power supply and wait for it to be discharged
+  3. Send completed or failed depending on previous step outcome
+
+##### BoschControllerReboot
+
+- Interlocks: None
+- Actions:
+  1. Accept the command
+  2. Send the reboot request to the bosch controller and wait for it to be reboot
+  3. Send completed or failed depending on previous step outcome
+
+> This action has no effect on the ATS and a `FAILED`response is sent with the `Command not implemented for the ATS.` message.
