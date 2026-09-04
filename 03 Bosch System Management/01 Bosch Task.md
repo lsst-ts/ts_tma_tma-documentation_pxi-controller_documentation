@@ -3,8 +3,6 @@
 This document describes the task used to communicate with the bosch system, from now on called Bosch task. This task
 contains some public methods that must be used to send the required actions to the wanted bosch axis.
 
-<!-- TODO update to the new Bosch task -->
-
 ## Task public methods
 
 Here the methods for the Bosch task are explained.
