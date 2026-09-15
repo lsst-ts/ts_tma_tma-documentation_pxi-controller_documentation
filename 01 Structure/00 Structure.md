@@ -4,10 +4,11 @@
 
 ### Commands, responses and events
 
-The commands are sent using TCP connections with a custom TCP protocol,
-[command format](https://ts-tma.lsst.io/docs/tma_pxi-controller_documentation/02%20CommandsAndEventsManagement/03%20Commands.html#command-format)
-[events](https://ts-tma.lsst.io/docs/tma_pxi-controller_documentation/02%20CommandsAndEventsManagement/04%20Events.html)
-[responses](https://github.com/lsst-ts/ts_tma_operation-manager_mt-mount-operation-manager/blob/develop/tma_management/doc/protocol.md#events)
+The commands are sent using TCP connections with a custom TCP protocol:
+
+- [command format](https://ts-tma.lsst.io/docs/tma_pxi-controller_documentation/02%20CommandsAndEventsManagement/03%20Commands.html#command-format)
+- [events](https://ts-tma.lsst.io/docs/tma_pxi-controller_documentation/02%20CommandsAndEventsManagement/04%20Events.html)
+- [responses](https://github.com/lsst-ts/ts_tma_operation-manager_mt-mount-operation-manager/blob/develop/tma_management/doc/protocol.md#events)
 
 ```plantuml
 @startuml Structure commands, responses and events
